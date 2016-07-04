@@ -13,7 +13,7 @@
             }
         },
         shim : {
-            'fnbase':['css!../css/lib/base.css']
+            'fnbase':['css!../stylesheets/lib/base.css']
         }
     });
 })();
