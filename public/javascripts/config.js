@@ -2,7 +2,7 @@
 (function(){
     var basePath = document.getElementById("basePath").value;
     require.config({
-        baseUrl : basePath+'/js',
+        baseUrl : basePath+'/javascripts',
         paths : {
             'jquery':'lib/jquery-1.9.1',
             'fnbase':'fnbase'
