@@ -35,6 +35,7 @@ router.post('/index', function(req, res) {
 			  user.count(query, function(err, doc){    //count返回集合中文档的数量，和 find 一样可以接收查询条件。query 表示查询的条件
 					if(doc == 1){
 						console.log(query.name + ": 登陆成功 " + new Date());
+						alert("success");
 						res.render('index', { title:'index' });
 					}else{
 						console.log(query.name + ": 登陆失败 " + new Date());
