@@ -1,7 +1,9 @@
 
-define(['require','jquery','./controller/c-login','./model/m-login'],function(require,$){
+define(['require','jquery','./controller/c-login','./model/m-login'],function(require,$,controller,model){
+    /*
     var controller = require('./controller/c-login'),
         model = require('./model/m-login');
+        */
 
     controller.bottomPosition();
     controller.contentHeight();

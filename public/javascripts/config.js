@@ -4,7 +4,7 @@
     require.config({
         baseUrl : basePath+'/javascripts',
         paths : {
-            'jquery':'lib/jquery-1.9.1',
+            'jquery':'lib/jquery-1.11.3.min',
             'fnbase':'fnbase'
         },
         map : {
