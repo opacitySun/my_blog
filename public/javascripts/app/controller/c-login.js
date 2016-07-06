@@ -3,8 +3,8 @@ define(['./Base'], function (Base) {
     var cLogin = {
         //重置登陆框
         loginReset : function(){
-            $("#login_name").val("Username");
-            $("#login_pwd").val("Password");
+            $("#login_name").val("");
+            $("#login_pwd").val("");
         },
         //关闭登陆框
         loginClose : function(){
