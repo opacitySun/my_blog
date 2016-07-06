@@ -3,7 +3,7 @@ var router = express.Router();
 var user = require('../database/db').user;
 
 /* GET home page. */
-router.get('/index', function(req, res) {
+router.post('/index', function(req, res, next) {
   res.render('index', { title: 'index' });
 });
 
@@ -32,14 +32,14 @@ router.post('/ucenter', function(req, res) {
 router.post('/index', function(req, res) {
 	  var query = {name: req.body.login_name, password: req.body.login_pwd};
 	  (function(){
-			  user.count(query, function(err, doc){    //count返回集合中文档的数量，和 find 一样可以接收查询条件。query 表示查询的条件
-					if(doc == 1){
-						console.log(query.name + ": 登陆成功 " + new Date());
-						res.render('index', { title:'index' });
-					}else{
-						console.log(query.name + ": 登陆失败 " + new Date());
-						res.redirect('/');
-					}
+		    user.count(query, function(err, doc){    //count返回集合中文档的数量，和 find 一样可以接收查询条件。query 表示查询的条件
+				if(doc == 1){
+					console.log(query.name + ": 登陆成功 " + new Date());
+					res.render('index', { title:'index' });
+				}else{
+					console.log(query.name + ": 登陆失败 " + new Date());
+					res.redirect('/');
+				}
 		  	});
 	  })(query);
 });
