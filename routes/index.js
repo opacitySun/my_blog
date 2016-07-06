@@ -3,9 +3,11 @@ var router = express.Router();
 var user = require('../database/db').user;
 
 /* GET home page. */
-router.post('/index', function(req, res, next) {
+/*
+router.get('/index', function(req, res, next) {
   res.render('index', { title: 'index' });
 });
+*/
 
 /* login */
 router.get('/login', function(req, res) {
