@@ -37,17 +37,17 @@
             <!--登陆头像结束-->
 
             <!--登录框开始-->
-            <div class="login_dialog" id="login_dialog">
+            <form action="index" mothed="post" class="login_dialog" id="login_dialog">
                 <h2>
                     <span>User Login</span>
                     <a class="close" href="javascript:void(0)" title="关闭" id="loginClose"></a>
                 </h2>
                 <div class="login_text">
                     <p class="p1">
-                        <input id="login_name" tabindex="1" type="text" value="Username" />
+                        <input id="login_name" name="login_name" tabindex="1" type="text" value="Username" />
                     </p>
                     <p class="p1">
-                        <input id="login_pwd" tabindex="2" type="text" value="Password" />
+                        <input id="login_pwd" name="login_pwd" tabindex="2" type="text" value="Password" />
                     </p>
                     <p class="p1">
                         <a class="reset" href="javascript:void(0)" title="重置" id="loginReset">reset</a>
@@ -56,7 +56,7 @@
                 <p class="p2">
                     <a class="submit" href="javascript:void(0)" title="登录">Login</a>
                 </p>
-            </div>
+            </form>
             <!--登录框结束-->
         </div>
     </div>
@@ -65,7 +65,7 @@
     <!--公共底部开始-->
     <div class="login_footer">
         <span>孙博为</span>
-        @2014
+        @2016
     </div>
     <!--公共底部结束-->
 </body>
