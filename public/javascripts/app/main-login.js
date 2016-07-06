@@ -7,7 +7,7 @@ define(['require','jquery','./controller/c-login','./model/m-login'],function(re
 
     controller.bottomPosition();
     controller.contentHeight();
-    controller.defaultText();
+    //controller.defaultText();
 
     $("#loginReset").click(function(){
         controller.loginReset();
