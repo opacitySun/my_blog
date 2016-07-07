@@ -1,13 +1,14 @@
+var http = require('http'),
+	url = require('url');
 var express = require('express');
 var router = express.Router();
 var user = require('../database/db').user;
+var users = require('./users');
 
 /* GET home page. */
-/*
 router.get('/index', function(req, res, next) {
   res.render('index', { title: 'index' });
 });
-*/
 
 /* login */
 router.get('/login', function(req, res) {
@@ -31,7 +32,7 @@ router.post('/ucenter', function(req, res) {
 	  })(query);
 });
 */
-router.post('/index', function(req, res) {
+router.post('/ucenter', function(req, res) {
 	/*
 	  var query = {name: req.body.login_name, password: req.body.login_pwd};
 	  (function(){

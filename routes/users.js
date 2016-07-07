@@ -1,9 +1,14 @@
+var http = require('http'),
+	url = require('url');
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
-
-module.exports = router;
+exports.router = function(req,res,pathname){
+	switch(pathname){
+		case "/parse":
+			parseDns.parseDns(req,res);
+			break;
+		default:
+			mainIndex.goIndex(req,res);
+	}
+}
