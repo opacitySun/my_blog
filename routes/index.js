@@ -3,7 +3,7 @@ var router = express.Router();
 var user = require('../database/db').user;
 
 /* GET home page. */
-router.get('/index', function(req, res, next) {
+router.get('/', function(req, res, next) {
   res.render('index', { title: 'index' });
 });
 
