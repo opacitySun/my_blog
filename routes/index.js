@@ -14,6 +14,7 @@ router.get('/login', function(req, res) {
 
  /* ucenter */
 router.post('/ucenter', function(req, res) {
+	/*
 	var name = req.body.login_name,
 		pwd = req.body.login_pwd;
 	if(name == ''){
@@ -37,6 +38,8 @@ router.post('/ucenter', function(req, res) {
 			}
 	  	});
 	})(query);
+	*/
+	res.render('ucenter', { title:'ucenter' });
 });
 
 module.exports = router;
