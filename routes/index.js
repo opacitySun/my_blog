@@ -17,11 +17,11 @@ router.post('/ucenter', function(req, res) {
 	var name = req.body.login_name,
 		pwd = req.body.login_pwd;
 	if(name == ''){
-		alert("用户名不能为空");
+		console.log("用户名不能为空");
 		return false;
 	}
 	if(pwd == ''){
-		alert("密码不能为空");
+		console.log("密码不能为空");
 		return false;
 	}
 	var query = {name: name, password: pwd};
@@ -29,7 +29,7 @@ router.post('/ucenter', function(req, res) {
 		user.count(query, function(err, doc){    //count返回集合中文档的数量，和 find 一样可以接收查询条件。query 表示查询的条件
 			if(err){
 				console.log(query.name + ": 登陆失败 " + new Date());
-				alert("用户名或密码不正确");
+				console.log("用户名或密码不正确");
 				//res.redirect('/');
 			}else{
 				console.log(query.name + ": 登陆成功 " + new Date());
