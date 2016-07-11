@@ -17,7 +17,7 @@ router.post('/ucenter', function(req, res) {
 	var name = req.body.login_name,
 		pwd = req.body.login_pwd;
 	console.log(name+" "+pwd);
-	return false;
+	/*
 	if(name == ''){
 		console.log("用户名不能为空");
 		return false;
@@ -39,6 +39,7 @@ router.post('/ucenter', function(req, res) {
 			}
 	  	});
 	})(query);
+	*/
 });
 
 module.exports = router;
