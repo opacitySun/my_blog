@@ -26,14 +26,14 @@ router.post('/ucenter', function(req, res) {
 	}
 	var query = {name: name, password: pwd};
 	(function(){
-		user.count(query, function(err, result){    //count返回集合中文档的数量，和 find 一样可以接收查询条件。query 表示查询的条件
-			if(err){
+		user.count(query, function(err, result){    //result:0是请求成功，1是请求失败
+			if(result == 0){
+				console.log(query.name + ": 登陆成功 " + new Date());
+				res.render('ucenter', { title:'ucenter' });
+			}else{
 				console.log(query.name + ": 登陆失败 " + new Date());
 				console.log("用户名或密码不正确");
 				//res.redirect('/');
-			}else{
-				console.log(query.name + ": 登陆成功 " + new Date());
-				res.render('ucenter', { title:'ucenter' });
 			}
 	  	});
 	})(query);
