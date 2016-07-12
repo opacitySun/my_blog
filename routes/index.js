@@ -14,11 +14,9 @@ router.get('/login', function(req, res) {
 
  /* ucenter */
 router.post('/ucenter', function(req, res) {
-	/*
 	var name = req.body.login_name,
 		pwd = req.body.login_pwd;
-		*/
-	console.log("1111");
+	console.log(name+" "+pwd);
 	/*
 	if(name == ''){
 		console.log("用户名不能为空");
