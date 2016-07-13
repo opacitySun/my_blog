@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var user = require('../database/db').user;
+var user = require('../database/db').user,
+	userClose = require('../database/db').userClose;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -25,6 +26,18 @@ router.post('/ucenter', function(req, res) {
 		return false;
 	}
 	var query = {name: name, password: pwd};
+	user.find(query,function(err,result){
+		if(err){
+			console.log(err);
+			res.redirect('/login');
+		}else{
+			console.log(query.name + ": 登陆成功 " + new Date());
+			res.render('ucenter', { title:'ucenter' });
+		}
+		//关闭数据库链接
+    	userClose();
+	});
+	/*
 	(function(){
 		user.count(query, function(err, result){    //result:0是请求成功，1是请求失败
 			if(result == 0){
@@ -32,11 +45,11 @@ router.post('/ucenter', function(req, res) {
 				res.render('ucenter', { title:'ucenter' });
 			}else{
 				console.log(query.name + ": 登陆失败 " + new Date());
-				console.log("用户名或密码不正确");
-				//res.redirect('/');
+				res.redirect('/login');
 			}
 	  	});
 	})(query);
+	*/
 });
 
 module.exports = router;
