@@ -14,7 +14,15 @@ router.get('/login', function(req, res) {
 
  /* ucenter */
 router.post('/ucenter', function(req, res) {
-	userController.userFindAction(req, res);
+	userController.userFindAction(req, res, function(result){
+		if(result.success == 1){
+			console.log(res.json(result));
+			res.render('ucenter', { title:'ucenter' });
+		}else{
+			console.log(res.json(result));
+			res.redirect('/login');
+		}
+	});
 	/*
 	(function(){
 		user.count(query, function(err, result){    //result:0是请求成功，1是请求失败
