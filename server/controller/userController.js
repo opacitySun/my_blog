@@ -35,10 +35,10 @@ exports.userFindAction = function(req, res) {
     var conditions ={name:req.body.login_name,password:req.body.login_pwd};  
     userDao.findUser(conditions,dbHelper,function(result){  
         if(result.success == 1){
-            console.log(result+"");
+            console.log(JSON.stringify(result));
             return res.render('ucenter', { title:'ucenter' });
         }else{
-            console.log(result+"");
+            console.log(JSON.stringify(result));
             return res.redirect('/login');
         }
         //res.json(result);  
