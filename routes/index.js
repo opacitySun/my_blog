@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var user = require('../database/db').user,
-	userClose = require('../database/db').userClose;
+var userController = require('../server/controller/userController');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -15,28 +14,7 @@ router.get('/login', function(req, res) {
 
  /* ucenter */
 router.post('/ucenter', function(req, res) {
-	var name = req.body.login_name,
-		pwd = req.body.login_pwd;
-	if(name == ''){
-		console.log("用户名不能为空");
-		return false;
-	}
-	if(pwd == ''){
-		console.log("密码不能为空");
-		return false;
-	}
-	var query = {name: name, password: pwd};
-	user.find(query,function(err,result){
-		if(err){
-			console.log(err);
-			res.redirect('/login');
-		}else{
-			console.log(query.name + ": 登陆成功 " + new Date());
-			res.render('ucenter', { title:'ucenter' });
-		}
-		//关闭数据库链接
-    	userClose();
-	});
+	userController.userFindAction(req, res);
 	/*
 	(function(){
 		user.count(query, function(err, result){    //result:0是请求成功，1是请求失败
