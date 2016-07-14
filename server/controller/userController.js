@@ -36,10 +36,10 @@ exports.userFindAction = function(req, res) {
     var conditions ={name:req.body.login_name,password:req.body.login_pwd};  
     userDao.findUser(conditions,dbHelper,function(result){  
         if(result.success == 1){
-            console.log(query.name + ": 登陆成功 " + new Date());
+            console.log(res.json(result));
             res.render('ucenter', { title:'ucenter' });
         }else{
-            console.log(query.name + ": 登陆失败 " + new Date());
+            console.log(res.json(result));
             res.redirect('/login');
         }
         //res.json(result);  
