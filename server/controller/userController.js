@@ -35,7 +35,14 @@ exports.userFindAction = function(req, res) {
     console.log("find"); 
     var conditions ={name:req.body.login_name,password:req.body.login_pwd};  
     userDao.findUser(conditions,dbHelper,function(result){  
-        res.json(result);  
+        if(result.success == 1){
+            console.log(query.name + ": 登陆成功 " + new Date());
+            res.render('ucenter', { title:'ucenter' });
+        }else{
+            console.log(query.name + ": 登陆失败 " + new Date());
+            res.redirect('/login');
+        }
+        //res.json(result);  
     });    
 }  
 
