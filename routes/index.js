@@ -20,7 +20,7 @@ router.post('/ucenter', function(req, res) {
 			res.render('ucenter', { title:'ucenter' });
 		}else{
 			console.log(res.json(result));
-			res.render('login', { title:'login' });
+			res.redirect('/');
 		}
 	});
 	/*
