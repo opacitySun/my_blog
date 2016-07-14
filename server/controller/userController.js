@@ -32,13 +32,11 @@ exports.userAddAction = function() {
  * @returns {Function}  
  */  
 exports.userFindAction = function(req, res) {  
-    console.log("find");
-    return function(req, res) {  
-        var conditions ={name:req.body.login_name,password:req.body.login_pwd};  
-        userDao.findUser(conditions,dbHelper,function(result){  
-            res.json(result);  
-        });  
-    }  
+    console.log("find"); 
+    var conditions ={name:req.body.login_name,password:req.body.login_pwd};  
+    userDao.findUser(conditions,dbHelper,function(result){  
+        res.json(result);  
+    });    
 }  
 
 /**  
