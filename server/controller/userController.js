@@ -31,10 +31,16 @@ exports.userAddAction = function() {
  * get User  
  * @returns {Function}  
  */  
-exports.userFindAction = function(req, res, callback) {   
+exports.userFindAction = function(req, res) {   
     var conditions ={name:req.body.login_name,password:req.body.login_pwd};  
     userDao.findUser(conditions,dbHelper,function(result){  
-        callback(result);
+        if(result.success == 1){
+            console.log(res.json(result));
+            return res.render('ucenter', { title:'ucenter' });
+        }else{
+            console.log(res.json(result));
+            return res.redirect('/');
+        }
         //res.json(result);  
     });    
 }  
