@@ -38,7 +38,7 @@ exports.userFindAction = function(req, res) {
             console.log(res.json(result));
             return res.render('ucenter', { title:'ucenter' });
         }else{
-            console.log(res.json(result));
+            //console.log(res.json(result));
             return res.redirect('/');
         }
         //res.json(result);  
