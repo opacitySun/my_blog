@@ -31,7 +31,7 @@ exports.userAddAction = function() {
  * get User  
  * @returns {Function}  
  */  
-exports.userFindAction = function() {  
+exports.userFindAction = function(req, res) {  
     return function(req, res) {  
         var conditions ={name:req.body.login_name,password:req.body.login_pwd};  
         userDao.findUser(conditions,dbHelper,function(result){  
