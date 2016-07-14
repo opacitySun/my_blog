@@ -32,7 +32,7 @@ exports.userAddAction = function() {
  * @returns {Function}  
  */  
 exports.userFindAction = function(req, res) {   
-    var conditions ={name:req.body.login_name,password:req.body.login_pwd};  
+    var conditions ={'name':req.body.login_name,'password':req.body.login_pwd};  
     userDao.findUser(conditions,dbHelper,function(result){  
         if(result.success == 1){
             console.log(JSON.stringify(result));
