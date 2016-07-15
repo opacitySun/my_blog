@@ -94,6 +94,32 @@ exports.findData = function(model,conditions,fields,options,callback) {
 }  
 
 /** 
+ * 公共findOne方法 非关联查找 
+ * @param model 
+ * @param conditions 
+ * @param fields 查找时限定的条件，如顺序，某些字段不查找等 
+ * @param options 
+ * @param callback 
+ */  
+exports.findOneData = function(model,conditions,fields,options,callback) {    
+    model.findOne(conditions, fields, options, function(error, result){  
+        if(error) {  
+            console.log(error);  
+            callback({success: 0, flag: "find data fail"});  
+        } else {  
+            if(result.length!=0){  
+                console.log('find success!');  
+                callback({success: 1, flag: "find data success",result:result});  
+            }  
+            else{  
+                console.log('find fail:no this data!');  
+                callback({success: 0, flag: 'find fail:no this data!'});  
+            }  
+        }  
+    });  
+}
+
+/** 
  * 公共populate find方法 
  * 是关联查找 
  * @param model 
