@@ -20,7 +20,9 @@ router.post('/ucenter', function(req, res) {
 	db.open(function(err,db){
 		if(!err){
 			console.log('connect db');
-			console.log(db.blog_user.find());
+			db.blog_user.find(function(error,result){
+            	console.log(result);
+            });
 			/*
 			db.createCollection('blog_user', {safe:true}, function(table_err, collection){
 	            if(table_err){
