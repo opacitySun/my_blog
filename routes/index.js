@@ -20,6 +20,8 @@ router.post('/ucenter', function(req, res) {
 	db.open(function(err,db){
 		if(!err){
 			console.log('connect db');
+			console.log(db.blog_user.find());
+			/*
 			db.createCollection('blog_user', {safe:true}, function(table_err, collection){
 	            if(table_err){
 	                console.log(table_err);
@@ -29,6 +31,7 @@ router.post('/ucenter', function(req, res) {
 	                }); 
 	            }
         	});
+			*/
 		}else{
 			console.log(err);
 		}
