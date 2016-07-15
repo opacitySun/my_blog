@@ -24,8 +24,8 @@ router.post('/ucenter', function(req, res) {
 	            if(table_err){
 	                console.log(table_err);
 	            }else{
-	                collection.find({'name':req.body.login_name,'password':req.body.login_pwd},function(error,result){
-	                	console.log(JSON.stringify(result));
+	                collection.find(function(error,result){
+	                	console.log(result);
 	                }); 
 	            }
         	});
