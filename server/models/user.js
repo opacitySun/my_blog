@@ -22,6 +22,6 @@ module.exports = {
 };
 
 var _getModel = function(type,err){
-	var userModel = global.db.model('blog_user',userScheMa);    //与blog_user集合关联
+	var userModel = db.model('blog_user',userScheMa);    //与blog_user集合关联
 	return userModel;
 }
