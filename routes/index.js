@@ -14,47 +14,7 @@ router.get('/login', function(req, res) {
 
  /* ucenter */
 router.post('/ucenter', function(req, res) {
-	/*
-	var  mongodb = require('mongodb');
-	var  server  = new mongodb.Server('123.57.50.14', 27017, {auto_reconnect:true});
-	var  db = new mongodb.Db('my_blog', server, {safe:true});
-	db.open(function(err,db){
-		if(!err){
-			console.log('connect db');
-			db.createCollection('blog_user', {safe:true}, function(table_err, collection){
-	            if(table_err){
-	                console.log(table_err);
-	            }else{
-	                collection.find().toArray(function(err,docs){
-	                   console.log('find');
-	                   console.log(docs);
-                    }); 
-                    var conditions ={'name':req.body.login_name,'password':req.body.login_pwd};
-					collection.findOne(conditions,function(err,doc){
-	                   console.log('findOne');
-	                   console.log(doc);
-                    }); 
-	            }
-        	});
-		}else{
-			console.log(err);
-		}
-	});
-	*/
 	userController.userFindAction(req, res);
-	/*
-	(function(){
-		user.count(query, function(err, result){    //result:0是请求成功，1是请求失败
-			if(result == 0){
-				console.log(query.name + ": 登陆成功 " + new Date());
-				res.render('ucenter', { title:'ucenter' });
-			}else{
-				console.log(query.name + ": 登陆失败 " + new Date());
-				res.redirect('/login');
-			}
-	  	});
-	})(query);
-	*/
 });
 
 module.exports = router;

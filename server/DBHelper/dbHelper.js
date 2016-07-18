@@ -107,8 +107,13 @@ exports.findOneData = function(model,conditions,fields,options,callback) {
             console.log(error);  
             callback({success: 0, flag: "find data fail"});  
         } else {  
-            console.log('find success!');  
-            callback({success: 1, flag: "find data success",result:result});
+            if(result != null && result != ''){
+                console.log('find success!');  
+                callback({success: 1, flag: "find data success",result:result});
+            }else{
+                console.log('find fail:no this data!');  
+                callback({success: 0, flag: 'find fail:no this data!'});
+            }
         }  
     });  
 }
