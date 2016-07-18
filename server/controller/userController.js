@@ -49,6 +49,13 @@ exports.userFindAction = function(req, res) {
             return res.redirect('/');
         }else{
             console.log(JSON.stringify(result));
+            req.session.destroy(function (err) {
+                if(err){
+                    console.log("session销毁失败.");
+                }else{
+                    console.log("session被销毁.");
+                } 
+            });   
             return res.redirect('/login');
         }
         //res.json(result);  
