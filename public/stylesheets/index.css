@@ -1,0 +1,36 @@
+@CHARSET "UTF-8";
+
+/*banner图
+---------------------------------------------------------*/
+.banner{float:left;width:100%;height:450px;background:#686868;}
+
+
+/*正文内容
+---------------------------------------------------------*/
+.content{float:left;width:100%;padding:20px 0;}
+.content .content_center{width:1000px;margin:0 auto;}
+.content h3{float:left;width:100%;height:27px;line-height:27px;border-bottom:1px solid #d8d5d0;}
+.content h3 span{float:left;font-size:14px;color:#505050;}
+.content h3 a.more{float:right;font-size:10px;color:#747474;font-family:Impact;font-weight:normal;}
+
+.content .content_1{float:left;width:100%;}
+.content .content_1 .left{float:left;width:615px;}
+.content .content_1 .left section{float:left;width:595px;height:144px;margin:10px 10px;overflow:hidden;}
+.content .content_1 .left section .l{float:left;width:120px;height:144px;}
+.content .content_1 .left section .l img{float:left;width:100%;height:144px;}
+.content .content_1 .left section .r{float:right;width:470px;height:144px;}
+.content .content_1 .left section .r p{float:left;width:100%;line-height:24px;font-size:12px;color:#666666;}
+.content .content_1 .right{float:right;width:350px;}
+.content .content_1 .right ul{float:left;width:100%;height:150px;overflow:hidden;}
+.content .content_1 .right ul li{float:left;width:100%;height:30px;line-height:30px;}
+.content .content_1 .right ul li a{float:left;display:block;width:100%;font-size:12px;}
+.content .content_1 .right ul li a span{float:left;color:#666666;width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.content .content_1 .right ul li a em{float:right;color:#aa99aa;width:80px;}
+.content .content_1 .right ul li a:hover span{text-decoration:underline;}
+
+.content .content_2{float:left;width:100%;}
+.content .content_2 section{float:left;width:980px;margin:15px 10px;overflow:hidden;}
+.content .content_2 section dl{float:left;width:188px;margin-right:10px;}
+.content .content_2 section dl dt{float:left;width:100%;margin-bottom:10px;}
+.content .content_2 section dl dt img{float:left;width:100%;}
+.content .content_2 section dl dd{float:left;width:100%;height:24px;line-height:24px;font-size:12px;text-align:center;color:#666666;}

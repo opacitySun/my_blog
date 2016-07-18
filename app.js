@@ -69,6 +69,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
+//判断是否存在session并选择跳转路径
 app.use(function(err,req,res,next){
   if (!req.session.username) {
     if(req.url=="/login"){

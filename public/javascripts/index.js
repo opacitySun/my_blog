@@ -1,5 +1,6 @@
 
-
-$(document).ready(function(){
-    $(".content_2 section dl:last").css("margin","0");
-});
+(function(){
+    require(['./config'],function(config){
+        require(['app/main-index']);
+    });
+})();
