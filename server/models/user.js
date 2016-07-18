@@ -20,6 +20,6 @@ module.exports = {
 };
 
 var _getModel = function(type,err){
-	var userModel = db.createCollection('blog_user', {safe:true});    //与blog_user集合关联
+	var userModel = db.collection('blog_user');
 	return userModel;
 }
