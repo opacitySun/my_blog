@@ -39,7 +39,6 @@ exports.userFindAction = function(req, res) {
             return res.render('ucenter', { title:'ucenter' });
         }else{
             console.log(JSON.stringify(result));
-            console.log("用户名或密码不正确");
             return res.redirect('/login');
         }
         //res.json(result);  
