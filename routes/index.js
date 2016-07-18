@@ -14,7 +14,6 @@ router.get('/login', function(req, res) {
 
  /* ucenter */
 router.post('/ucenter', function(req, res) {
-	/*
 	var  mongodb = require('mongodb');
 	var  server  = new mongodb.Server('123.57.50.14', 27017, {auto_reconnect:true});
 	var  db = new mongodb.Db('my_blog', server, {safe:true});
@@ -29,14 +28,18 @@ router.post('/ucenter', function(req, res) {
 	                   console.log('find');
 	                   console.log(docs);
                     }); 
+                    var conditions ={'name':req.body.login_name,'password':req.body.login_pwd};
+					collection.findOne(conditions,function(err,doc){
+	                   console.log('findOne');
+	                   console.log(doc);
+                    }); 
 	            }
         	});
 		}else{
 			console.log(err);
 		}
 	});
-	*/
-	userController.userFindAction(req, res);
+	//userController.userFindAction(req, res);
 	/*
 	(function(){
 		user.count(query, function(err, result){    //result:0是请求成功，1是请求失败
