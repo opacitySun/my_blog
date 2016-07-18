@@ -1,3 +1,4 @@
+var mongodb = require('mongodb');
 var db = require("./db").db;   //连接数据库
 
 db.open(function(err){
