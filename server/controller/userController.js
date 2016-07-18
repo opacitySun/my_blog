@@ -36,7 +36,17 @@ exports.userFindAction = function(req, res) {
     userDao.findUser(conditions,dbHelper,function(result){  
         if(result.success == 1){
             console.log(JSON.stringify(result));
-            return res.render('ucenter', { title:'ucenter' });
+            req.session.username=result.name;          
+            req.session.password=result.password;
+            req.session.regenerate(function (err) {
+                if(err){
+                    console.log("session重新初始化失败.");
+                }else{
+                    console.log("session被重新初始化.");
+                } 
+            });   
+            //return res.render('ucenter', { title:'ucenter' });
+            return res.redirect('/');
         }else{
             console.log(JSON.stringify(result));
             return res.redirect('/login');
