@@ -9,7 +9,6 @@ exports.addUser = function(conditions,dbHelper,callback) {
     var userModel =user.getModel();  
     dbHelper.addData(userModel,conditions,function(result) {  
         callback(result); 
-        user.closeModel(); 
     });  
 };  
 
@@ -25,7 +24,6 @@ exports.findUser = function(conditions,dbHelper,callback) {
     var options  = {};  
     dbHelper.findOneData(userModel,conditions,fields,options,function(result){  
         callback(result);
-        //user.closeModel();
     });  
 }  
 
@@ -39,7 +37,6 @@ exports.removeUser = function(conditions,dbHelper,callback) {
     var userModel =user.getModel();  
     dbHelper.removeData(userModel,conditions,function(result){  
         callback(result); 
-        user.closeModel(); 
     });  
 }  
 
@@ -55,6 +52,5 @@ exports.updateUser = function(conditions,update,options,dbHelper,callback) {
     var userModel =user.getModel();  
     dbHelper.updateData(userModel,conditions,update,options,function(result){  
         callback(result);  
-        user.closeModel();
     });  
 }  

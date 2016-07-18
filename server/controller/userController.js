@@ -1,5 +1,6 @@
 var dbHelper = require("../DBHelper/dbHelper");
 var userDao = require("../DBSql/userDao");
+var userModel = require("../models/user");
 
 /**  
  * add user  
@@ -34,6 +35,7 @@ exports.userAddAction = function() {
 exports.userFindAction = function(req, res) {   
     var conditions ={'name':req.body.login_name,'password':req.body.login_pwd};  
     userDao.findUser(conditions,dbHelper,function(result){  
+        userModel.closeModel(); 
         if(result.success == 1){
             console.log(JSON.stringify(result));
             req.session.username=result.result.name;          
