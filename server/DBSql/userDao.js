@@ -25,7 +25,7 @@ exports.findUser = function(conditions,dbHelper,callback) {
     var options  = {};  
     dbHelper.findOneData(userModel,conditions,fields,options,function(result){  
         callback(result);
-        user.closeModel();
+        //user.closeModel();
     });  
 }  
 
