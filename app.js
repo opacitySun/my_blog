@@ -69,7 +69,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.use(function(req,res,next){
+app.use(function(err,req,res,next){
   if (!req.session.username) {
     if(req.url=="/login"){
       next(); //如果请求的地址是登录则通过，进行下一个请求
