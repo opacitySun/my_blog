@@ -1,0 +1,3 @@
+define(["./Base"],function(Base){
+
+});
