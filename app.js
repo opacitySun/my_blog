@@ -31,7 +31,7 @@ app.use(expressSession({
   secret: '3boy',
   cookie: {maxAge:3600000}, //3600s即1个小时后session和相应的cookie失效过期
   resave: true, //是指每次请求都重新设置session cookie
-  saveUninitialized: true //是指无论有没有session cookie，每次请求都设置个session cookie，默认给个标示为connect.sid
+  saveUninitialized: false //是指无论有没有session cookie，每次请求都设置个session cookie，默认给个标示为connect.sid
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
