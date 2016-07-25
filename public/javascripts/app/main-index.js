@@ -12,7 +12,7 @@ define(['require','jquery','./controller/c-index','./model/m-index'],function(re
     	var html = "";
     	res.result.forEach(function(work){
     		html += '<dl>';
-			html += '<a href="'+work.workUrl+'">';
+			html += '<a target="_blank" href="'+work.workUrl+'">';
 			html += '<dt><img src="'+work.workImg+'" alt="截图" /></dt>';
 			html += '<dd>'+work.workName+'</dd>';
 			html += '</a>';
