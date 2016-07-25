@@ -10,6 +10,8 @@ var expressSession = require('express-session');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+var routesController = require('./server/controller/routesController');
+
 var app = express();
 
 // view engine setup
@@ -34,6 +36,9 @@ app.use(expressSession({
   saveUninitialized: false //是指无论有没有session cookie，每次请求都设置个session cookie，默认给个标示为connect.sid
 }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+//将express与控制器相关联来达到路由的目的
+routesController(app);
 
 //判断是否存在session并选择跳转路径
 app.use(function(req,res,next){

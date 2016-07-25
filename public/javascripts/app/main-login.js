@@ -18,4 +18,9 @@ define(['require','jquery','./controller/c-login','./model/m-login'],function(re
     $("#loginOpen").click(function(){
         controller.loginOpen();
     });
+
+    window.onresize = function(){
+        controller.bottomPosition();
+        controller.contentHeight();
+    }
 });
