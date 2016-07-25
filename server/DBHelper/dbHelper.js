@@ -76,7 +76,7 @@ exports.removeData = function(model,conditions,callback) {
  * @param callback 
  */  
 exports.findData = function(model,conditions,fields,options,callback) {    
-    model.find().toArray(conditions, fields, options, function(error, result){  
+    model.find().toArray(function(error, result){  
         if(error) {  
             console.log(error);  
             callback({success: 0, flag: "find data fail"});  
