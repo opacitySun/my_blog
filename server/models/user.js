@@ -20,6 +20,6 @@ module.exports = {
 };
 
 var _getModel = function(type,err){
-	var userModel = db.collection('blog_user');
-	return userModel;
+	var dbModel = db.collection('blog_user');
+	return dbModel;
 }

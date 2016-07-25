@@ -1,12 +1,12 @@
-var userInfo = require("../models/userInfo");
+var userWorks = require("../models/userWorks");
 
 /** 
  * 调用公共add方法并且传入操作数据库的模型user 
  * @returns {Function} 
  */  
-exports.addUserInfo = function(conditions,dbHelper,callback) {  
+exports.addUserWorks = function(conditions,dbHelper,callback) {  
     //获取user模型  
-    var dbModel =userInfo.getModel();  
+    var dbModel =userWorks.getModel();  
     dbHelper.addData(dbModel,conditions,function(result) {  
         callback(result); 
     });  
@@ -18,8 +18,8 @@ exports.addUserInfo = function(conditions,dbHelper,callback) {
  * @param dbHelper 
  * @param callback 
  */  
-exports.findUserInfo = function(conditions,dbHelper,callback) {  
-    var dbModel =userInfo.getModel();  
+exports.findUserWorks = function(conditions,dbHelper,callback) {  
+    var dbModel =userWorks.getModel();  
     var fields   = {};  
     var options  = {};  
     dbHelper.findData(dbModel,conditions,fields,options,function(result){  
@@ -33,8 +33,8 @@ exports.findUserInfo = function(conditions,dbHelper,callback) {
  * @param dbHelper 
  * @param callback 
  */  
-exports.removeUserInfo = function(conditions,dbHelper,callback) {  
-    var dbModel =userInfo.getModel();  
+exports.removeUserWorks = function(conditions,dbHelper,callback) {  
+    var dbModel =userWorks.getModel();  
     dbHelper.removeData(dbModel,conditions,function(result){  
         callback(result); 
     });  
@@ -48,8 +48,8 @@ exports.removeUserInfo = function(conditions,dbHelper,callback) {
  * @param dbHelper 
  * @param callback 
  */  
-exports.updateUserInfo = function(conditions,update,options,dbHelper,callback) {  
-    var dbModel =userInfo.getModel();  
+exports.updateUserWorks = function(conditions,update,options,dbHelper,callback) {  
+    var dbModel =userWorks.getModel();  
     dbHelper.updateData(dbModel,conditions,update,options,function(result){  
         callback(result);  
     });  

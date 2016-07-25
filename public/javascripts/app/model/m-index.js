@@ -10,6 +10,14 @@ define(["./Base"],function(Base){
 			modelBase.postAjax(url,data,function(res){
 				callback(res);
 			});
+		},
+		//获取作品列表
+		getUserWorks : function(callback){
+			var url = "/userWorksFindAction";
+			var data = {};
+			modelBase.postAjax(url,data,function(res){
+				callback(res);
+			});
 		}
 	};
 
