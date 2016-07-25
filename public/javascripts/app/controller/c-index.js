@@ -1,5 +1,5 @@
 
-define([./Base],function(){
+define([./Base],function(Base){
 	var cIndex = {
 
 	};
