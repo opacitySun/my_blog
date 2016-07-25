@@ -15,7 +15,7 @@ module.exports = function(app){
     //获取作品列表
     app.all("/userWorksFindAction",function(req,res){
         var conditions = {};
-        userWorksDao.findUserInfo(conditions,dbHelper,function(result){  
+        userWorksDao.findUserWorks(conditions,dbHelper,function(result){  
             console.log(JSON.stringify(result));
             res.json(result);
         });    
