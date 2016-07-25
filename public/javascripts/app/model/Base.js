@@ -20,7 +20,7 @@ define(['require','fnbase'],function(require,fnbase){
                     fn(data);//执行自定义的回调方法 fn
                 },
                 error:function(err){
-                    alert(err);
+                    console.log(err);
                 }
             });
         },
@@ -39,7 +39,7 @@ define(['require','fnbase'],function(require,fnbase){
                     fn(data);//执行自定义的回调方法 fn
                 },
                 error:function(err){
-                    alert(err);
+                    console.log(err);
                 }
             });
         }
