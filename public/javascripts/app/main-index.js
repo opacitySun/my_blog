@@ -3,7 +3,7 @@ define(['require','jquery','./controller/c-index','./model/m-index'],function(re
     $(".content_2 section dl:last").css("margin","0");
 
     model.getUserInfo(function(res){
-    	$("#peopleImg").attr("src",res[0].image);
-    	$("#peopleName").text(res[0].name);
+    	$("#peopleImg").attr("src",res[0].result.image);
+    	$("#peopleName").text(res[0].result.name);
     });
 });

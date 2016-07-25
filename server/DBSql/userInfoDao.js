@@ -22,7 +22,7 @@ exports.findUserInfo = function(conditions,dbHelper,callback) {
     var userModel =userInfo.getModel();  
     var fields   = {};  
     var options  = {};  
-    dbHelper.findOneData(userModel,conditions,fields,options,function(result){  
+    dbHelper.findData(userModel,conditions,fields,options,function(result){  
         callback(result);
     });  
 }  

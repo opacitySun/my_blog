@@ -3,7 +3,7 @@ var db = require("./db").getDB();   //连接数据库
 
 db.open(function(err){
 	if(!err){
-		console.log('connect db');
+		console.log('connect db blog_user');
 	}else{
 		console.log(err);
 		return false;
