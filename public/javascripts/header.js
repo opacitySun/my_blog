@@ -41,10 +41,10 @@ define(['require','jquery'],function(require,$){
 	$("#header nav li").eq(navLiNo).find("a").addClass("sel");
 
 	//设为首页
-	function setHome(obj,url){
+	function setHome(obj,indexUrl){
 		try{
-			obj.style.behavior='url(#default#homepage)';
-			obj.setHomePage(url);
+			obj.style.behavior='indexUrl(#default#homepage)';
+			obj.setHomePage(indexUrl);
 		}catch(e){
 			if(window.netscape){
 				try{
