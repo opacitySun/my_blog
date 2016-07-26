@@ -14,7 +14,7 @@ define(['require','jquery'],function(require,$){
                 dataType : "json",
                 async : true,
                 type : "get",
-                contentType: "application/json; charset=utf-8",
+                //contentType: "application/json; charset=utf-8",
                 success : function(data) {
                     console.log(data);
                     fn(data);//执行自定义的回调方法 fn
@@ -33,7 +33,7 @@ define(['require','jquery'],function(require,$){
                 dataType : "json",
                 async : true,
                 type : "post",
-                contentType: "application/json; charset=utf-8",
+                //contentType: "application/json; charset=utf-8",
                 success : function(data) {
                     console.log(data);
                     fn(data);//执行自定义的回调方法 fn
