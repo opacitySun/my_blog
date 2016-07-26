@@ -5,7 +5,7 @@
         baseUrl : basePath+'/javascripts',
         paths : {
             'jquery':'lib/jquery-1.11.3.min',
-            'fnbase':'fnbase',
+            'fnbase':'./fnbase',
             'vue':'lib/vue.min'
         },
         map : {
