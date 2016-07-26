@@ -27,7 +27,7 @@ define(['require','jquery'],function(require,$){
 	var protocol = window.location.protocol;
 	var protocolLen = protocol.length;
 	var url = window.location.href;
-	var pathName = url.substring(hostLen+1);
+	var pathName = url.substring(hostLen+protocolLen+3);
 	console.log(host);
 	console.log(hostLen);
 	console.log(protocol);
