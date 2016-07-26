@@ -36,5 +36,5 @@ define(['require','jquery'],function(require,$){
 		default:
 			navLiNo = 0;
 	}
-	$("#header nav li").eq(navLiNo).addClass("sel");
+	$("#header nav li").eq(navLiNo).find("a").addClass("sel");
 });
