@@ -26,8 +26,9 @@
 .works_list .content .right .position span{float:left;}
 .works_list .content .right .list{float:left;width:690px;margin:30px 40px;overflow:hidden;}
 .works_list .content .right .list section{float:left;width:730px;}
-.works_list .content .right .list section dl{float:left;width:190px;margin-right:40px;}
+.works_list .content .right .list section dl{float:left;width:190px;border:2px solid #ffffff;margin-right:40px;margin-bottom:30px;}
+.works_list .content .right .list section dl:hover{border:2px solid #ff0000;}
 .works_list .content .right .list section dl:hover dd{color:#ff0000;}
-.works_list .content .right .list section dl dt{float:left;width:100%;margin-bottom:10px;}
+.works_list .content .right .list section dl dt{float:left;width:100%;height:130px;overflow:hidden;margin-bottom:10px;}
 .works_list .content .right .list section dl dt img{float:left;width:100%;}
 .works_list .content .right .list section dl dd{float:left;width:100%;height:24px;line-height:24px;font-size:12px;text-align:center;color:#666666;}

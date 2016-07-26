@@ -19,6 +19,8 @@ define(['require','jquery','./controller/c-work','./model/m-work'],function(requ
 					html += '</a>';
 		    		html += '</dl>';
 	    		});
+	    	}else{
+	    		html = "暂无数据";
 	    	}
 	    	$("#worksList").html(html);
 	    });
@@ -36,6 +38,8 @@ define(['require','jquery','./controller/c-work','./model/m-work'],function(requ
 					html += '</a>';
 		    		html += '</dl>';
 	    		});
+	    	}else{
+	    		html = "暂无数据";
 	    	}
 	    	$("#worksList").html(html);
 	    });
@@ -53,6 +57,8 @@ define(['require','jquery','./controller/c-work','./model/m-work'],function(requ
 					html += '</a>';
 		    		html += '</dl>';
 	    		});
+	    	}else{
+	    		html = "暂无数据";
 	    	}
 	    	$("#worksList").html(html);
 	    });
@@ -70,6 +76,8 @@ define(['require','jquery','./controller/c-work','./model/m-work'],function(requ
 					html += '</a>';
 		    		html += '</dl>';
 	    		});
+	    	}else{
+	    		html = "暂无数据";
 	    	}
 	    	$("#worksList").html(html);
 	    });
