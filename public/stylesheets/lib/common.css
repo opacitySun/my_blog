@@ -5,7 +5,7 @@
 /*公共头部
 -----------------------------------------*/
 header{width:100%;font-family:"微软雅黑";}
-header .header_top{float:left;width:100%;height:110px;background:#b01515;border-bottom:1px solid #860707;}
+header .header_top{width:100%;height:110px;background:#b01515;border-bottom:1px solid #860707;}
 header .header_top .top_center{position:relative;margin:0 auto;width:1000px;height:110px;}
 header .header_top .top_center .logo{position:absolute;left:0;bottom:0;height:80px;line-height:80px;font-size:46px;color:#FFF;text-shadow:2px 2px 2px #000000;}
 header .header_top .top_center ul{position:absolute;right:0;top:15px;height:24px;line-height:24px;font-size:12px;}
@@ -13,7 +13,7 @@ header .header_top .top_center ul li{float:left;}
 header .header_top .top_center ul li a{display:block;height:24px;line-height:24px;padding:0 5px;color:#FFF;}
 header .header_top .top_center ul li a:hover{text-decoration:underline;}
 header .header_top .top_center ul span{float:left;color:#9d0f12;}
-header nav{float:left;width:100%;height:48px;line-height:48px;background:#930f11;border-top:1px solid #ac1f20;}
+header nav{width:100%;height:48px;line-height:48px;background:#930f11;border-top:1px solid #ac1f20;}
 header nav ul{margin:0 auto;width:1000px;height:48px;}
 header nav ul li{float:left;width:140px;height:48px;border-right:1px solid #860707;border-left:1px solid #ac1f20;}
 header nav ul li a{display:block;width:140px;height:48px;text-align:center;font-weight:bold;font-size:14px;color:#FFF;}

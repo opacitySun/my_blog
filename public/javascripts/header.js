@@ -21,7 +21,6 @@ define(['require','jquery'],function(require,$){
 	html += '		<li><a href="" title="消息新闻">消息新闻</a></li>';
 	html += '	</ul>';
 	html += '</nav>';
-	html += '<div class="clearfix"></div>';
 	$("#header").html(html);
 
 	//设置菜单选中状态
