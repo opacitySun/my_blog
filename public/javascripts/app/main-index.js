@@ -28,7 +28,7 @@ define(['require','jquery','fnbase','./controller/c-index','./model/m-index'],fu
         var html = "";
         res.result.forEach(function(obj){
             html += '<li>';
-            html += '<a target="_blank" href="'+work.url+'">';
+            html += '<a target="_blank" href="'+obj.url+'">';
             html += '<span>'+obj.name+'</span>';
             html += '<em>'+fnbase.getFormatDateByLong(obj.createTime,true)+'</em>';
             html += '</a>';
