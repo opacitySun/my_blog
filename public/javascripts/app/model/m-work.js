@@ -6,7 +6,7 @@ define(["./Base"],function(Base){
 		getOnlinePCList : function(callback){
 			var url = "/worksListFindAction";
 			var data = {"type":"PC","status":"online"};
-			modelBase.postAjax(url,data,function(res){
+			modelBase.getAjax(url,data,function(res){
 				callback(res);
 			});
 		},

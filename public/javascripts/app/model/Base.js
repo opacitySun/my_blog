@@ -1,5 +1,5 @@
 
-define(['require','fnbase'],function(require,fnbase){
+define(['require','jquery'],function(require,$){
     function modelBase(id){
         this.id = id;
     }
