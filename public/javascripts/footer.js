@@ -4,6 +4,7 @@ define(['require','jquery'],function(require,$){
 	html += '	<p>本网站为个人网站，不用于商业用途</p>';
 	html += '	<p>孙博为@2016</p>';
 	html += '</div>';
+	html += '<div class="clearfix"></div>';
 
 	$("#footer").html(html);
 });
