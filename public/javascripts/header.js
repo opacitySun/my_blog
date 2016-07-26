@@ -23,7 +23,8 @@ define(['require','jquery'],function(require,$){
 	$("#header").html(html);
 
 	var host = window.location.host;
+	var hostLen = host.length;
 	var url = window.location.href;
-	var pathName = url.substring(url.indexOf(host)+1);
-	alert(host);
+	var pathName = url.substring(hostLen+1);
+	alert(pathName);
 });
