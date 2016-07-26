@@ -2,6 +2,7 @@
  * Created by sun on 2016/4/11.
  */
 
+define(function(){
 var fnBase = {};
 /*
  * 是否存在指定变量
@@ -367,3 +368,4 @@ fnBase.isWeiXin = function(){
 
 //将对象集合返回给外部
 return fnBase;
+});
