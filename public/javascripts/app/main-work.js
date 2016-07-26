@@ -10,7 +10,7 @@ define(['require','jquery','./controller/c-work','./model/m-work'],function(requ
     $("#onlinePC").click(function(){
     	model.getOnlinePCList(function(res){
 	    	var html = "";
-	    	if(res.result.length > 0){
+	    	if(res.result){
 	    		$.each(res.result,function(key,obj){
 	    			html += '<dl title="'+obj.workName+'">';
 					html += '<a target="_blank" href="'+obj.workUrl+'">';
@@ -27,7 +27,7 @@ define(['require','jquery','./controller/c-work','./model/m-work'],function(requ
     $("#onlinePhone").click(function(){
     	model.getOnlinePhoneList(function(res){
 	    	var html = "";
-	    	if(res.result.length > 0){
+	    	if(res.result){
 	    		$.each(res.result,function(key,obj){
 	    			html += '<dl title="'+obj.workName+'">';
 					html += '<a target="_blank" href="'+obj.workUrl+'">';
@@ -44,7 +44,7 @@ define(['require','jquery','./controller/c-work','./model/m-work'],function(requ
     $("#staticPC").click(function(){
     	model.getStaticPCList(function(res){
 	    	var html = "";
-	    	if(res.result.length > 0){
+	    	if(res.result){
 	    		$.each(res.result,function(key,obj){
 	    			html += '<dl title="'+obj.workName+'">';
 					html += '<a target="_blank" href="'+obj.workUrl+'">';
@@ -61,7 +61,7 @@ define(['require','jquery','./controller/c-work','./model/m-work'],function(requ
     $("#staticPhone").click(function(){
     	model.getStaticPhoneList(function(res){
 	    	var html = "";
-	    	if(res.result.length > 0){
+	    	if(res.result){
 	    		$.each(res.result,function(key,obj){
 	    			html += '<dl title="'+obj.workName+'">';
 					html += '<a target="_blank" href="'+obj.workUrl+'">';

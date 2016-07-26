@@ -12,7 +12,7 @@ define(['require','jquery','fnbase','./controller/c-index','./model/m-index'],fu
     //获取作品列表
     model.getUserWorks(function(res){
     	var html = "";
-        if(res.result.length > 0){
+        if(res.result){
             $.each(res.result,function(key,obj){
                 html += '<dl title="'+obj.workName+'">';
                 html += '<a target="_blank" href="'+obj.workUrl+'">';
@@ -28,7 +28,7 @@ define(['require','jquery','fnbase','./controller/c-index','./model/m-index'],fu
     //获取新闻列表
     model.getNewsList(function(res){
         var html = "";
-        if(res.result.length > 0){
+        if(res.result){
             $.each(res.result,function(key,obj){
                 html += '<li>';
                 html += '<a target="_blank" href="'+obj.url+'">';
