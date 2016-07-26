@@ -1,5 +1,5 @@
 
-define(['require','jquery','./controller/c-index','./model/m-index'],function(require,$,controller,model){
+define(['require','jquery','fnbase','./controller/c-index','./model/m-index'],function(require,$,fnbase,controller,model){
     $(".content_2 section dl:last").css("margin","0");
 
     //获取用户信息
@@ -21,5 +21,19 @@ define(['require','jquery','./controller/c-index','./model/m-index'],function(re
     		html += '</dl>';
     	});
     	$("#userWorks").html(html);
+    });
+
+    //获取新闻列表
+    model.getNewsList(function(res){
+        var html = "";
+        res.result.forEach(function(obj){
+            html += '<li>';
+            html += '<a target="_blank" href="'+work.url+'">';
+            html += '<span>'+obj.name+'</span>';
+            html += '<em>'+fnbase.getFormatDateByLong(obj.createTime,true)+'</em>';
+            html += '</a>';
+            html += '</li>';
+        });
+        $("#newsList").html(html);
     });
 });

@@ -18,6 +18,14 @@ define(["./Base"],function(Base){
 			modelBase.postAjax(url,data,function(res){
 				callback(res);
 			});
+		},
+		//获取新闻列表
+		getNewsList : function(callback){
+			var url = "/newsListAction";
+			var data = {};
+			modelBase.postAjax(url,data,function(res){
+				callback(res);
+			});
 		}
 	};
 
