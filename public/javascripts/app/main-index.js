@@ -30,7 +30,7 @@ define(['require','jquery','fnbase','./controller/c-index','./model/m-index'],fu
             html += '<li>';
             html += '<a target="_blank" href="'+obj.url+'">';
             html += '<span>'+obj.name+'</span>';
-            html += '<em>'+fnbase.getSmpFormatDateByLong(parseInt(obj.createTime),false)+'</em>';
+            html += '<em>'+fnbase.getSmpFormatDateByLong(parseInt(obj.createTime),true)+'</em>';
             html += '</a>';
             html += '</li>';
         });
