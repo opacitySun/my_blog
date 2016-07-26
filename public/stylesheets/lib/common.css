@@ -1,6 +1,6 @@
 @CHARSET "UTF-8";
 
-.main{width:100%;font-family:"微软雅黑";}
+.main{width:100%;font-family:"微软雅黑";overflow:hidden;}
 
 /*公共头部
 -----------------------------------------*/
