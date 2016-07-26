@@ -5,7 +5,7 @@ define(["./Base"],function(Base){
 		//获取上线PC端项目列表
 		getOnlinePCList : function(callback){
 			var url = "/worksListFindAction";
-			var data = {"type":"PC","status":"online"};
+			var data = {};
 			modelBase.postAjax(url,data,function(res){
 				callback(res);
 			});
