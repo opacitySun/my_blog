@@ -4,7 +4,9 @@
  */
 
 var index = require("./indexController");
+var worksList = require("./worksListController");
 
 module.exports = function(app){
 	index(app);
+	worksList(app);
 }
