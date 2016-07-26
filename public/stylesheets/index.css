@@ -31,6 +31,6 @@
 .content .content_2{float:left;width:100%;}
 .content .content_2 section{float:left;width:980px;margin:15px 10px;overflow:hidden;}
 .content .content_2 section dl{float:left;width:188px;margin-right:10px;}
-.content .content_2 section dl dt{float:left;width:100%;margin-bottom:10px;}
-.content .content_2 section dl dt img{float:left;width:100%;}
+.content .content_2 section dl dt{float:left;width:100%;height:130px;overflow:hidden;margin-bottom:10px;}
+.content .content_2 section dl dt img{max-width:100%;}
 .content .content_2 section dl dd{float:left;width:100%;height:24px;line-height:24px;font-size:12px;text-align:center;color:#666666;}
