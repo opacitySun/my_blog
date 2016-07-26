@@ -12,28 +12,32 @@ define(['require','jquery','fnbase','./controller/c-index','./model/m-index'],fu
     //获取作品列表
     model.getUserWorks(function(res){
     	var html = "";
-    	res.result.forEach(function(work){
-    		html += '<dl title="'+work.workName+'">';
-			html += '<a target="_blank" href="'+work.workUrl+'">';
-			html += '<dt><img src="'+work.workImg+'" alt="截图" /></dt>';
-			html += '<dd>'+work.workName+'</dd>';
-			html += '</a>';
-    		html += '</dl>';
-    	});
+        if(res.result.length > 0){
+            $.each(res.result,function(key,obj){
+                html += '<dl title="'+obj.workName+'">';
+                html += '<a target="_blank" href="'+obj.workUrl+'">';
+                html += '<dt><img src="'+obj.workImg+'" alt="截图" /></dt>';
+                html += '<dd>'+obj.workName+'</dd>';
+                html += '</a>';
+                html += '</dl>';
+            });
+        }
     	$("#userWorks").html(html);
     });
 
     //获取新闻列表
     model.getNewsList(function(res){
         var html = "";
-        res.result.forEach(function(obj){
-            html += '<li>';
-            html += '<a target="_blank" href="'+obj.url+'">';
-            html += '<span>'+obj.name+'</span>';
-            html += '<em>'+fnbase.getSmpFormatDateByLong(parseInt(obj.createTime),false)+'</em>';
-            html += '</a>';
-            html += '</li>';
-        });
+        if(res.result.length > 0){
+            $.each(res.result,function(key,obj){
+                html += '<li>';
+                html += '<a target="_blank" href="'+obj.url+'">';
+                html += '<span>'+obj.name+'</span>';
+                html += '<em>'+fnbase.getSmpFormatDateByLong(parseInt(obj.createTime),false)+'</em>';
+                html += '</a>';
+                html += '</li>';
+            });
+        }
         $("#newsList").html(html);
     });
 });
