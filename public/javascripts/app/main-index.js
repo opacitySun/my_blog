@@ -1,5 +1,5 @@
 
-define(['require','jquery','fnbase','./controller/c-index','./model/m-index'],function(require,$,fnbase,controller,model){
+define(['require','jquery','../lib/fnbase','./controller/c-index','./model/m-index'],function(require,$,fnbase,controller,model){
     $(".content_2 section dl:last").css("margin","0");
 
     //获取用户信息
