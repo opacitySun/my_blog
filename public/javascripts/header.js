@@ -13,7 +13,7 @@ define(['require','jquery'],function(require,$){
 	html += '</div>';
 	html += '<nav>';
 	html += '	<ul>';
-	html += '		<li><a class="sel" href="/" title="网站首页">网站首页</a></li>';
+	html += '		<li><a href="/" title="网站首页">网站首页</a></li>';
 	html += '		<li><a href="/works-list" title="我的作品">我的作品</a></li>';
 	html += '		<li><a href="" title="学习分享">学习分享</a></li>';
 	html += '		<li><a href="" title="我的娱乐">我的娱乐</a></li>';
@@ -28,10 +28,13 @@ define(['require','jquery'],function(require,$){
 	var protocolLen = protocol.length;
 	var url = window.location.href;
 	var pathName = url.substring(hostLen+protocolLen+3);
-	console.log(host);
-	console.log(hostLen);
-	console.log(protocol);
-	console.log(protocolLen);
-	console.log(url);
-	console.log(pathName);
+	var navLiNo = 0;
+	switch(pathName){
+		case 'works-list':
+			navLiNo = 1;
+			break;
+		default:
+			navLiNo = 0;
+	}
+	$("#header nav li").eq(navLiNo).addClass("sel");
 });
