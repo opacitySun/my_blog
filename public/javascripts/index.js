@@ -1,7 +1,8 @@
 
 (function(){
     require(['./config'],function(config){
-    	require(['./head']);
+    	require(['./header']);
+    	require(['./footer']);
         require(['app/main-index']);
     });
 })();

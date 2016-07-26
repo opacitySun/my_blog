@@ -1,5 +1,4 @@
 
-
 define(['require','jquery'],function(require,$){
 	var html = "";
 	html += '<div class="header_top">';
@@ -21,6 +20,10 @@ define(['require','jquery'],function(require,$){
 	html += '		<li><a href="" title="消息新闻">消息新闻</a></li>';
 	html += '	</ul>';
 	html += '</nav>';
+	$("#header").html(html);
 
-	$("#head").html(html);
+	var host = window.location.host;
+	var url = window.location.href;
+	var pathName = url.substring(url.indexOf(host)+1);
+	alert(pathName);
 });
