@@ -1,6 +1,6 @@
 
 
-define(['require','vue'],function(require,Vue){
+define(['require','jquery'],function(require,$){
 	var html = "";
 	html += '<div class="header_top">';
 	html += '	<div class="top_center">';
@@ -22,10 +22,5 @@ define(['require','vue'],function(require,Vue){
 	html += '	</ul>';
 	html += '</nav>';
 
-	new Vue({
-		el: '#head',
-		data: {
-			head: html
-		}
-	});
+	$("#head").html(html);
 });
