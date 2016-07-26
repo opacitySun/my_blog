@@ -14,7 +14,7 @@
             }
         },
         shim : {
-            'fnbase':['css!../stylesheets/lib/base.css']
+            //'fnbase':['css!../stylesheets/lib/base.css']
         }
     });
 })();
