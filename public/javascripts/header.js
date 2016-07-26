@@ -26,5 +26,8 @@ define(['require','jquery'],function(require,$){
 	var hostLen = host.length;
 	var url = window.location.href;
 	var pathName = url.substring(hostLen+1);
-	alert(pathName);
+	console.log(host);
+	console.log(hostLen);
+	console.log(url);
+	console.log(pathName);
 });
