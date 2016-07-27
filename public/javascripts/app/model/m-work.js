@@ -13,7 +13,7 @@ define(["./Base"],function(Base){
 		//获取上线PC端项目列表
 		getOnlinePCList : function(callback){
 			var url = "/worksListFindAction";
-			var data = {"type":"PC","status":"online"};
+			var data = {"type":0,"status":0};
 			modelBase.postAjax(url,data,function(res){
 				callback(res);
 			});
@@ -21,7 +21,7 @@ define(["./Base"],function(Base){
 		//获取上线手机端项目列表
 		getOnlinePhoneList : function(callback){
 			var url = "/worksListFindAction";
-			var data = {"type":"Phone","status":"online"};
+			var data = {"type":1,"status":0};
 			modelBase.postAjax(url,data,function(res){
 				callback(res);
 			});
@@ -29,7 +29,7 @@ define(["./Base"],function(Base){
 		//获取静态PC端项目列表
 		getStaticPCList : function(callback){
 			var url = "/worksListFindAction";
-			var data = {"type":"PC","status":"static"};
+			var data = {"type":0,"status":1};
 			modelBase.postAjax(url,data,function(res){
 				callback(res);
 			});
@@ -37,7 +37,7 @@ define(["./Base"],function(Base){
 		//获取静态手机端项目列表
 		getStaticPhoneList : function(callback){
 			var url = "/worksListFindAction";
-			var data = {"type":"Phone","status":"static"};
+			var data = {"type":1,"status":1};
 			modelBase.postAjax(url,data,function(res){
 				callback(res);
 			});
