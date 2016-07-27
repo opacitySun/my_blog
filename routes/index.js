@@ -32,4 +32,9 @@ router.get('/news-list', function(req, res) {
 	res.render('news-list', { title: '消息新闻' });
 });
 
+/* recreation */
+router.get('/recreation', function(req, res) {
+	res.render('recreation', { title: '娱乐' });
+});
+
 module.exports = router;
