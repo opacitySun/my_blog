@@ -22,4 +22,9 @@ router.get('/works-list', function(req, res) {
 	res.render('works-list', { title: '作品列表' });
 });
 
+/* study-list */
+router.get('/study-list', function(req, res) {
+	res.render('study-list', { title: '学习分享' });
+});
+
 module.exports = router;

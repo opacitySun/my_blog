@@ -5,7 +5,7 @@ define(['./Base'], function (Base) {
 			$(obj).parent().siblings().find("dd").slideUp();
         	$(obj).parent().find("dd").slideDown();
 		}
-	}
+	};
 
 	return cWork;
 });
