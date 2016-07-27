@@ -5,7 +5,7 @@ module.exports = function(app){
     //获取项目列表
     app.all("/worksListFindAction",function(req,res){
     	//type:0是PC,1是手机;status:0是在线,1是静态
-        var conditions = {"type":req.body.type,"status":req.body.status};
+        var conditions = {"type":Number(req.body.type),"status":Number(req.body.status)};
         userWorksDao.findUserWorks(conditions,dbHelper,function(result){  
             console.log(JSON.stringify(result));
             res.json(result);
