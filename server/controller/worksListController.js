@@ -10,4 +10,13 @@ module.exports = function(app){
             res.json(result);
         });    
     });
+
+    //获取全部项目列表
+    app.all("/worksAllListFindAction",function(req,res){
+        var conditions = {};
+        userWorksDao.findUserWorks(conditions,dbHelper,function(result){  
+            console.log(JSON.stringify(result));
+            res.json(result);
+        });    
+    });
 }

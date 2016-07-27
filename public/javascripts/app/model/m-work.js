@@ -2,6 +2,14 @@ define(["./Base"],function(Base){
 	var modelBase = new Base();
 
 	var mWork = {
+		//获取全部项目列表
+		getAllList : function(callback){
+			var url = "/worksAllListFindAction";
+			var data = {};
+			modelBase.postAjax(url,data,function(res){
+				callback(res);
+			});
+		},
 		//获取上线PC端项目列表
 		getOnlinePCList : function(callback){
 			var url = "/worksListFindAction";
