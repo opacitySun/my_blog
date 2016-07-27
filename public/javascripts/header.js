@@ -18,7 +18,7 @@ define(['require','jquery'],function(require,$){
 	html += '		<li><a href="/works-list" title="我的作品">我的作品</a></li>';
 	html += '		<li><a href="/study-list" title="学习分享">学习分享</a></li>';
 	html += '		<li><a href="" title="我的娱乐">我的娱乐</a></li>';
-	html += '		<li><a href="" title="消息新闻">消息新闻</a></li>';
+	html += '		<li><a href="/news-list" title="消息新闻">消息新闻</a></li>';
 	html += '	</ul>';
 	html += '</nav>';
 	$("#header").html(html);
@@ -37,6 +37,9 @@ define(['require','jquery'],function(require,$){
 			break;
 		case 'study-list':
 			navLiNo = 2;
+			break;
+		case 'news-list':
+			navLiNo = 4;
 			break;
 		default:
 			navLiNo = 0;
