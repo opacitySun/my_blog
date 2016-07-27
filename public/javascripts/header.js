@@ -16,7 +16,7 @@ define(['require','jquery'],function(require,$){
 	html += '	<ul>';
 	html += '		<li><a href="/" title="网站首页">网站首页</a></li>';
 	html += '		<li><a href="/works-list" title="我的作品">我的作品</a></li>';
-	html += '		<li><a href="" title="学习分享">学习分享</a></li>';
+	html += '		<li><a href="/study-list" title="学习分享">学习分享</a></li>';
 	html += '		<li><a href="" title="我的娱乐">我的娱乐</a></li>';
 	html += '		<li><a href="" title="消息新闻">消息新闻</a></li>';
 	html += '	</ul>';
