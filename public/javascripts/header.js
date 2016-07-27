@@ -35,6 +35,9 @@ define(['require','jquery'],function(require,$){
 		case 'works-list':
 			navLiNo = 1;
 			break;
+		case 'study-list':
+			navLiNo = 2;
+			break;
 		default:
 			navLiNo = 0;
 	}
