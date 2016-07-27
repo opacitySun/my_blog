@@ -2,13 +2,13 @@
 
 /*学习分享列表
 ----------------------------------------------------------*/
-.study_list{width:1000px;margin:0 auto;}
+.study_list{width:1000px;margin:20px auto;}
 .study_list dl{width:48%;height:500px;overflow:hidden;margin-right:40px;}
-.study_list dl dt{width:100%;height:30px;line-height:30px;border-bottom:1px solid #666666;}
-.study_list dl dt span{font-size:16px;color:#333333;}
+.study_list dl dt{width:100%;height:40px;line-height:40px;border-bottom:1px solid #666666;}
+.study_list dl dt span{float:left;font-size:16px;color:#333333;}
 .study_list dl dt i{float:right;font-size:12px;color:#999999;font-style:normal;}
 .study_list dl dt i:hover{color:#ff0000;cursor:pointer;}
 .study_list dl dd{width:100%;height:30px;line-height:30px;border-bottom:1px dashed #999999;}
-.study_list dl dd span{font-size:14px;color:#666666;width:350px;}
+.study_list dl dd span{float:left;font-size:14px;color:#666666;width:340px;}
 .study_list dl dd a:hover span{color:#ff0000;}
 .study_list dl dd i{float:right;font-size:12px;color:#CCCCCC;font-style:normal;}
