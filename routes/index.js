@@ -27,4 +27,9 @@ router.get('/study-list', function(req, res) {
 	res.render('study-list', { title: '学习分享' });
 });
 
+/* news-list */
+router.get('/news-list', function(req, res) {
+	res.render('news-list', { title: '消息新闻' });
+});
+
 module.exports = router;

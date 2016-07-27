@@ -4,11 +4,13 @@
  */
 
 var index = require("./indexController");
-var worksList = require("./worksListController");
+var works = require("./worksController");
 var study = require("./studyController");
+var news = require("./newsController");
 
 module.exports = function(app){
 	index(app);
-	worksList(app);
+	works(app);
 	study(app);
+	news(app);
 }
