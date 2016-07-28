@@ -14,12 +14,11 @@ define(['require','jquery','fnbase','./controller/c-news','./model/m-news'],func
                         if(obj.data){
                             $.each(obj.data,function(k,o){
                                 html += '<dd>';
-                                html += '<a href="'+o.url+'" title="'+o.name+'">';
+                                html += '<a href="/news-detail?id='+o._id.toString()+'" title="'+o.name+'">';
                                 html += '<span class="txt_ellipsis">'+o.name+'</span>';
                                 html += '<i>'+fnbase.getSmpFormatDateByLong(o.updateTime,false)+'</i>';
                                 html += '</a>';
                                 html += '</dd>';
-                                console.log(o._id.toString());
                             });
                         }
                         html += '</dl>';
@@ -29,8 +28,21 @@ define(['require','jquery','fnbase','./controller/c-news','./model/m-news'],func
                 }
                 $("#newsAll").html(html);
             });
+        },
+        getDetail : function(id){
+            model.getDetail(function(id,res){
+                $("#newsDetail h1").text(res.name);
+                $("#newsDetail article").text(res.desc);
+            });
         }
     }
 
-    newsFun.getAllList();
+    var url = window.location.href;
+    if(fnbase.inString("news-list",url)){
+        newsFun.getAllList();
+    }else if(fnbase.inString("news-detail",url)){
+        var requestGet = fnbase.GetRequest();
+        var urlId = requestGet["id"];
+        newsFun.getDetail(urlId);
+    }
 });

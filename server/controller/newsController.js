@@ -1,3 +1,4 @@
+var ObjectID = require("mongodb").ObjectID;
 var dbHelper = require("../DBHelper/dbHelper");
 var newsDao = require("../DBSql/newsDao");
 var newsTypeDao = require("../DBSql/newsTypeDao");
@@ -30,6 +31,11 @@ module.exports = function(app){
     });
     //新闻详情
     app.all("/newsDetailAction",function(req,res){
-        
+        var id = req.body.id;
+        var conditions = {"_id":ObjectID(id)};
+        newsDao.findOneNews(conditions,dbHelper,function(result){  
+            console.log(JSON.stringify(result));
+            res.json(result);
+        });    
     });
 }
