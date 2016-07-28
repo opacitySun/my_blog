@@ -1,5 +1,5 @@
 
-define(['require','jquery',fnbase],function(require,$,fnbase){
+define(['require','jquery','fnbase'],function(require,$,fnbase){
 	//创建头部
 	var html = "";
 	html += '<div class="header_top">';
