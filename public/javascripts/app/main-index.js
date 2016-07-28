@@ -30,9 +30,9 @@ define(['require','jquery','fnbase','./controller/c-index','./model/m-index'],fu
         var html = "";
         if(res.result){
             $.each(res.result,function(key,obj){
-                html += '<li>';
-                html += '<a target="_blank" href="'+obj.url+'">';
-                html += '<span>'+obj.name+'</span>';
+                html += '<li title="'+obj.name+'">';
+                html += '<a target="_blank" href="/news-detail?id='+obj._id.toString()+'">';
+                html += '<span class="txt_ellipsis">'+obj.name+'</span>';
                 html += '<em>'+fnbase.getSmpFormatDateByLong(obj.updateTime,false)+'</em>';
                 html += '</a>';
                 html += '</li>';
