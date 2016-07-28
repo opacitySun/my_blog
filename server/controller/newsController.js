@@ -28,4 +28,8 @@ module.exports = function(app){
         	});    
         });     
     });
+    //新闻详情
+    app.all("/newsDetailAction",function(req,res){
+        
+    });
 }

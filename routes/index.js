@@ -32,6 +32,11 @@ router.get('/news-list', function(req, res) {
 	res.render('news-list', { title: '消息新闻' });
 });
 
+/* news-detail */
+router.get('/news-detail', function(req, res) {
+	res.render('news-detail', { title: '新闻详情' });
+});
+
 /* recreation */
 router.get('/recreation', function(req, res) {
 	res.render('recreation', { title: '娱乐' });
