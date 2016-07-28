@@ -19,7 +19,11 @@ define(['require','jquery','fnbase','./controller/c-recreation','./model/m-recre
 						html += '<ul>';
 	    				$.each(obj.data,function(k,o){
 	    					if(k != 0){
-	    						html += '<li>';
+	    						if(k == 4){
+	    							html += '<li style="margin-right:0">';
+	    						}else{
+	    							html += '<li>';
+	    						}
 								html += '<img src="'+o.image+'" />';
 								html += '<span>'+o.name+'</span>';
 								html += '<em>'+o.desc+'</em>';
