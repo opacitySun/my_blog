@@ -38,9 +38,9 @@ define(['require','jquery','fnbase','./controller/c-news','./model/m-news'],func
     }
 
     var url = window.location.href;
-    if(fnbase.inString("news-list",url)){
+    if(fnbase.inString("news-list",url) == true){
         newsFun.getAllList();
-    }else if(fnbase.inString("news-detail",url)){
+    }else if(fnbase.inString("news-detail",url) == true){
         var requestGet = fnbase.GetRequest();
         var urlId = requestGet["id"];
         newsFun.getDetail(urlId);
