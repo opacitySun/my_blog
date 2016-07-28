@@ -12,11 +12,13 @@ define(['require','jquery','fnbase','./controller/c-recreation','./model/m-recre
     				html += '</h2>';
     				if(obj.data){
     					html += '<div class="akey" title="'+obj.data[0].name+'">';
+    					html += '<a href="'+obj.data[0].url+'">';
     					html += '<div class="img">';
 						html += '<img src="'+obj.data[0].image+'" />';
 						html += '</div>';
 						html += '<span>'+obj.data[0].name+'</span>';
 						html += '<em>'+obj.data[0].desc+'</em>';
+						html += '</a>';
 						html += '</div>';
 						html += '<ul>';
 	    				$.each(obj.data,function(k,o){
@@ -26,6 +28,7 @@ define(['require','jquery','fnbase','./controller/c-recreation','./model/m-recre
 	    						}else{
 	    							html += '<li title="'+o.name+'">';
 	    						}
+	    						html += '<a href="'+o.url+'">';
 	    						html += '<div class="img">';
 								html += '<img src="'+o.image+'" />';
 								html += '</div>';
@@ -52,6 +55,7 @@ define(['require','jquery','fnbase','./controller/c-recreation','./model/m-recre
     						}else{
     							html += '<li title="'+o.name+'">';
     						}
+    						html += '<a href="'+o.url+'">';
     						html += '<div class="img">';
 							html += '<img src="'+o.image+'" />';
 							html += '</div>';
