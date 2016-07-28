@@ -4,7 +4,7 @@ define(['require','jquery','fnbase','./controller/c-recreation','./model/m-recre
 		var html = "";
     	if(res.result){
     		$.each(res.result,function(key,obj){
-    			if(obj.type == 0 || obj.type == 1){	//如果是电视剧:0,电影:1
+    			if(obj.type == 0 || obj.type == 1){	//电视剧:0,电影:1
     				html += '<section class="s01">';
     				html += '<h2>';
     				html += '<span>'+obj.name+'</span>';
