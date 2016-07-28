@@ -1,5 +1,5 @@
 
-define(['require','jquery'],function(require,$){
+define(['require','jquery',fnbase],function(require,$,fnbase){
 	//创建头部
 	var html = "";
 	html += '<div class="header_top">';
@@ -24,24 +24,20 @@ define(['require','jquery'],function(require,$){
 	$("#header").html(html);
 
 	//设置菜单选中状态
-	var host = window.location.host;
-	var hostLen = host.length;
-	var protocol = window.location.protocol;
-	var protocolLen = protocol.length;
 	var url = window.location.href;
 	var pathName = url.substring(hostLen+protocolLen+3);
 	var navLiNo = 0;
 	switch(pathName){
-		case 'works-list':
+		case fnbase.inString("works",url):
 			navLiNo = 1;
 			break;
-		case 'study-list':
+		case fnbase.inString("study",url):
 			navLiNo = 2;
 			break;
-		case 'recreation':
+		case fnbase.inString("recreation",url):
 			navLiNo = 3;
 			break;
-		case 'news-list':
+		case fnbase.inString("news",url):
 			navLiNo = 4;
 			break;
 		default:
