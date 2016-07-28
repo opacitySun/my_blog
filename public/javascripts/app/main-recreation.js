@@ -11,7 +11,7 @@ define(['require','jquery','fnbase','./controller/c-recreation','./model/m-recre
     				html += '<i>更多></i>';
     				html += '</h2>';
     				if(obj.data){
-    					html += '<div class="akey">';
+    					html += '<div class="akey" title="'+obj.data[0].name+'">';
 						html += '<img src="'+obj.data[0].image+'" />';
 						html += '<span>'+obj.data[0].name+'</span>';
 						html += '<em>'+obj.data[0].desc+'</em>';
@@ -20,9 +20,9 @@ define(['require','jquery','fnbase','./controller/c-recreation','./model/m-recre
 	    				$.each(obj.data,function(k,o){
 	    					if(k != 0){
 	    						if(k == 4){
-	    							html += '<li style="margin-right:0">';
+	    							html += '<li title="'+o.name+'" style="margin-right:0">';
 	    						}else{
-	    							html += '<li>';
+	    							html += '<li title="'+o.name+'">';
 	    						}
 								html += '<img src="'+o.image+'" />';
 								html += '<span>'+o.name+'</span>';
