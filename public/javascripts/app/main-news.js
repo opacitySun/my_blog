@@ -31,6 +31,7 @@ define(['require','jquery','fnbase','./controller/c-news','./model/m-news'],func
         },
         getDetail : function(id){
             model.getDetail(id,function(res){
+                $("title").text(res.result.name);
                 $("#newsDetail h1").text(res.result.name);
                 $("#newsDetail article").text(res.result.desc);
             });
