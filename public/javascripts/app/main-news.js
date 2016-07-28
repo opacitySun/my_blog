@@ -30,7 +30,7 @@ define(['require','jquery','fnbase','./controller/c-news','./model/m-news'],func
             });
         },
         getDetail : function(id){
-            model.getDetail(function(id,res){
+            model.getDetail(id,function(res){
                 $("#newsDetail h1").text(res.name);
                 $("#newsDetail article").text(res.desc);
             });
