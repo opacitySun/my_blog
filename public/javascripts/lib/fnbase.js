@@ -44,7 +44,11 @@ define(function(){
      * 检测字符串中是否存在指定字符
      */
     fnBase.inString = function(value,string){
-        return new RegExp(string).test(value);
+        if(string.indexOf(value) > 0){
+            return true;
+        }else{
+            return false;
+        }
     }
     /*
      * 获取url参数
