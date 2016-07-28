@@ -26,21 +26,16 @@ define(['require','jquery','fnbase'],function(require,$,fnbase){
 	//设置菜单选中状态
 	var url = window.location.href;
 	var navLiNo = 0;
-	switch(pathName){
-		case fnbase.inString("works",url):
-			navLiNo = 1;
-			break;
-		case fnbase.inString("study",url):
-			navLiNo = 2;
-			break;
-		case fnbase.inString("recreation",url):
-			navLiNo = 3;
-			break;
-		case fnbase.inString("news",url):
-			navLiNo = 4;
-			break;
-		default:
-			navLiNo = 0;
+	if(fnbase.inString("works",url)){
+		navLiNo = 1;
+	}else if(fnbase.inString("study",url)){
+		navLiNo = 2;
+	}else if(fnbase.inString("recreation",url)){
+		navLiNo = 3;
+	}else if(fnbase.inString("news",url)){
+		navLiNo = 4;
+	}else{
+		navLiNo = 0;
 	}
 	$("#header nav li").eq(navLiNo).find("a").addClass("sel");
 
