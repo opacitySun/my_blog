@@ -45,6 +45,7 @@ define(function(){
      */
     fnBase.inString = function(value,string){
         return new RegExp(string).test(value);
+        console.log(return new RegExp(string).test(value));
     }
     /*
      * 获取url参数
