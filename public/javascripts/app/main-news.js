@@ -1,6 +1,4 @@
 define(['require','jquery','fnbase','./controller/c-news','./model/m-news'],function(require,$,fnbase,controller,model){
-    newsFun.getAllList();
-
     var newsFun = {
         getAllList : function(){
             //获取全部列表
@@ -33,4 +31,6 @@ define(['require','jquery','fnbase','./controller/c-news','./model/m-news'],func
             });
         }
     }
+
+    newsFun.getAllList();
 });
