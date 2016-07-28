@@ -25,7 +25,6 @@ define(['require','jquery','fnbase'],function(require,$,fnbase){
 
 	//设置菜单选中状态
 	var url = window.location.href;
-	var pathName = url.substring(hostLen+protocolLen+3);
 	var navLiNo = 0;
 	switch(pathName){
 		case fnbase.inString("works",url):
