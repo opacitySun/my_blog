@@ -1,5 +1,5 @@
 define(['require','jquery','fnbase','./controller/c-news','./model/m-news'],function(require,$,fnbase,controller,model){
-    
+    newsFun.getAllList();
 
     var newsFun = {
         getAllList : function(){
