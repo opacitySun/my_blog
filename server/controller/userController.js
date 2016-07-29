@@ -2,6 +2,20 @@ var dbHelper = require("../DBHelper/dbHelper");
 var userDao = require("../DBSql/userDao");
 
 /**  
+ * 提供操作表的公共路由，以供ajax访问  
+ * @returns {Function}  
+ */ 
+exports.outerConnectAction = function(app){
+    //查找用户
+    app.all("/outerUserFindAction",function(req,res){
+        var conditions ={'name':req.body.name,'password':req.body.password};  
+        userDao.findUser(conditions,dbHelper,function(result){  
+            res.json(result); 
+        });    
+    });
+}
+
+/**  
  * add user  
  * @returns {Function}  
  */  
@@ -32,7 +46,7 @@ exports.userAddAction = function() {
  * @returns {Function}  
  */  
 exports.userFindAction = function(req, res) {   
-    var conditions ={'name':req.body.login_name,'password':req.body.login_pwd};  
+    var conditions ={'name':req.body.loginName,'password':req.body.loginPwd};  
     userDao.findUser(conditions,dbHelper,function(result){  
         if(result.success == 1){
             console.log(JSON.stringify(result));

@@ -37,24 +37,24 @@
             <!--登陆头像结束-->
 
             <!--登录框开始-->
-            <form action="ucenter" method="post" class="login_dialog" id="login_dialog">
+            <form action="ucenter" method="post" class="login_dialog" id="loginDialog">
                 <h2>
                     <span>User Login</span>
                     <a class="close" href="javascript:void(0)" title="关闭" id="loginClose"></a>
                 </h2>
                 <div class="login_text">
                     <p class="p1">
-                        <input id="login_name" name="login_name" tabindex="1" type="text" placeholder="Username" />
+                        <input id="loginName" name="loginName" tabindex="1" type="text" placeholder="Username" />
                     </p>
                     <p class="p1">
-                        <input id="login_pwd" name="login_pwd" tabindex="2" type="password" placeholder="Password" />
+                        <input id="loginPwd" name="loginPwd" tabindex="2" type="password" placeholder="Password" />
                     </p>
                     <p class="p1">
                         <a class="reset" href="javascript:void(0)" title="重置" id="loginReset">reset</a>
                     </p>
                 </div>
                 <p class="p2">
-                    <button class="submit" type="submit" href="javascript:void(0)" title="登录">Login</button>
+                    <button class="submit" id="loginSubmit" type="button" href="javascript:void(0)" title="登录">Login</button>
                 </p>
             </form>
             <!--登录框结束-->
