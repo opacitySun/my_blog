@@ -9,6 +9,14 @@ define(["./Base"],function(Base){
 			modelBase.postAjax(url,data,function(res){
 				callback(res);
 			});
+		},
+		//获取详情
+		getDetail : function(id,callback){
+			var url = "/studyDetailAction";
+			var data = {"id":id};
+			modelBase.postAjax(url,data,function(res){
+				callback(res);
+			});
 		}
 	};
 

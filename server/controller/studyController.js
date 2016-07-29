@@ -1,3 +1,4 @@
+var ObjectID = require("mongodb").ObjectID;
 var dbHelper = require("../DBHelper/dbHelper");
 var studyDao = require("../DBSql/studyDao");
 var studyTypeDao = require("../DBSql/studyTypeDao");
@@ -27,5 +28,14 @@ module.exports = function(app){
             	res.json(result);
         	});    
         });     
+    });
+    //详情
+    app.all("/studyDetailAction",function(req,res){
+        var id = req.body.id;
+        var conditions = {"_id":ObjectID(id)};
+        studyDao.findOneStudy(conditions,dbHelper,function(result){  
+            console.log(JSON.stringify(result));
+            res.json(result);
+        });    
     });
 }
