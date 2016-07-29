@@ -1,6 +1,7 @@
 var ObjectID = require("mongodb").ObjectID;
 var dbHelper = require("../DBHelper/dbHelper");
 var studyDao = require("../DBSql/studyDao");
+var studyDetailDao = require("../DBSql/studyDetailDao");
 var studyTypeDao = require("../DBSql/studyTypeDao");
 
 module.exports = function(app){
@@ -32,8 +33,8 @@ module.exports = function(app){
     //详情
     app.all("/studyDetailAction",function(req,res){
         var id = req.body.id;
-        var conditions = {"_id":ObjectID(id)};
-        studyDao.findOneStudy(conditions,dbHelper,function(result){  
+        var conditions = {"studyId":id};
+        studyDetailDao.findOneStudyDetail(conditions,dbHelper,function(result){  
             console.log(JSON.stringify(result));
             res.json(result);
         });    
