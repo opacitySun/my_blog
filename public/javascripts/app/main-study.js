@@ -15,7 +15,7 @@ define(['require','jquery','fnbase','./controller/c-study','./model/m-study'],fu
                         if(obj.data){
                             $.each(obj.data,function(k,o){
                                 html += '<dd>';
-                                html += '<a href="/study-detail?id='+o._id.toString()+'" title="'+o.name+'">';
+                                html += '<a target="_blank" href="/study-detail?id='+o._id.toString()+'" title="'+o.name+'">';
                                 html += '<span class="txt_ellipsis">'+o.name+'</span>';
                                 html += '<i>'+fnbase.getSmpFormatDateByLong(o.updateTime,false)+'</i>';
                                 html += '</a>';
