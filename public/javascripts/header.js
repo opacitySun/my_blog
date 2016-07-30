@@ -39,6 +39,8 @@ define(['require','jquery','fnbase'],function(require,$,fnbase){
 	}
 	$("#header nav li").eq(navLiNo).find("a").addClass("sel");
 
+	var host = window.location.host;
+	var protocol = window.location.protocol;
 	//设为首页
 	function setHome(obj,indexUrl){
 		try{
