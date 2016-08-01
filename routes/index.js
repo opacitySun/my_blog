@@ -4,12 +4,12 @@ var userController = require('../server/controller/userController');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	res.render('index', { title: 'index',layout: 'layout.html' });
+	res.render('index', { title: 'welcome to sun blog',layout: 'layout.html' });
 });
 
 /* login */
 router.get('/login', function(req, res) {
-	res.render('login', { title: 'login',layout: false });
+	res.render('login', { title: '请先登录',layout: false });
 });
 
 /* ucenter */
