@@ -39,9 +39,9 @@ define(['require','jquery','fnbase','./controller/c-news','./model/m-news'],func
     }
 
     var routerPath = fnbase.getRouterName();
-    if(routerPath == "news-list"){
+    if(routerPath == "/news-list"){
         newsFun.getAllList();
-    }else if(routerPath == "news-detail"){
+    }else if(routerPath == "/news-detail"){
         var requestGet = fnbase.GetRequest();
         var urlId = requestGet["id"];
         newsFun.getDetail(urlId);

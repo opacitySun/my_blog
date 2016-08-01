@@ -40,9 +40,9 @@ define(['require','jquery','fnbase','./controller/c-study','./model/m-study'],fu
     };
 
     var routerPath = fnbase.getRouterName();
-    if(routerPath == "study-list"){
+    if(routerPath == "/study-list"){
         studyFun.getAllList();
-    }else if(routerPath == "study-detail"){
+    }else if(routerPath == "/study-detail"){
         var requestGet = fnbase.GetRequest();
         var urlId = requestGet["id"];
         studyFun.getDetail(urlId);
