@@ -369,6 +369,24 @@ define(function(){
             return false;
         }
     }
+    /*
+     * 获取路由路径名称
+     */
+    fnBase.getRouterName = function(){
+        var url = window.location.href;
+        var host = window.location.host;
+        var protocol = window.location.protocol;
+        var urlFirstHalf = protocol + "//" + host;
+        var urlFirstHalfLen = urlFirstHalf.length;
+        var urlEndPosition = url.indexOf("?");
+        var urlPath;
+        if(urlEndPosition > -1){
+            urlPath = url.substring(urlFirstHalfLen,urlEndPosition);
+        }else{
+            urlPath = url.substring(urlFirstHalfLen);
+        }
+        return urlPath;
+    }
 
     //将对象集合返回给外部
     return fnBase;

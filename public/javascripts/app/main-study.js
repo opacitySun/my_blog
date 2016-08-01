@@ -39,10 +39,10 @@ define(['require','jquery','fnbase','./controller/c-study','./model/m-study'],fu
         }
     };
 
-	var url = window.location.href;
-    if(fnbase.inString("study-list",url)){
+    var routerPath = fnbase.getRouterName();
+    if(routerPath == "study-list"){
         studyFun.getAllList();
-    }else if(fnbase.inString("study-detail",url)){
+    }else if(routerPath == "study-detail"){
         var requestGet = fnbase.GetRequest();
         var urlId = requestGet["id"];
         studyFun.getDetail(urlId);
