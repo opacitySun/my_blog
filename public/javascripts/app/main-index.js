@@ -1,10 +1,10 @@
 
 define(['require','jquery','fnbase','./controller/c-index','./model/m-index'],function(require,$,fnbase,controller,model){
-    $(".content_2 section dl:last").css("margin","0");
+    var staticPath = $("#staticPath").val();
 
     //获取用户信息
     model.getUserInfo(function(res){
-    	$("#peopleImg").attr("src",res.result[0].image);
+    	$("#peopleImg").attr("src",staticPath+res.result[0].image);
     	$("#peopleName").text(res.result[0].name);
     	$("#peopleDesc").text(res.result[0].desc);
     });
@@ -16,7 +16,7 @@ define(['require','jquery','fnbase','./controller/c-index','./model/m-index'],fu
             $.each(res.result,function(key,obj){
                 html += '<dl title="'+obj.workName+'">';
                 html += '<a target="_blank" href="'+obj.workUrl+'">';
-                html += '<dt><img src="'+obj.workImg+'" alt="截图" /></dt>';
+                html += '<dt><img src="'+staticPath+obj.workImg+'" alt="截图" /></dt>';
                 html += '<dd>'+obj.workName+'</dd>';
                 html += '</a>';
                 html += '</dl>';

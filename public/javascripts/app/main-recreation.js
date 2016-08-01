@@ -1,4 +1,6 @@
 define(['require','jquery','fnbase','./controller/c-recreation','./model/m-recreation'],function(require,$,fnbase,controller,model){
+	var staticPath = $("#staticPath").val();
+
 	//获取全部列表
 	model.getAllList(function(res){
 		var html = "";
@@ -14,7 +16,7 @@ define(['require','jquery','fnbase','./controller/c-recreation','./model/m-recre
     					html += '<div class="akey" title="'+obj.data[0].name+'">';
     					html += '<a target="_blank" href="'+obj.data[0].url+'">';
     					html += '<div class="img">';
-						html += '<img src="'+obj.data[0].image+'" />';
+						html += '<img src="'+staticPath+obj.data[0].image+'" />';
 						html += '</div>';
 						html += '<span>'+obj.data[0].name+'</span>';
 						html += '<em>'+obj.data[0].desc+'</em>';
@@ -30,7 +32,7 @@ define(['require','jquery','fnbase','./controller/c-recreation','./model/m-recre
 	    						}
 	    						html += '<a target="_blank" href="'+o.url+'">';
 	    						html += '<div class="img">';
-								html += '<img src="'+o.image+'" />';
+								html += '<img src="'+staticPath+o.image+'" />';
 								html += '</div>';
 								html += '<span>'+o.name+'</span>';
 								html += '<em>'+o.desc+'</em>';
@@ -57,7 +59,7 @@ define(['require','jquery','fnbase','./controller/c-recreation','./model/m-recre
     						}
     						html += '<a target="_blank" href="'+o.url+'">';
     						html += '<div class="img">';
-							html += '<img src="'+o.image+'" />';
+							html += '<img src="'+staticPath+o.image+'" />';
 							html += '</div>';
 							html += '<span>'+o.name+'</span>';
 							html += '</a>';

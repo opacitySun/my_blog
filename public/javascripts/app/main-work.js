@@ -1,7 +1,8 @@
 
 define(['require','jquery','./controller/c-work','./model/m-work'],function(require,$,controller,model){
+	var staticPath = $("#staticPath").val();
+	
 	$(".works_list .left dd:first").css("display","block");
-
     $(".content .left dt").click(function(){
         controller.showDDList(this);
     });
@@ -13,7 +14,7 @@ define(['require','jquery','./controller/c-work','./model/m-work'],function(requ
     		$.each(res.result,function(key,obj){
     			html += '<dl title="'+obj.workName+'">';
 				html += '<a target="_blank" href="'+obj.workUrl+'">';
-				html += '<dt><img src="'+obj.workImg+'" alt="截图" /></dt>';
+				html += '<dt><img src="'+staticPath+obj.workImg+'" alt="截图" /></dt>';
 				html += '<dd>'+obj.workName+'</dd>';
 				html += '</a>';
 	    		html += '</dl>';
@@ -32,7 +33,7 @@ define(['require','jquery','./controller/c-work','./model/m-work'],function(requ
 	    		$.each(res.result,function(key,obj){
 	    			html += '<dl title="'+obj.workName+'">';
 					html += '<a target="_blank" href="'+obj.workUrl+'">';
-					html += '<dt><img src="'+obj.workImg+'" alt="截图" /></dt>';
+					html += '<dt><img src="'+staticPath+obj.workImg+'" alt="截图" /></dt>';
 					html += '<dd>'+obj.workName+'</dd>';
 					html += '</a>';
 		    		html += '</dl>';
@@ -52,7 +53,7 @@ define(['require','jquery','./controller/c-work','./model/m-work'],function(requ
 	    		$.each(res.result,function(key,obj){
 	    			html += '<dl title="'+obj.workName+'">';
 					html += '<a target="_blank" href="'+obj.workUrl+'">';
-					html += '<dt><img src="'+obj.workImg+'" alt="截图" /></dt>';
+					html += '<dt><img src="'+staticPath+obj.workImg+'" alt="截图" /></dt>';
 					html += '<dd>'+obj.workName+'</dd>';
 					html += '</a>';
 		    		html += '</dl>';
@@ -72,7 +73,7 @@ define(['require','jquery','./controller/c-work','./model/m-work'],function(requ
 	    		$.each(res.result,function(key,obj){
 	    			html += '<dl title="'+obj.workName+'">';
 					html += '<a target="_blank" href="'+obj.workUrl+'">';
-					html += '<dt><img src="'+obj.workImg+'" alt="截图" /></dt>';
+					html += '<dt><img src="'+staticPath+obj.workImg+'" alt="截图" /></dt>';
 					html += '<dd>'+obj.workName+'</dd>';
 					html += '</a>';
 		    		html += '</dl>';
@@ -92,7 +93,7 @@ define(['require','jquery','./controller/c-work','./model/m-work'],function(requ
 	    		$.each(res.result,function(key,obj){
 	    			html += '<dl title="'+obj.workName+'">';
 					html += '<a target="_blank" href="'+obj.workUrl+'">';
-					html += '<dt><img src="'+obj.workImg+'" alt="截图" /></dt>';
+					html += '<dt><img src="'+staticPath+obj.workImg+'" alt="截图" /></dt>';
 					html += '<dd>'+obj.workName+'</dd>';
 					html += '</a>';
 		    		html += '</dl>';
