@@ -1,5 +1,5 @@
 
-define(['./Base'], function (Base) {
+define(['./Base','../model/m-login'], function (Base,model) {
     var cLogin = {
         //重置登陆框
         loginReset : function(){
@@ -64,6 +64,26 @@ define(['./Base'], function (Base) {
                 var txt_value = $(this).val();
                 if(txt_value==""){
                     $(this).val("Password");
+                }
+            });
+        },
+        //登录
+        loginSubmit : function(){
+            var loginName = $("#loginName").val();
+            var loginPwd = $("#loginPwd").val();
+            if(loginName == ''){
+                alert("用户名不能为空");
+                return false;
+            }
+            if(loginPwd == ''){
+                alert("密码不能为空");
+                return false;
+            }
+            model.findUser(loginName,loginPwd,function(res){
+                if(res.success == 1){
+                    $("#loginDialog").submit();
+                }else{
+                    alert("用户名或密码不正确");
                 }
             });
         }
