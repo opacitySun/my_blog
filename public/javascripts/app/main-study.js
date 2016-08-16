@@ -34,7 +34,7 @@ define(['require','jquery','fnbase','./controller/c-study','./model/m-study'],fu
             model.getDetail(id,function(res){
                 $("title").text(res.result.name);
                 $("#studyDetail h1").text(res.result.name);
-                $("#studyDetail article").text(res.result.article);
+                $("#studyDetail article").text(decodeURI(res.result.article));
             });
         }
     };
