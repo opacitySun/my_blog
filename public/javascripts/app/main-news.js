@@ -1,4 +1,6 @@
 define(['require','jquery','fnbase','./controller/c-news','./model/m-news'],function(require,$,fnbase,controller,model){
+    var staticPath = $("#staticPath").val();
+
     var newsFun = {
         getAllList : function(){
             //获取全部列表
@@ -33,7 +35,16 @@ define(['require','jquery','fnbase','./controller/c-news','./model/m-news'],func
             model.getDetail(id,function(res){
                 $("title").text(res.result.name);
                 $("#newsDetail h1").text(res.result.name);
-                $("#newsDetail article").html(decodeURI(res.result.desc));
+                $("#newsDetail article").hide().html(decodeURI(res.result.desc));
+                var imgLen = $("#newsDetail article img").length;
+                if(imgLen > 0){
+                    $("#newsDetail article img").each(function(key,obj){
+                        var thisSrc = $(obj).attr("src");
+                        thisSrc = staticPath + thisSrc;
+                        $(obj).attr("src",thisSrc);
+                    });
+                }  
+                $("#newsDetail article").show();
             });
         }
     }

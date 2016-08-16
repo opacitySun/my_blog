@@ -1,5 +1,7 @@
 
 define(['require','jquery','fnbase','./controller/c-study','./model/m-study'],function(require,$,fnbase,controller,model){
+    var staticPath = $("#staticPath").val();
+
     var studyFun = {
         getAllList : function(){
             //获取全部列表
@@ -34,7 +36,16 @@ define(['require','jquery','fnbase','./controller/c-study','./model/m-study'],fu
             model.getDetail(id,function(res){
                 $("title").text(res.result.name);
                 $("#studyDetail h1").text(res.result.name);
-                $("#studyDetail article").html(decodeURI(res.result.article));
+                $("#studyDetail article").hide().html(decodeURI(res.result.article));
+                var imgLen = $("#studyDetail article img").length;
+                if(imgLen > 0){
+                    $("#studyDetail article img").each(function(key,obj){
+                        var thisSrc = $(obj).attr("src");
+                        thisSrc = staticPath + thisSrc;
+                        $(obj).attr("src",thisSrc);
+                    });
+                }
+                $("#studyDetail article").show();
             });
         }
     };
