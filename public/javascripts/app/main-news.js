@@ -33,7 +33,7 @@ define(['require','jquery','fnbase','./controller/c-news','./model/m-news'],func
             model.getDetail(id,function(res){
                 $("title").text(res.result.name);
                 $("#newsDetail h1").text(res.result.name);
-                $("#newsDetail article").text(decodeURI(res.result.desc));
+                $("#newsDetail article").html(decodeURI(res.result.desc));
             });
         }
     }
