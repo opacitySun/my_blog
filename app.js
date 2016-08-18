@@ -43,9 +43,9 @@ app.use(expressSession({
 app.use(express.static(path.join(__dirname, 'public')));
 
 //验证微信token
-validateWeixinToken(app);
+//validateWeixinToken(app);
 //执行微信程序
-//weixinReply(app);
+weixinReply(app);
 
 //将express与控制器相关联来达到路由的目的
 routesController(app);
