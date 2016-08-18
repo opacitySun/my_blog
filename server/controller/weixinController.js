@@ -55,7 +55,7 @@ exports.validateToken = function(req, res, next) {
     }
 
     var webSvr = http.createServer(validateToken);
-    webSvr.listen(80,function(){
+    webSvr.listen(8000,function(){
       console.log("Start validate");
     });
 }  
