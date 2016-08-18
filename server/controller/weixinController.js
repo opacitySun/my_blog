@@ -71,5 +71,5 @@ exports.reply = function(app) {
               }
             ]);
         }
-    });
+    }));
 }  
