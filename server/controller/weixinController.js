@@ -1,6 +1,7 @@
 var http = require("http");
 var url = require("url");
 var crypto = require("crypto");
+var express = require('express');
 var wechat = require('wechat');
 
 /**  
