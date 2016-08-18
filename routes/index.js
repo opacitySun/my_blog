@@ -1,20 +1,24 @@
 var express = require('express');
 var router = express.Router();
 var userController = require('../server/controller/userController');
-var userController = require('../server/controller/userController');
+var validateWeixinToken = require('../server/controller/weixinController').validateToken;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+	//验证微信token
+	validateWeixinToken(req, res, next);
 	res.render('index', { title: 'welcome to sun blog',layout: 'layout.html' });
 });
 
 /* login */
-router.get('/login', function(req, res) {
+router.get('/login', function(req, res, next) {
+	//验证微信token
+	validateWeixinToken(req, res, next);
 	res.render('login', { title: '请先登录',layout: false });
 });
 
 /* ucenter */
-router.post('/ucenter', function(req, res) {
+router.post('/ucenter', function(req, res, next) {
 	userController.userFindAction(req, res);
 });
 

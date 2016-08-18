@@ -14,7 +14,6 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var routesController = require('./server/controller/routesController');
-var validateWeixinToken = require('./server/controller/weixinController').validateToken;
 
 var app = express();
 
@@ -41,9 +40,6 @@ app.use(expressSession({
   saveUninitialized: false //是指无论有没有session cookie，每次请求都设置个session cookie，默认给个标示为connect.sid
 }));
 app.use(express.static(path.join(__dirname, 'public')));
-
-//验证微信token
-validateWeixinToken();
 
 //将express与控制器相关联来达到路由的目的
 routesController(app);
