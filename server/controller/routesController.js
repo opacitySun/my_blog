@@ -9,7 +9,7 @@ var works = require("./worksController");
 var study = require("./studyController");
 var news = require("./newsController");
 var recreation = require("./recreationController");
-var weixin = require("./weixinController");
+var weixin = require("./weixinController").outerConnectAction;
 
 module.exports = function(app){
 	user(app);
