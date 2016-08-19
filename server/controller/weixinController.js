@@ -54,5 +54,5 @@ exports.program = function(app) {
     //执行回复程序
     reply(app);
     //创建菜单
-    menu.createMenu();
+    //menu.createMenu();
 }  
