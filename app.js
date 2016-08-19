@@ -14,7 +14,7 @@ var users = require('./routes/users');
 
 var routesController = require('./server/controller/routesController');
 var validateWeixinToken = require('./server/controller/weixinController').validateToken;
-var weixinReply = require('./server/controller/weixinController').reply;
+var weixinProgram = require('./server/controller/weixinController').program;
 
 var app = express();
 
@@ -45,7 +45,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //验证微信token
 //validateWeixinToken(app);
 //执行微信程序
-weixinReply(app);
+weixinProgram(app);
 
 //将express与控制器相关联来达到路由的目的
 routesController(app);

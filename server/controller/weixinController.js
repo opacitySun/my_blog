@@ -1,17 +1,20 @@
-var http = require("http");
 var url = require("url");
-var crypto = require("crypto");
-var express = require('express');
-var wechat = require('wechat');
+var sha1 = require("../WXHelper/wxSha1");
+var sign = require('../WXHelper/signature');
+var reply = require('../WXHelper/wxReply');
+var menu = require('../WXHelper/wxMenu');
 
 /**  
  * 提供操作表的公共路由，以供ajax访问  
  * @returns {Function}  
  */ 
 exports.outerConnectAction = function(app){
-    //
-    app.all("/outerUserFindAction",function(req,res){
-        
+    //获取数字签名
+    app.all("/getWxConfigAction",function(req,res){
+        var url = req.body.url;
+        sign(url,function(result){
+            res.json(result);
+        });
     });
 }
 
@@ -21,13 +24,6 @@ exports.outerConnectAction = function(app){
  */  
 exports.validateToken = function(app) {   
     app.use("/wechat",function(req,res,next){
-        function sha1(str){
-          var md5sum = crypto.createHash("sha1");
-          md5sum.update(str);
-          str = md5sum.digest("hex");
-          return str;
-        }
-
         var query = url.parse(req.url,true).query;
         var signature = query.signature;
         var timestamp = query["timestamp"];
@@ -51,31 +47,12 @@ exports.validateToken = function(app) {
 }  
 
 /**  
- * 执行回复程序
+ * 执行微信程序
  * @returns {Function}  
  */  
-exports.reply = function(app) {   
-    var config = {
-      token: 'sunxxjjs8ceow90xc92',
-      appid: 'wx69a406a1b3ddb9f4',
-      encodingAESKey: 'FGS8kxzKdzST4GR2NSqNPjUTXIX3gdfRirBjFCQ1zoC'
-    };
-    app.use(express.query());
-    app.use("/wechat",wechat(config,function(req,res,next){
-        // 微信输入信息都在req.weixin上
-        var message = req.weixin;
-        if (message.MsgType === 'text') {
-            res.reply({ type: "text", content: "你说 " + message.Content});
-        } else {
-            // 回复高富帅(图文回复)
-            res.reply([
-              {
-                title: '你来我家接我吧',
-                description: '这是女神与高富帅之间的对话',
-                picurl: 'http://nodeapi.cloudfoundry.com/qrcode.jpg',
-                url: 'http://nodeapi.cloudfoundry.com/'
-              }
-            ]);
-        }
-    }));
+exports.program = function(app) {   
+    //执行回复程序
+    reply(app);
+    //创建菜单
+    menu.createMenu();
 }  
