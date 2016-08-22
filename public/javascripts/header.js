@@ -1,4 +1,4 @@
-define(['require','jquery','fnbase','movetop','easing'],function(require,$,fnbase,movetop,easing){
+define(['require','jquery','fnbase'],function(require,$,fnbase){
 	//设置菜单选中状态
 	var url = window.location.href;
 	var navLiNo = 0;
@@ -21,14 +21,6 @@ define(['require','jquery','fnbase','movetop','easing'],function(require,$,fnbas
 	$("#header span.menu" ).click(function() {
 		$( "ul.nav1" ).slideToggle( 300, function() {
 		 // Animation complete.
-		});
-	});
-
-	//返回顶部按钮
-	$(document).ready(function($) {
-		$(".scroll").click(function(event){		
-			event.preventDefault();
-			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 		});
 	});
 });
