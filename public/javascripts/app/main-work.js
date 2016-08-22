@@ -15,7 +15,7 @@ define(['require','jquery','./controller/c-work','./model/m-work'],function(requ
     			html += '<img src="'+staticPath+obj.workImg+'" alt="'+obj.workName+'" />';
     			html += '<div>';
     			html += '<h5>'+obj.workName+'</h5>';
-    			//html += '<span>non suscipit leo fringilla non suscipit leo fringilla molestie</span>';
+    			html += '<span>'+obj.workDesc+'</span>';
     			html += '</div>';
     			html += '</a>';
     			html += '</li>';
@@ -38,7 +38,7 @@ define(['require','jquery','./controller/c-work','./model/m-work'],function(requ
 	    			html += '<img src="'+staticPath+obj.workImg+'" alt="'+obj.workName+'" />';
 	    			html += '<div>';
 	    			html += '<h5>'+obj.workName+'</h5>';
-	    			//html += '<span>non suscipit leo fringilla non suscipit leo fringilla molestie</span>';
+	    			html += '<span>'+obj.workDesc+'</span>';
 	    			html += '</div>';
 	    			html += '</a>';
 	    			html += '</li>';
@@ -62,7 +62,7 @@ define(['require','jquery','./controller/c-work','./model/m-work'],function(requ
 	    			html += '<img src="'+staticPath+obj.workImg+'" alt="'+obj.workName+'" />';
 	    			html += '<div>';
 	    			html += '<h5>'+obj.workName+'</h5>';
-	    			//html += '<span>non suscipit leo fringilla non suscipit leo fringilla molestie</span>';
+	    			html += '<span>'+obj.workDesc+'</span>';
 	    			html += '</div>';
 	    			html += '</a>';
 	    			html += '</li>';
@@ -86,7 +86,7 @@ define(['require','jquery','./controller/c-work','./model/m-work'],function(requ
 	    			html += '<img src="'+staticPath+obj.workImg+'" alt="'+obj.workName+'" />';
 	    			html += '<div>';
 	    			html += '<h5>'+obj.workName+'</h5>';
-	    			//html += '<span>non suscipit leo fringilla non suscipit leo fringilla molestie</span>';
+	    			html += '<span>'+obj.workDesc+'</span>';
 	    			html += '</div>';
 	    			html += '</a>';
 	    			html += '</li>';
@@ -110,7 +110,7 @@ define(['require','jquery','./controller/c-work','./model/m-work'],function(requ
 	    			html += '<img src="'+staticPath+obj.workImg+'" alt="'+obj.workName+'" />';
 	    			html += '<div>';
 	    			html += '<h5>'+obj.workName+'</h5>';
-	    			//html += '<span>non suscipit leo fringilla non suscipit leo fringilla molestie</span>';
+	    			html += '<span>'+obj.workDesc+'</span>';
 	    			html += '</div>';
 	    			html += '</a>';
 	    			html += '</li>';
