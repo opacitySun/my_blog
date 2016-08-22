@@ -76,28 +76,14 @@ exports.removeData = function(model,conditions,callback) {
  * @param callback 
  */  
 exports.findData = function(model,conditions,fields,options,callback) {    
-    var skip,limit;
-    if(fields.currentPage){
-        skip = (fields.currentPage-1)*fields.pageSize;
-        limit = Number(fields.pageSize);
-    }else{
-        skip = 0;
-        limit = 1000;
-    }
-    model.find(conditions, options)
-    .sort({"updateTime":-1})    //按照updateTime字段降序排列
-    .skip(skip)
-    .limit(limit)
-    .toArray(function(error, result){  
+    model.find(conditions, fields, options).toArray(function(error, result){  
         if(error) {  
             console.log(error);  
             callback({success: 0, flag: "find data fail"});  
         } else {  
             if(result.length!=0){  
                 console.log('find success!');  
-                model.find(conditions).toArray(function(err,res){
-                    callback({success: 1, flag: "find data success",result:result,total:res.length});  
-                });
+                callback({success: 1, flag: "find data success",result:result});  
             }  
             else{  
                 console.log('find fail:no this data!');  
