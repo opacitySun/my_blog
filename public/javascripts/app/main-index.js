@@ -1,31 +1,27 @@
-
-define(['require','jquery','fnbase','./controller/c-index','./model/m-index'],function(require,$,fnbase,controller,model){
+define(['require','jquery','fnbase','./controller/c-index','./model/m-index'],
+function(require,$,fnbase,controller,model){
     var staticPath = $("#staticPath").val();
-
-    //获取用户信息
-    model.getUserInfo(function(res){
-    	$("#peopleImg").attr("src",staticPath+res.result[0].image);
-    	$("#peopleName").text(res.result[0].name);
-    	$("#peopleDesc").text(res.result[0].desc);
-    });
 
     //获取作品列表
     model.getUserWorks(function(res){
     	var html = "";
         if(res.result){
             $.each(res.result,function(key,obj){
-                html += '<dl title="'+obj.workName+'">';
-                html += '<a target="_blank" href="'+obj.workUrl+'">';
-                html += '<dt><img src="'+staticPath+obj.workImg+'" alt="截图" /></dt>';
-                html += '<dd>'+obj.workName+'</dd>';
+                html += '<li>';
+                html += '<div class="biseller-column">';
+                html += '<a class="lightbox" target="_blank" href="'+obj.workUrl+'" title="'+obj.workName+'">';
+                html += '<img src="'+staticPath+obj.workImg+'" alt="'+obj.workName+'" />';
                 html += '</a>';
-                html += '</dl>';
+                html += '</div>';
+                html += '</li>';
             });
         }
     	$("#userWorks").html(html);
+        controller.flexisel();
     });
 
     //获取新闻列表
+    /*
     model.getNewsList(function(res){
         var html = "";
         if(res.result){
@@ -40,4 +36,5 @@ define(['require','jquery','fnbase','./controller/c-index','./model/m-index'],fu
         }
         $("#newsList").html(html);
     });
+    */
 });

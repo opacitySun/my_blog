@@ -6,7 +6,11 @@
         paths : {
             'jquery':'lib/jquery-1.11.3.min',
             'fnbase':'lib/fnbase',
-            'vue':'lib/vue.min'
+            'vue':'lib/vue.min',
+            'easing':'lib/easing',
+            'flexisel':'lib/jquery.flexisel',
+            'hoverdir':'lib/jquery.hoverdir',
+            'movetop':'lib/move-top'
         },
         map : {
             '*':{
@@ -15,6 +19,15 @@
         },
         shim : {
             //'fnbase':['css!../stylesheets/lib/base.css']
+            //声明依赖
+            'flexisel':{
+                deps:['jquery'],
+                exports:'flexisel'
+            },
+            'hoverdir':{
+                deps:['jquery'],
+                exports:'hoverdir'
+            }
         }
     });
 })();

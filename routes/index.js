@@ -47,4 +47,9 @@ router.get('/recreation', function(req, res) {
 	res.render('recreation', { title: '娱乐',layout: 'layout.html' });
 });
 
+/* me */
+router.get('/me', function(req, res) {
+	res.render('me', { title: '关于我',layout: 'layout.html' });
+});
+
 module.exports = router;

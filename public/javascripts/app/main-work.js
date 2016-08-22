@@ -2,28 +2,27 @@
 define(['require','jquery','./controller/c-work','./model/m-work'],function(require,$,controller,model){
 	var staticPath = $("#staticPath").val();
 	
-	$(".works_list .left dd:first").css("display","block");
-    $(".content .left dt").click(function(){
-        controller.showDDList(this);
-    });
-
     //获取全部项目列表
     model.getAllList(function(res){
     	var html = "";
     	if(res.result){
     		$.each(res.result,function(key,obj){
-    			html += '<dl title="'+obj.workName+'">';
-				html += '<a target="_blank" href="'+obj.workUrl+'">';
-				html += '<dt><img src="'+staticPath+obj.workImg+'" alt="截图" /></dt>';
-				html += '<dd>'+obj.workName+'</dd>';
-				html += '</a>';
-	    		html += '</dl>';
+    			html += '<li>';
+    			html += '<a href="'+obj.workUrl+'" rel="title" class="b-link-stripe b-animate-go thickbox">';
+    			html += '<img src="'+staticPath+obj.workImg+'" alt="'+obj.workName+'" />';
+    			html += '<div>';
+    			html += '<h5>'+obj.workName+'</h5>';
+    			//html += '<span>non suscipit leo fringilla non suscipit leo fringilla molestie</span>';
+    			html += '</div>';
+    			html += '</a>';
+    			html += '</li>';
     		});
+    		html += '<div class="clearfix"></div>';
     	}else{
     		html = "暂无数据";
     	}
     	$("#worksList").html(html);
-    	$("#workPosition").text("全部");
+    	controller.jqHoverdir();
     });
     //获取上线PC端项目列表
     $("#onlinePC").click(function(){
@@ -31,18 +30,22 @@ define(['require','jquery','./controller/c-work','./model/m-work'],function(requ
 	    	var html = "";
 	    	if(res.result){
 	    		$.each(res.result,function(key,obj){
-	    			html += '<dl title="'+obj.workName+'">';
-					html += '<a target="_blank" href="'+obj.workUrl+'">';
-					html += '<dt><img src="'+staticPath+obj.workImg+'" alt="截图" /></dt>';
-					html += '<dd>'+obj.workName+'</dd>';
-					html += '</a>';
-		    		html += '</dl>';
+	    			html += '<li>';
+	    			html += '<a href="'+obj.workUrl+'" rel="title" class="b-link-stripe b-animate-go thickbox">';
+	    			html += '<img src="'+staticPath+obj.workImg+'" alt="'+obj.workName+'" />';
+	    			html += '<div>';
+	    			html += '<h5>'+obj.workName+'</h5>';
+	    			//html += '<span>non suscipit leo fringilla non suscipit leo fringilla molestie</span>';
+	    			html += '</div>';
+	    			html += '</a>';
+	    			html += '</li>';
 	    		});
+	    		html += '<div class="clearfix"></div>';
 	    	}else{
 	    		html = "暂无数据";
 	    	}
 	    	$("#worksList").html(html);
-	    	$("#workPosition").text("上线网站 > 电脑端");
+	    	controller.jqHoverdir();
 	    });
     });
     //获取上线手机端项目列表
@@ -51,18 +54,22 @@ define(['require','jquery','./controller/c-work','./model/m-work'],function(requ
 	    	var html = "";
 	    	if(res.result){
 	    		$.each(res.result,function(key,obj){
-	    			html += '<dl title="'+obj.workName+'">';
-					html += '<a target="_blank" href="'+obj.workUrl+'">';
-					html += '<dt><img src="'+staticPath+obj.workImg+'" alt="截图" /></dt>';
-					html += '<dd>'+obj.workName+'</dd>';
-					html += '</a>';
-		    		html += '</dl>';
+	    			html += '<li>';
+	    			html += '<a href="'+obj.workUrl+'" rel="title" class="b-link-stripe b-animate-go thickbox">';
+	    			html += '<img src="'+staticPath+obj.workImg+'" alt="'+obj.workName+'" />';
+	    			html += '<div>';
+	    			html += '<h5>'+obj.workName+'</h5>';
+	    			//html += '<span>non suscipit leo fringilla non suscipit leo fringilla molestie</span>';
+	    			html += '</div>';
+	    			html += '</a>';
+	    			html += '</li>';
 	    		});
+	    		html += '<div class="clearfix"></div>';
 	    	}else{
 	    		html = "暂无数据";
 	    	}
 	    	$("#worksList").html(html);
-	    	$("#workPosition").text("上线网站 > 手机端");
+	    	controller.jqHoverdir();
 	    });
     });
     //获取静态PC端项目列表
@@ -71,18 +78,22 @@ define(['require','jquery','./controller/c-work','./model/m-work'],function(requ
 	    	var html = "";
 	    	if(res.result){
 	    		$.each(res.result,function(key,obj){
-	    			html += '<dl title="'+obj.workName+'">';
-					html += '<a target="_blank" href="'+obj.workUrl+'">';
-					html += '<dt><img src="'+staticPath+obj.workImg+'" alt="截图" /></dt>';
-					html += '<dd>'+obj.workName+'</dd>';
-					html += '</a>';
-		    		html += '</dl>';
+	    			html += '<li>';
+	    			html += '<a href="'+obj.workUrl+'" rel="title" class="b-link-stripe b-animate-go thickbox">';
+	    			html += '<img src="'+staticPath+obj.workImg+'" alt="'+obj.workName+'" />';
+	    			html += '<div>';
+	    			html += '<h5>'+obj.workName+'</h5>';
+	    			//html += '<span>non suscipit leo fringilla non suscipit leo fringilla molestie</span>';
+	    			html += '</div>';
+	    			html += '</a>';
+	    			html += '</li>';
 	    		});
+	    		html += '<div class="clearfix"></div>';
 	    	}else{
 	    		html = "暂无数据";
 	    	}
 	    	$("#worksList").html(html);
-	    	$("#workPosition").text("静态网站 > 电脑端");
+	    	controller.jqHoverdir();
 	    });
     });
     //获取静态手机端项目列表
@@ -91,18 +102,22 @@ define(['require','jquery','./controller/c-work','./model/m-work'],function(requ
 	    	var html = "";
 	    	if(res.result){
 	    		$.each(res.result,function(key,obj){
-	    			html += '<dl title="'+obj.workName+'">';
-					html += '<a target="_blank" href="'+obj.workUrl+'">';
-					html += '<dt><img src="'+staticPath+obj.workImg+'" alt="截图" /></dt>';
-					html += '<dd>'+obj.workName+'</dd>';
-					html += '</a>';
-		    		html += '</dl>';
+	    			html += '<li>';
+	    			html += '<a href="'+obj.workUrl+'" rel="title" class="b-link-stripe b-animate-go thickbox">';
+	    			html += '<img src="'+staticPath+obj.workImg+'" alt="'+obj.workName+'" />';
+	    			html += '<div>';
+	    			html += '<h5>'+obj.workName+'</h5>';
+	    			//html += '<span>non suscipit leo fringilla non suscipit leo fringilla molestie</span>';
+	    			html += '</div>';
+	    			html += '</a>';
+	    			html += '</li>';
 	    		});
+	    		html += '<div class="clearfix"></div>';
 	    	}else{
 	    		html = "暂无数据";
 	    	}
 	    	$("#worksList").html(html);
-	    	$("#workPosition").text("静态网站 > 手机端");
+	    	controller.jqHoverdir();
 	    });
     });
 });

@@ -1,47 +1,31 @@
+<style>
+    .ulBtn{width:100%;}
+    .ulBtn a{color:#999999;font-size:14px;margin-right:30px;line-height:40px;}
+</style>
 
-<link type="text/css" rel="stylesheet" href="/stylesheets/works.css" />
+<!-- banner -->
+<div class="inner-banner">
 
-<!--banner图开始-->
-<div class="banner"></div>    
-<!--banner图结束-->
-<div class="works_list">
-    <!--正文开始-->
-    <div class="content">
-        <div class="left">
-            <h3>网页作品</h3>
-            <nav>
-                <dl>
-                    <dt><em></em>上线网站</dt>
-                    <dd>
-                        <ul>
-                            <li id="onlinePC"><a href="javascript:void(0)">电脑端</a></li>
-                            <li id="onlinePhone"><a href="javascript:void(0)">手机端</a></li>
-                        </ul>
-                    </dd>
-                </dl>
-                <dl>
-                    <dt><em></em>静态网站</dt>
-                    <dd>
-                        <ul>
-                            <li id="staticPC"><a href="javascript:void(0)">电脑端</a></li>
-                            <li id="staticPhone"><a href="javascript:void(0)">手机端</a></li>
-                        </ul>
-                    </dd>
-                </dl>
-            </nav>
-        </div>
-        <div class="right">
-            <div class="position">
-                <em>>></em>
-                <span>当前位置：<span id="workPosition">全部</span></span>
-            </div>
-            <div class="list">
-                <section id="worksList">
-                </section>
-            </div>
-        </div>
-    </div>
-    <!--正文结束-->
 </div>
+<!-- //banner -->
+<!--gallery-->
+<div class="gallery">
+        <div class="container">
+            <h3 class="tittle">Gallery</h3>
+            <p class="ulBtn">
+                <a href="javascript:void(0)" id="onlinePC">上线网站--电脑端</a>
+                <a href="javascript:void(0)" id="onlinePhone">上线网站--手机端</a>
+                <a href="javascript:void(0)" id="staticPC">静态网站--电脑端</a>
+                <a href="javascript:void(0)" id="staticPhone">静态网站--手机端</a>
+            </p>
+            <section>
+                <ul id="worksList" class="da-thumbs">
+                    
+                </ul>
+            </section>
+        </div>
+        
+</div>
+<!--//gallery-->
 
 <script type="text/javascript" data-main="/javascripts/works.js" src="/javascripts/lib/require-min.js"></script>

@@ -8,22 +8,32 @@ define(['require','jquery','fnbase','./controller/c-news','./model/m-news'],func
                 var html = "";
                 if(res.result){
                     $.each(res.result,function(key,obj){
-                        html += '<dl>';
-                        html += '<dt>';
-                        html += '<span>'+obj.name+'</span>';
-                        html += '<i title="更多">more></i>';
-                        html += '</dt>';
+                        html += '<div class="container">';
+                        html += '<h3 class="tittle">'+obj.name+'</h3>';
+                        html += '<div class="news-article">';
                         if(obj.data){
                             $.each(obj.data,function(k,o){
-                                html += '<dd>';
-                                html += '<a target="_blank" href="/news-detail?id='+o._id.toString()+'" title="'+o.name+'">';
-                                html += '<span class="txt_ellipsis">'+o.name+'</span>';
-                                html += '<i>'+fnbase.getSmpFormatDateByLong(o.updateTime,false)+'</i>';
-                                html += '</a>';
-                                html += '</dd>';
+                                html += '<div class="col-md-6 article-post">';
+                                html += '<div class="col-md-3 post-meta">';
+                                html += '<ul class="ad-info">';
+                                html += '<li>'+fnbase.getSmpFormatDateByLong(o.updateTime,false)+'</li>';
+                                html += '</ul>';
+                                html += '<div class="clearfix"></div>';
+                                html += '</div>';
+                                html += '<div class="col-md-9 post-details">';
+                                html += '<a href="/news-detail?id='+o._id.toString()+'"><h4>'+o.name+'</h4></a>';
+                                //html += '<p></p>';
+                                html += '<div class="read two">';
+                                html += '<a class="button" href="/news-detail?id='+o._id.toString()+'"><img src="/images/read.png" /></a>';
+                                html += '</div>';
+                                html += '</div>';
+                                html += '<div class="clearfix"></div>';
+                                html += '</div>';
                             });
                         }
-                        html += '</dl>';
+                        html += '<div class="clearfix"></div>';
+                        html += '</div>';
+                        html += '</div>';
                     });
                 }else{
                     html = "暂无数据";
@@ -34,7 +44,7 @@ define(['require','jquery','fnbase','./controller/c-news','./model/m-news'],func
         getDetail : function(id){
             model.getDetail(id,function(res){
                 $("title").text(res.result.name);
-                $("#newsDetail h1").text(res.result.name);
+                $("#newsDetail h3.tittle").text(res.result.name);
                 $("#newsDetail article").hide().html(decodeURI(res.result.desc));
                 var imgLen = $("#newsDetail article img").length;
                 if(imgLen > 0){
