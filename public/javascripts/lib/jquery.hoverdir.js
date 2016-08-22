@@ -8,7 +8,8 @@
  * Copyright 2012, Codrops
  * http://www.codrops.com
  */
-;( function( $, window, undefined ) {
+define(['jquery'],function(jQuery){
+( function( $, window, undefined ) {
 	
 	'use strict';
 
@@ -218,3 +219,4 @@
 	};
 	
 } )( jQuery, window );
+});
