@@ -10,7 +10,8 @@
             'easing':'lib/easing',
             'flexisel':'lib/jquery.flexisel',
             'hoverdir':'lib/jquery.hoverdir',
-            'movetop':'lib/move-top'
+            'movetop':'lib/move-top',
+            'modernizr':'lib/modernizr'
         },
         map : {
             '*':{
@@ -25,7 +26,7 @@
                 exports:'flexisel'
             },
             'hoverdir':{
-                deps:['jquery'],
+                deps:['jquery','modernizr'],
                 exports:'hoverdir'
             }
         }

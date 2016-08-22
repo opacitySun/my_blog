@@ -11,7 +11,7 @@ define(['require','jquery','./controller/c-work','./model/m-work'],function(requ
     	if(res.result){
     		$.each(res.result,function(key,obj){
     			html += '<li>';
-    			html += '<a href="'+obj.workUrl+'" rel="title" class="b-link-stripe b-animate-go thickbox">';
+    			html += '<a target="_blank" href="'+obj.workUrl+'" rel="title" class="b-link-stripe b-animate-go thickbox">';
     			html += '<img src="'+staticPath+obj.workImg+'" alt="'+obj.workName+'" />';
     			html += '<div>';
     			html += '<h5>'+obj.workName+'</h5>';
