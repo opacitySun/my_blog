@@ -14,7 +14,6 @@ define(['require','jquery','fnbase','./controller/c-recreation','./model/m-recre
 	    				$.each(obj.data,function(k,o){
 	    					html += '<div class="col-md-2 view fifth-effect">';
 	    					html += '<a target="_blank" href="'+o.url+'" title="'+o.name+'"><img src="'+staticPath+o.image+'" /></a>';
-	    					html += '<div class="mask"></div>';
 	    					html += '<p>'+o.name+'</p>';
 	    					html += '</div>';
 		    			});
@@ -29,7 +28,6 @@ define(['require','jquery','fnbase','./controller/c-recreation','./model/m-recre
 	    				$.each(obj.data,function(k,o){
 	    					html += '<div class="col-md-3 view fifth-effect">';
 	    					html += '<a target="_blank" href="'+o.url+'" title="'+o.name+'"><img src="'+staticPath+o.image+'" /></a>';
-	    					html += '<div class="mask"></div>';
 	    					html += '<p>'+o.name+'</p>';
 	    					html += '</div>';
 		    			});
