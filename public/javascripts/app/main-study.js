@@ -23,6 +23,7 @@ define(['require','jquery','fnbase','./controller/c-study','./model/m-study'],fu
                                 html += '<div class="clearfix"></div>';
                                 html += '</div>';
                                 html += '<div class="col-md-9 post-details">';
+                                html += '<a href="/study-detail?id='+o._id.toString()+'" class="mask"><img src="/images/banner.jpg" alt="image" class="img-responsive zoom-img"></a>';
                                 html += '<a href="/study-detail?id='+o._id.toString()+'"><h4>'+o.name+'</h4></a>';
                                 //html += '<p></p>';
                                 html += '<div class="read two">';
