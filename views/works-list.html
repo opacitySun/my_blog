@@ -1,6 +1,7 @@
 <style>
-    .ulBtn{width:100%;}
-    .ulBtn a{color:#999999;font-size:14px;margin-right:30px;line-height:40px;}
+    .menuButton{width:100%;}
+    .menuButton a{color:#999999;font-size:14px;margin-right:30px;line-height:40px;}
+    .menuButton a:hover,.menuButton a.current{color:#CA4D4D;font-weight:bold;}
 </style>
 
 <!-- banner -->
@@ -11,8 +12,8 @@
 <!--gallery-->
 <div class="gallery">
         <div class="container">
-            <h3 class="tittle">Gallery</h3>
-            <p class="ulBtn">
+            <h3 class="tittle">我的作品</h3>
+            <p class="menuButton" id="menuButton">
                 <a href="javascript:void(0)" id="onlinePC">上线网站--电脑端</a>
                 <a href="javascript:void(0)" id="onlinePhone">上线网站--手机端</a>
                 <a href="javascript:void(0)" id="staticPC">静态网站--电脑端</a>
