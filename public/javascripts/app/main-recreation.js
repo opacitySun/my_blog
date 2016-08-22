@@ -7,67 +7,35 @@ define(['require','jquery','fnbase','./controller/c-recreation','./model/m-recre
     	if(res.result){
     		$.each(res.result,function(key,obj){
     			if(obj.type == 0 || obj.type == 1){	//电视剧:0,电影:1
-    				html += '<section class="s01">';
-    				html += '<h2>';
-    				html += '<span>'+obj.name+'</span>';
-    				html += '<i>更多></i>';
-    				html += '</h2>';
+    				html += '<div class="container">';
+    				html += '<h3 class="tittle">'+obj.name+'</h3>';
+    				html += '<div class="main">';
     				if(obj.data){
-    					html += '<div class="akey" title="'+obj.data[0].name+'">';
-    					html += '<a target="_blank" href="'+obj.data[0].url+'">';
-    					html += '<div class="img">';
-						html += '<img src="'+staticPath+obj.data[0].image+'" />';
-						html += '</div>';
-						html += '<span>'+obj.data[0].name+'</span>';
-						html += '<em>'+obj.data[0].desc+'</em>';
-						html += '</a>';
-						html += '</div>';
-						html += '<ul>';
 	    				$.each(obj.data,function(k,o){
-	    					if(k != 0){
-	    						if(k == 4){
-	    							html += '<li title="'+o.name+'" style="margin-right:0">';
-	    						}else{
-	    							html += '<li title="'+o.name+'">';
-	    						}
-	    						html += '<a target="_blank" href="'+o.url+'">';
-	    						html += '<div class="img">';
-								html += '<img src="'+staticPath+o.image+'" />';
-								html += '</div>';
-								html += '<span>'+o.name+'</span>';
-								html += '<em>'+o.desc+'</em>';
-								html += '</a>';
-			    				html += '</li>';
-	    					}
+	    					html += '<div class="col-md-2 view fifth-effect">';
+	    					html += '<a target="_blank" href="'+o.url+'" title="'+o.name+'"><img src="'+staticPath+o.image+'" /></a>';
+	    					html += '<div class="mask"></div>';
+	    					html += '<p>'+o.name+'</p>';
+	    					html += '</div>';
 		    			});
-		    			html += '</ul>';
 	    			}
-    				html += '</section>';
+    				html += '</div>';
+    				html += '</div>';
     			}else if(obj.type == 2){	//图集
-    				html += '<section class="s02">';
-    				html += '<h2>';
-    				html += '<span>'+obj.name+'</span>';
-    				html += '<i>更多></i>';
-    				html += '</h2>';
+    				html += '<div class="container">';
+    				html += '<h3 class="tittle">'+obj.name+'</h3>';
+    				html += '<div class="main">';
     				if(obj.data){
-						html += '<ul>';
 	    				$.each(obj.data,function(k,o){
-    						if(k == 4){
-    							html += '<li title="'+o.name+'" style="margin-right:0">';
-    						}else{
-    							html += '<li title="'+o.name+'">';
-    						}
-    						html += '<a target="_blank" href="'+o.url+'">';
-    						html += '<div class="img">';
-							html += '<img src="'+staticPath+o.image+'" />';
-							html += '</div>';
-							html += '<span>'+o.name+'</span>';
-							html += '</a>';
-		    				html += '</li>';
+	    					html += '<div class="col-md-3 view fifth-effect">';
+	    					html += '<a target="_blank" href="'+o.url+'" title="'+o.name+'"><img src="'+staticPath+o.image+'" /></a>';
+	    					html += '<div class="mask"></div>';
+	    					html += '<p>'+o.name+'</p>';
+	    					html += '</div>';
 		    			});
-		    			html += '</ul>';
 	    			}
-    				html += '</section>';
+    				html += '</div>';
+    				html += '</div>';
     			}
     		});
     	}else{
