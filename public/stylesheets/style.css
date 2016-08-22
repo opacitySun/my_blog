@@ -1684,7 +1684,7 @@ p.para1{
 	filter: alpha(opacity=0);
 }
 .copy-right p{
-margin:100px 0 0 0;
+margin:0;
 color:#7E7E7E;
 font-size:14px;
 text-align:center;
@@ -1800,7 +1800,7 @@ color:#CA4D4D;
 	  padding:20px 0;
 	}
 	.copy-right p {
-		margin: 80px 0 0 0;
+		margin: 0;
 	}
 	.col-md-6.slider-grid {
 	  width: 48.5%;
@@ -2270,7 +2270,7 @@ color:#CA4D4D;
 	  width: 17.2%;
 	}	
 	.copy-right p {
-	  margin: 60px 0 0 0;
+	  margin: 0;
 	  }
 	.col-md-4.services-grid {
 	  float: left;
@@ -2622,7 +2622,7 @@ color:#CA4D4D;
 	  padding: 35px 0 70px 0;
 	}
 	.copy-right p {
-	  margin: 20px 0 0 0;
+	  margin: 0;
 	}
 	.services-left p {
 	  font-size: 13px;
@@ -3295,7 +3295,7 @@ color:#CA4D4D;
 	  background-size: 189%;
 	}
 	.copy-right p {
-	  margin: 0px 0 0 0;
+	  margin: 0;
 	  line-height:1.7em;
 	}
 	.sec-slid-info {
