@@ -13,7 +13,7 @@ define(['jquery','fnbase','./controller/c-login','./model/m-login'],function($,f
 		$("#regName").on("change",function(){
 			if(controller.hasUserName() == true){
 				$("#regName").parent().removeClass("has-error has-feedback").addClass("has-error has-feedback").find(".help-block").text("此用户名已被使用");
-			}if else($(this).val() == ''){
+			}else if($(this).val() == ''){
 				$("#regName").parent().removeClass("has-error has-feedback").addClass("has-error has-feedback").find(".help-block").text("用户名不能为空");
 			}else{
 				$("#regName").parent().removeClass("has-error has-feedback").find(".help-block").text("");
