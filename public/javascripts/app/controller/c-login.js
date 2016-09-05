@@ -1,5 +1,5 @@
 
-define(['./Base','../model/m-login'], function (Base,model) {
+define(['./Base','fnbase','../model/m-login'], function (Base,fnbase,model) {
     var cLogin = {
         //重置登陆框
         loginReset : function(){
@@ -9,7 +9,9 @@ define(['./Base','../model/m-login'], function (Base,model) {
         //登录
         loginSubmit : function(){
             var loginName = $("#loginName").val();
+            loginName = fnbase.trim(loginName);
             var loginPwd = $("#loginPwd").val();
+            loginPwd = fnbase.trim(loginPwd);
             if(loginName == ''){
                 alert("用户名不能为空");
                 return false;
@@ -31,6 +33,9 @@ define(['./Base','../model/m-login'], function (Base,model) {
             var regName = $("#regName").val();
             var regPwd = $("#regPwd").val();
             var confirmPwd = $("#confirmPwd").val();
+            regName = fnbase.trim(regName);
+            regPwd = fnbase.trim(regPwd);
+            confirmPwd = fnbase.trim(confirmPwd);
             if(regName == ''){
                 $("#regName").parent().removeClass("has-error has-feedback").addClass("has-error has-feedback").find(".help-block").text("用户名不能为空");
                 return false;
@@ -67,6 +72,7 @@ define(['./Base','../model/m-login'], function (Base,model) {
         //检验用户名是否已存在
         hasUserName : function(callback){
             var regName = $("#regName").val();
+            regName = fnbase.trim(regName);
             model.hasUserName(regName,function(res){
                 callback(res.success);
             });
