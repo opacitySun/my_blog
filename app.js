@@ -53,7 +53,7 @@ routesController(app);
 //判断是否存在session并选择跳转路径
 app.use(function(req,res,next){
   if (!req.session.username) {
-    if(req.url == "/login" || req.url == "/ucenter"){
+    if(req.url == "/login" || req.url == "/ucenter" || req.url == "/register"){
       next(); //如果请求的地址是登录则通过，进行下一个请求
     }else{
       res.redirect('/login');
