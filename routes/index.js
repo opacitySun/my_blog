@@ -9,7 +9,12 @@ router.get('/', function(req, res, next) {
 
 /* login */
 router.get('/login', function(req, res, next) {
-	res.render('login', { title: '请先登录',layout: false });
+	res.render('login', { title: '登录',layout: false });
+});
+
+/* register */
+router.get('/register', function(req, res, next) {
+	res.render('register', { title: '注册',layout: false });
 });
 
 /* ucenter */

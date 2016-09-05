@@ -1,26 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>welcome to sun login</title>
-        <meta name="keywords" content="孙博为,个人博客,学习分享" />
-        <meta name="description" content="孙博为的个人博客" />
-
-        <!-- CSS -->
-        <link rel="stylesheet" href="/loginTemplet/css/fonts.css">
-        <link rel="stylesheet" href="/loginTemplet/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/loginTemplet/font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/loginTemplet/css/form-elements.css">
-        <link rel="stylesheet" href="/loginTemplet/css/style.css">
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+        <% include login-tpl-header.html %>
     </head>
 
     <body>
@@ -32,7 +14,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1>Welcome to<strong>SUN</strong>Login Form</h1>
+                            <h1>Welcome to <strong>SUN</strong> Login Form</h1>
                         </div>
                     </div>
                     <div class="row">
@@ -61,25 +43,24 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 social-login">
+                            <div class="social-login-buttons">
+                                <a class="btn btn-link-2" href="/register">
+                                    Sign up
+                                </a>
+                                <a class="btn btn-link-2" href="#">
+                                    Forgot password
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
         </div>
 
-
-        <!-- Javascript -->
-        <script src="/loginTemplet/js/jquery-1.11.1.min.js"></script>
-        <script src="/loginTemplet/bootstrap/js/bootstrap.min.js"></script>
-        <script src="/loginTemplet/js/jquery.backstretch.min.js"></script>
-        <script src="/loginTemplet/js/scripts.js"></script>
-        <script type="text/javascript" data-main="/javascripts/login.js" src="/javascripts/lib/require-min.js"></script>
-        <input type="hidden" id="basePath" value="http://www.sunbowei.com" />
-        <input type="hidden" id="staticPath" value="http://www.sunbowei.com:3000" />
-        
-        <!--[if lt IE 10]>
-            <script src="/loginTemplet/js/placeholder.js"></script>
-        <![endif]-->
-
+        <% include login-tpl-footer.html %>
     </body>
 
 </html>

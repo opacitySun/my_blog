@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>sun register</title>
+        <% include login-tpl-header.html %>
+    </head>
+
+    <body>
+
+        <!-- Top content -->
+        <div class="top-content">
+            
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1>Welcome to <strong>SUN</strong> Login Form</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                            <div class="form-bottom">
+                                <div class="form-group">
+                                    <label class="sr-only" for="regName">Username</label>
+                                    <input type="text" name="regName" placeholder="Username..." class="form-username form-control" id="regName">
+                                    <p class="help-block"></p>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="regPwd">Password</label>
+                                    <input type="password" name="regPwd" placeholder="Password..." class="form-password form-control" id="regPwd">
+                                    <p class="help-block"></p>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="confirmPwd">Confirm Password</label>
+                                    <input type="password" name="confirmPwd" placeholder="Confirm Password..." class="form-password form-control" id="confirmPwd">
+                                    <p class="help-block"></p>
+                                </div>
+                                <button id="regSubmit" type="button" class="btn" title="注册">Sign up!</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <% include login-tpl-footer.html %>
+    </body>
+
+</html>

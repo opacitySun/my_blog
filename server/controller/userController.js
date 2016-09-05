@@ -9,8 +9,49 @@ exports.outerConnectAction = function(app){
     //查找用户
     app.all("/outerUserFindAction",function(req,res){
         var conditions ={'name':req.body.name,'password':req.body.password};  
-        userDao.findUser(conditions,dbHelper,function(result){  
+        userDao.findOneUser(conditions,dbHelper,function(result){  
             res.json(result); 
+        });    
+    });
+    //检验用户名是否已存在
+    app.all("/outerUserNameFindAction",function(req,res){
+        var conditions ={'name':req.body.name};  
+        userDao.findOneUser(conditions,dbHelper,function(result){  
+            res.json(result); 
+        });    
+    });
+    //添加用户
+    app.all("/outerAddUserAction",function(req,res){
+        var thisTime = new Date().getTime();
+        var conditions ={
+            'name':req.body.name,
+            'password':req.body.password,
+            'type':1,
+            'createTime':thisTime,
+            'updateTime':thisTime
+        };  
+        userDao.addUser(conditions,dbHelper,function(result){  
+            res.json(result); 
+        });    
+    });
+    //登录
+    app.all("/outerLoginAction",function(req,res){
+        var conditions ={'name':req.body.name,'password':req.body.password};  
+        userDao.findOneUser(conditions,dbHelper,function(result){  
+            if(result.success == 1){
+                req.session.username=result.result.name;          
+                req.session.password=result.result.password;
+                req.session.regenerate(function (err) {
+                    if(err){
+                        console.log("session重新初始化失败.");
+                    }else{
+                        console.log("session被重新初始化.");
+                    } 
+                });   
+                res.json(result);  
+            }else{
+                res.json(result);  
+            }
         });    
     });
 }
@@ -47,7 +88,7 @@ exports.userAddAction = function() {
  */  
 exports.userFindAction = function(req, res) {   
     var conditions ={'name':req.body.loginName,'password':req.body.loginPwd};  
-    userDao.findUser(conditions,dbHelper,function(result){  
+    userDao.findOneUser(conditions,dbHelper,function(result){  
         if(result.success == 1){
             console.log(JSON.stringify(result));
             req.session.username=result.result.name;          
