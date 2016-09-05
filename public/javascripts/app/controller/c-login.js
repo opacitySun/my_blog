@@ -32,19 +32,19 @@ define(['./Base','../model/m-login'], function (Base,model) {
             var regPwd = $("#regPwd").val();
             var confirmPwd = $("#confirmPwd").val();
             if(regName == ''){
-                $("#regName").parent().addClass("has-error has-feedback").find(".help-block").text("用户名不能为空");
+                $("#regName").parent().removeClass("has-error has-feedback").addClass("has-error has-feedback").find(".help-block").text("用户名不能为空");
                 return false;
             }
             if(regPwd == ''){
-                $("#regPwd").parent().addClass("has-error has-feedback").find(".help-block").text("密码不能为空");
+                $("#regPwd").parent().removeClass("has-error has-feedback").addClass("has-error has-feedback").find(".help-block").text("密码不能为空");
                 return false;
             }
             if(confirmPwd != regPwd){
-                $("#confirmPwd").parent().addClass("has-error has-feedback").find(".help-block").text("两次密码输入不一致");
+                $("#confirmPwd").parent().removeClass("has-error has-feedback").addClass("has-error has-feedback").find(".help-block").text("两次密码输入不一致");
                 return false;
             }
             if(cLogin.hasUserName() == true){
-                $("#regName").parent().addClass("has-error has-feedback").find(".help-block").text("此用户名已被使用");
+                $("#regName").parent().removeClass("has-error has-feedback").addClass("has-error has-feedback").find(".help-block").text("此用户名已被使用");
                 return false;
             }
             model.addUser(regName,regPwd,function(res){
