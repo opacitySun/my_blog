@@ -11,7 +11,7 @@ define(['jquery','fnbase','./controller/c-login','./model/m-login'],function($,f
 	    });
 	}else if(urlPath == "/register"){
 		$("#regName").on("change",function(){
-			if(controller.hasUserName() == true){
+			if(controller.hasUserName() == 1){
 				$("#regName").parent().removeClass("has-error has-feedback").addClass("has-error has-feedback").find(".help-block").text("此用户名已被使用");
 			}else if($(this).val() == ''){
 				$("#regName").parent().removeClass("has-error has-feedback").addClass("has-error has-feedback").find(".help-block").text("用户名不能为空");

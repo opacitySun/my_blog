@@ -43,7 +43,7 @@ define(['./Base','../model/m-login'], function (Base,model) {
                 $("#confirmPwd").parent().removeClass("has-error has-feedback").addClass("has-error has-feedback").find(".help-block").text("两次密码输入不一致");
                 return false;
             }
-            if(cLogin.hasUserName() == true){
+            if(cLogin.hasUserName() == 1){
                 $("#regName").parent().removeClass("has-error has-feedback").addClass("has-error has-feedback").find(".help-block").text("此用户名已被使用");
                 return false;
             }
@@ -66,11 +66,7 @@ define(['./Base','../model/m-login'], function (Base,model) {
         hasUserName : function(){
             var regName = $("#regName").val();
             model.hasUserName(regName,function(res){
-                if(res.success == 1){
-                    return true;
-                }else{
-                    return false;
-                }
+                return res.success;
             });
         }
     };
