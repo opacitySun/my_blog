@@ -15,10 +15,13 @@
 .myfairy .top{position:absolute;z-index:1100;top:-60px;right:220px;}
 .myfairy .top .panel{width:200px;padding:10px 10px;border:2px solid #CA4D4D;
 	border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;-o-border-radius:5px;}
-.myfairy .top .panel a{display:inline-block;width:50%;height:40px;line-height:40px;text-align:center;font-size:14px;color:#fe74c2;margin-bottom:20px;}
+.myfairy .top .panel a{float:left;display:inline-block;width:50%;height:40px;line-height:40px;text-align:center;font-size:14px;color:#fe74c2;margin-bottom:20px;}
 .myfairy .top .panel a:hover{color:#fd46ae;}
 .myfairy .bottom{position:static;width:100%;height:auto;}
 .myfairy .bottom img{width:100%;height:auto;}
 @media(max-width:800px){
 	.myfairy{width:30%;bottom:0;}
+	.myfairy .top{right:28%;}
+	.myfairy .top .panel{width:100px;}
+	.myfairy .top .panel a{width:100%;height:30px;line-height:30px;margin-bottom:0;}
 }
