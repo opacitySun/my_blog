@@ -17,7 +17,7 @@
 	border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;-o-border-radius:5px;}
 .myfairy .top .panel a{display:inline-block;width:100px;height:50px;line-height:50px;text-align:center;font-size:14px;color:#fe74c2;}
 .myfairy .top .panel a:hover{color:#fd46ae;text-decoration:underline;}
-.myfairy .bottom{position:static;width:260px;}
+.myfairy .bottom{position:absolute;z-index:1050;width:260px;bottom:0;right:0;}
 .myfairy .bottom img{float:right;width:100%;height:auto;}
 @media(max-width:800px){
 	.myfairy{bottom:0;}
