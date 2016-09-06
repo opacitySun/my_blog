@@ -19,6 +19,14 @@ define(['jquery','fnbase','./controller/c-fairy','./model/m-fairy'],function($,f
     	}else{
     		$("#myfairy").css("width","30%");
     	}
+    	window.onresize = function(){
+    		var screen_w = $(window).width();
+	    	if(screen_w >= 800){
+	    		$("#myfairy").css("width","260px");
+	    	}else{
+	    		$("#myfairy").css("width","30%");
+	    	}
+    	}
     });
     //自我介绍
     controller.selfTxt();
