@@ -95,9 +95,8 @@ define(["jquery","bootstrap","flexisel","../model/m-index"],function($,bootstrap
                     flag = false;
                     model.addFairy(data,function(res){
                         if(res.success == 1){
-                            alert("提交成功");
                             flag = true;
-                            $("#selFairyModal").remove();
+                            window.location.href = "/";
                         }else{
                             alert("提交失败");
                         }
