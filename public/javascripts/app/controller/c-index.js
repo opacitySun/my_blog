@@ -68,6 +68,12 @@ define(["jquery","bootstrap","flexisel","../model/m-index"],function($,bootstrap
                     });
                 }
             });
+        },
+        //精灵选中效果
+        selFairy : function(){
+            $("#fairyListByModal li").on("click",fucntion(){
+                
+            });
         }
 	};
 
