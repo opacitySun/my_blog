@@ -12,6 +12,7 @@ define(["jquery","bootstrap","../model/m-fairy"],function($,bootstrap,model){
                         if(res.success == 1){
                             var typeImage = '<img src="'+staticPath+res.result.image+'" />';
                             $("#myfairy .bottom").html(typeImage);
+                            $("#myfairy .txtBox p").html(res.result.desc);
                             $("#myfairy").show();
                         }else{
                             console.log(res);
@@ -21,6 +22,17 @@ define(["jquery","bootstrap","../model/m-fairy"],function($,bootstrap,model){
                     console.log(resHas);
                     $("#myfairy").remove();
                 }
+            });
+        },
+        //自我介绍
+        selfTxt : function(){
+            $("#selfTxt").on("click",function(){
+                $("#myfairy .panel").fadeOut();
+                $("#myfairy .txtBox").show();
+            });
+            $("#fairyBack").on("click",function(){
+                $("#myfairy .txtBox").fadeOut();
+                $("#myfairy .panel").show();
             });
         }
 	};

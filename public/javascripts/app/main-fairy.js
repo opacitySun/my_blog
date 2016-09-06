@@ -20,4 +20,6 @@ define(['jquery','fnbase','./controller/c-fairy','./model/m-fairy'],function($,f
     		$("#myfairy").css("width","30%");
     	}
     });
+    //自我介绍
+    controller.selfTxt();
 });
