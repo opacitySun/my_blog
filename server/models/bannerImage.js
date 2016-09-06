@@ -4,7 +4,7 @@ var db = new mongodb.Db('my_blog', server, {safe:true});
 
 db.open(function(err){
 	if(!err){
-		console.log('connect db news');
+		console.log('connect db banner_image');
 	}else{
 		console.log(err);
 		return false;
@@ -21,6 +21,6 @@ module.exports = {
 };
 
 var _getModel = function(type,err){
-	var dbModel = db.collection('news');
+	var dbModel = db.collection('banner_image');
 	return dbModel;
 }
