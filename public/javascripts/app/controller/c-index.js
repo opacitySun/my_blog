@@ -57,6 +57,7 @@ define(["jquery","bootstrap","flexisel","../model/m-index"],function($,bootstrap
                                 html += '<li>';
                                 html += '<input type="checkbox" name="type" value="'+obj.type+'" />';
                                 html += '<img src="'+staticPath+obj.image+'" />';
+                                html += '<p>'+obj.name+'</p>';
                                 html += '</li>';
                             });
                             $("#fairyListByModal").html(html);
