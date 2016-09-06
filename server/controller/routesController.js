@@ -10,6 +10,7 @@ var study = require("./studyController");
 var news = require("./newsController");
 var recreation = require("./recreationController");
 var me = require("./meController");
+var fairy = require("./fairyController");
 var weixin = require("./weixinController").outerConnectAction;
 
 module.exports = function(app){
@@ -20,5 +21,6 @@ module.exports = function(app){
 	news(app);
 	recreation(app);
 	me(app);
+	fairy(app);
 	weixin(app);
 }
