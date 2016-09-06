@@ -45,6 +45,29 @@ define(["jquery","bootstrap","flexisel","../model/m-index"],function($,bootstrap
                 $("#userWorks").html(html);
                 cIndex.flexisel();
             });
+        },
+        //判断是否显示选择精灵弹出窗
+        fairyModal : function(){
+            model.hasFairy(function(resHas){
+                if(resHas.success != 1){
+                    model.getFairyTypeList(function(res){
+                        if(res.success == 1){
+                            var html = "";
+                            $.each(res.result,function(key,obj){
+                                html += '<li>';
+                                html += '<input type="checkbox" name="type" value="'+obj.type+'" />';
+                                html += '<img src="'+staticPath+obj.image+'" />';
+                                html += '</li>';
+                            });
+                            $("#fairyListByModal").html(html);
+                            cIndex.selFairy();
+                            $("#selFairyModal").modal("show");
+                        }else{
+                            console.log(res);
+                        }   
+                    });
+                }
+            });
         }
 	};
 
