@@ -71,8 +71,10 @@ define(["jquery","bootstrap","flexisel","../model/m-index"],function($,bootstrap
         },
         //精灵选中效果
         selFairy : function(){
-            $("#fairyListByModal li").on("click",fucntion(){
-                
+            $("#fairyListByModal li").on("click",function(){
+                $(this).find("input[type='checkbox']").attr("checked",true);
+                $(this).siblings().find("input[type='checkbox']").attr("checked",false);
+                $(this).addClass("current").siblings().removeClass("current");
             });
         }
 	};
