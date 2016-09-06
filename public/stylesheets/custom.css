@@ -17,7 +17,7 @@
 	border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;-o-border-radius:5px;}
 .myfairy .top .panel a{display:inline-block;width:100px;height:50px;line-height:50px;text-align:center;font-size:14px;color:#fe74c2;}
 .myfairy .top .panel a:hover{color:#fd46ae;text-decoration:underline;}
-.myfairy .top .txtBox{padding:10px 10px;border:2px solid #CA4D4D;display:none;
+.myfairy .top .txtBox{padding:10px 10px;border:2px solid #CA4D4D;display:none;background:#ffffff;width:200px;
 	border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;-o-border-radius:5px;} 
 .myfairy .top .txtBox p{width:100%;font-size:14px;line-height:30px;font-size:14px;}
 .myfairy .top .txtBox a{font-size:14px;color:#fe74c2;}
