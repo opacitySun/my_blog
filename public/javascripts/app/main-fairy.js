@@ -8,15 +8,15 @@ define(['jquery','fnbase','./controller/c-fairy','./model/m-fairy'],function($,f
     	$("#myfairy .showBtn").show();
     	var screen_w = $(window).width();
     	if(screen_w >= 800){
-    		$("#myfairy").css("width":"260px");
+    		$("#myfairy").css("width","260px");
     	}else{
-    		$("#myfairy").css("width":"30%");
+    		$("#myfairy").css("width","30%");
     	}
     });
     $("#myfairy .showBtn").on("click",function(){
     	$("#myfairy .top").show();
     	$("#myfairy .bottom").show();
     	$("#myfairy .showBtn").hide();
-    	$("#myfairy").css("width":"40px");
+    	$("#myfairy").css("width","40px");
     });
 });
