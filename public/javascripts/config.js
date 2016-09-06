@@ -11,7 +11,8 @@
             'flexisel':'lib/jquery.flexisel',
             'hoverdir':'lib/jquery.hoverdir',
             'movetop':'lib/move-top',
-            'modernizr':'lib/modernizr'
+            'modernizr':'lib/modernizr',
+            'bootstrap':'../loginTemplet/bootstrap/js/bootstrap.min'
         },
         map : {
             '*':{
@@ -28,6 +29,10 @@
             'hoverdir':{
                 deps:['jquery','modernizr'],
                 exports:'hoverdir'
+            },
+            'bootstrap':{
+                deps:['jquery'],
+                exports:'bootstrap'
             }
         }
     });

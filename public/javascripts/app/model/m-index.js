@@ -10,9 +10,17 @@ define(["./Base"],function(Base){
 				callback(res);
 			});
 		},
-		//获取新闻列表
-		getNewsList : function(callback){
-			var url = "/newsListAction";
+		//获取精灵模型列表
+		getFairyTypeList : function(callback){
+			var url = "/fairyTypeListAction";
+			var data = {};
+			modelBase.postAjax(url,data,function(res){
+				callback(res);
+			});
+		},
+		//判断精灵是否存在
+		hasFairy : function(callback){
+			var url = "/hasFairyAction";
 			var data = {};
 			modelBase.postAjax(url,data,function(res){
 				callback(res);
