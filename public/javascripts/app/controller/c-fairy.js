@@ -27,12 +27,12 @@ define(["jquery","bootstrap","../model/m-fairy"],function($,bootstrap,model){
         //自我介绍
         selfTxt : function(){
             $("#selfTxt").on("click",function(){
-                $("#myfairy .panel").fadeOut(1000);
-                $("#myfairy .txtBox").show(1000);
+                $("#myfairy .panel").fadeOut();
+                $("#myfairy .txtBox").show();
             });
             $("#fairyBack").on("click",function(){
-                $("#myfairy .txtBox").fadeOut(1000);
-                $("#myfairy .panel").show(1000);
+                $("#myfairy .txtBox").fadeOut();
+                $("#myfairy .panel").show();
             });
         }
 	};

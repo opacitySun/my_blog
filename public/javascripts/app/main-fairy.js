@@ -3,15 +3,15 @@ define(['jquery','fnbase','./controller/c-fairy','./model/m-fairy'],function($,f
     controller.fairyShow();
     //隐藏显示精灵
     $("#hideBox").on("click",function(){
-    	$("#myfairy .top").fadeOut(1000);
-    	$("#myfairy .bottom").fadeOut(1000);
-    	$("#myfairy .showBtn").show(1000);
+    	$("#myfairy .top").fadeOut();
+    	$("#myfairy .bottom").fadeOut();
+    	$("#myfairy .showBtn").show();
     	$("#myfairy").css("width","40px");
     });
     $("#myfairy .showBtn").on("click",function(){
-    	$("#myfairy .top").show(1000);
-    	$("#myfairy .bottom").show(1000);
-    	$("#myfairy .showBtn").hide(1000);
+    	$("#myfairy .top").show();
+    	$("#myfairy .bottom").show();
+    	$("#myfairy .showBtn").hide();
 
     	var screen_w = $(window).width();
     	if(screen_w >= 800){
