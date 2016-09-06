@@ -25,6 +25,17 @@ define(["./Base"],function(Base){
 			modelBase.postAjax(url,data,function(res){
 				callback(res);
 			});
+		},
+		//添加精灵
+		addFairy : function(formData,callback){
+			var url = "/addFairyAction";
+			var data = {
+				"name":formData.name,
+				"type":formData.type
+			};
+			modelBase.postAjax(url,data,function(res){
+				callback(res);
+			});
 		}
 	};
 

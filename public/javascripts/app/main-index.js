@@ -3,4 +3,8 @@ define(['jquery','fnbase','./controller/c-index','./model/m-index'],function($,f
     controller.getWorksList();
     //判断是否显示选择精灵弹出窗
     controller.fairyModal();
+
+    $("#createFairy").on("click",function(){
+        controller.createFairy();
+    });
 });

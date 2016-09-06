@@ -67,6 +67,9 @@ define(["jquery","bootstrap","flexisel","../model/m-index"],function($,bootstrap
                             console.log(res);
                         }   
                     });
+                }else{
+                    console.log(resHas);
+                    $("#selFairyModal").remove();
                 }
             });
         },
@@ -77,6 +80,30 @@ define(["jquery","bootstrap","flexisel","../model/m-index"],function($,bootstrap
                 $(this).siblings().find("input[type='checkbox']").attr("checked",false);
                 $(this).addClass("current").siblings().removeClass("current");
             });
+        },
+        //创建精灵
+        createFairy : function(){
+            var fairyName = $("#fairyName").val();
+            var type = $("input[name='type']:checked").val();
+            if(confirm("确认提交数据吗？")){
+                var flag = true;
+                var data = {
+                    "name":fairyName,
+                    "type":type
+                };
+                if(flag == true){
+                    flag = false;
+                    model.addFairy(data,function(res){
+                        if(res.success == 1){
+                            alert("提交成功");
+                            flag = true;
+                            $("#selFairyModal").remove();
+                        }else{
+                            alert("提交失败");
+                        }
+                    });
+                }
+            }
         }
 	};
 
