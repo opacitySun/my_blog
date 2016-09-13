@@ -3,15 +3,30 @@ define(["jquery","bootstrap","../model/m-fairy"],function($,bootstrap,model){
     var staticPath = $("#staticPath").val();
 
 	var cFairy = {
-        //判断是否显示精灵
-        fairyShow : function(){
+        //判断是否存在精灵
+        fairyHas : function(){
             model.hasFairy(function(resHas){
                 if(resHas.success == 1){
                     var id = resHas.result._id.toString();
                     model.getFairyAllInfoById(id,function(res){
                         if(res.success == 1){
-                            var typeImage = '<img src="'+staticPath+res.result.image+'" />';
-                            $("#myfairy .bottom").html(typeImage);
+                            var fairyBottom = '';
+                            fairyBottom += '<div class="level">';
+                            fairyBottom += '<p>LV.'+res.result.level+'</p>';
+                            fairyBottom += '<div class="exp">';
+                            fairyBottom += '<b></b>';
+                            fairyBottom += '<em>'+res.result.exp+'/'+res.result.nextExp+'</em>';
+                            fairyBottom += '</div>';
+                            fairyBottom += '</div>';
+                            fairyBottom += '<img src="'+staticPath+res.result.image+'" />';
+                            $("#myfairy .bottom").html(fairyBottom);
+
+                            //设置经验值
+                            var expPercent = res.result.exp/res.result.nextExp;
+                            var expWidth = $(".exp").width();
+                            var bgWidth = expPercent * expWidth;
+                            $(".exp b").animate({"width":bgWidth+"px"});
+
                             $("#myfairy .txtBox p").html(res.result.desc);
                             $("#myfairy").show();
                         }else{
@@ -23,6 +38,45 @@ define(["jquery","bootstrap","../model/m-fairy"],function($,bootstrap,model){
                     $("#myfairy").remove();
                 }
             });
+        },
+        //显示精灵
+        fairyShow : function(){
+            $("#myfairy .top").show();
+            $("#myfairy .bottom").show();
+            $("#myfairy .showBtn").hide();
+
+            var screen_w = $(window).width();
+            if(screen_w >= 800){
+                $("#myfairy").css("width","260px");
+            }else{
+                $("#myfairy").css("width","30%");
+            }
+            window.onresize = function(){
+                var screen_w = $(window).width();
+                if(screen_w >= 800){
+                    $("#myfairy").css("width","260px");
+                }else{
+                    $("#myfairy").css("width","30%");
+                }
+            }
+            localStorage.setItem('fairyShowStatus',1);
+        },
+        //隐藏精灵
+        fairyHide : function(){
+            $("#myfairy .top").hide();
+            $("#myfairy .bottom").hide();
+            $("#myfairy .showBtn").show();
+            $("#myfairy").css("width","40px");
+            localStorage.setItem('fairyShowStatus',0);
+        },
+        //根据精灵显示状态设置是否显示
+        fairyShowStatus : function(){
+            var status = localStorage.getItem('fairyShowStatus');   //0为不显示，1为显示
+            if(status == 1){
+                cFairy.fairyShow();
+            }else{
+                cFairy.fairyHide();
+            }
         },
         //自我介绍
         selfTxt : function(){

@@ -100,6 +100,7 @@ exports.userFindAction = function(req, res) {
                     console.log("session被重新初始化.");
                 } 
             });   
+            localStorage.setItem('fairyShowStatus',1);    //精灵状态设置为显示
             //return res.render('ucenter', { title:'ucenter' });
             return res.redirect('/');
         }else{

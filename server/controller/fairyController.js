@@ -15,10 +15,22 @@ module.exports = function(app){
         		result = result0;
         		var conditions1 = {"type":result0.result.type};
         		fairyTypeDao.findOneFairyType(conditions1,dbHelper,function(result1){
-        			result.result["typeName"] = result1.result.name;
-        			result.result["image"] = result1.result.image;
-        			result.result["desc"] = result1.result.desc;
-        			res.json(result);
+                    if(result1.success == 1){
+                        result.result["typeName"] = result1.result.name;
+                        result.result["image"] = result1.result.image;
+                        result.result["desc"] = result1.result.desc;
+                        var conditions2 = {"level":Number(result0.result.level)+1};
+                        fairyLevelDao.findOneFairyLevel(conditions2,dbHelper,function(result2){
+                            if(result2.success == 1){
+                                result.result["nextExp"] = result2.result.exp;
+                                res.json(result);
+                            }else{
+                                res.json(result2);
+                            }  
+                        });
+                    }else{
+                        res.json(result1);
+                    }	
         		});
         	}else{
         		res.json(result0);
