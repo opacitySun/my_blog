@@ -11,9 +11,9 @@ define(["jquery","bootstrap","../model/m-fairy"],function($,bootstrap,model){
                     model.getFairyAllInfoById(id,function(res){
                         if(res.success == 1){
                             var fairyBottom = '';
-                            fairyBottom += '<div class="level">';
+                            fairyBottom += '<div class="level" id="level">';
                             fairyBottom += '<p>LV.'+res.result.level+'</p>';
-                            fairyBottom += '<div class="exp" id="exp">';
+                            fairyBottom += '<div class="exp">';
                             fairyBottom += '<b></b>';
                             fairyBottom += '<em>'+res.result.exp+'/'+res.result.nextExp+'</em>';
                             fairyBottom += '</div>';
@@ -23,9 +23,9 @@ define(["jquery","bootstrap","../model/m-fairy"],function($,bootstrap,model){
 
                             //设置经验值
                             var expPercent = res.result.exp/res.result.nextExp;
-                            var expWidth = $("#exp").width();
+                            var expWidth = $("#level").width();
                             var bgWidth = expPercent * expWidth;
-                            $("#exp b").animate({"width":bgWidth+"px"});
+                            $("#level .exp b").animate({"width":bgWidth+"px"});
 
                             $("#myfairy .txtBox p").html(res.result.desc);
                             $("#myfairy").show();
