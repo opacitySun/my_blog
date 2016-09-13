@@ -17,6 +17,14 @@ define(["./Base"],function(Base){
 			modelBase.postAjax(url,data,function(res){
 				callback(res);
 			});
+		},
+		//签到
+		skill : function(callback){
+			var url = "/fairySkillAction";
+			var data = {};
+			modelBase.postAjax(url,data,function(res){
+				callback(res);
+			});
 		}
 	};
 

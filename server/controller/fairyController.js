@@ -56,4 +56,8 @@ module.exports = function(app){
             }   
         });     
     });
+    //签到
+    app.all("/fairySkillAction",function(req,res){
+        
+    });
 }

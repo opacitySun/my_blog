@@ -94,6 +94,12 @@ define(["jquery","bootstrap","../model/m-fairy"],function($,bootstrap,model){
                 $("#myfairy .txtBox").hide();
                 $("#myfairy .panel").show();
             });
+        },
+        //签到
+        skill : function(){
+            model.skill(function(res){
+
+            });
         }
 	};
 
