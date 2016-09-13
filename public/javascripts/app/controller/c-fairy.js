@@ -32,18 +32,6 @@ define(["jquery","bootstrap","../model/m-fairy"],function($,bootstrap,model){
                             }
                             var bgWidth = expPercent * expWidth;
                             $("#exp b").animate({"width":bgWidth+"px"});
-                            window.onresize = function(){
-                                var expPercent = res.result.exp/res.result.nextExp;
-                                var expWidth = 0;
-                                var screen_w = $(window).width();
-                                if(screen_w >= 800){
-                                    expWidth = 260;
-                                }else{
-                                    expWidth = $("#exp").width();
-                                }
-                                var bgWidth = expPercent * expWidth;
-                                $("#exp b").animate({"width":bgWidth+"px"});
-                            }
 
                             $("#myfairy .txtBox p").html(res.result.desc);
                             $("#myfairy").show();
