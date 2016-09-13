@@ -3,8 +3,8 @@ define(['jquery','fnbase','./controller/c-fairy','./model/m-fairy'],function($,f
     controller.fairyShow();
     //隐藏显示精灵
     $("#hideBox").on("click",function(){
-    	$("#myfairy .top").fadeOut();
-    	$("#myfairy .bottom").fadeOut();
+    	$("#myfairy .top").hide();
+    	$("#myfairy .bottom").hide();
     	$("#myfairy .showBtn").show();
     	$("#myfairy").css("width","40px");
     });
