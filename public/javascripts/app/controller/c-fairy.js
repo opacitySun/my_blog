@@ -23,9 +23,9 @@ define(["jquery","bootstrap","../model/m-fairy"],function($,bootstrap,model){
 
                             //设置经验值
                             var expPercent = res.result.exp/res.result.nextExp;
-                            var expWidth = $(".exp").width();
+                            var expWidth = $(".level .exp").width();
                             var bgWidth = expPercent * expWidth;
-                            $(".exp b").animate({"width":bgWidth+"px"});
+                            $(".level .exp b").animate({"width":bgWidth+"px"});
 
                             $("#myfairy .txtBox p").html(res.result.desc);
                             $("#myfairy").show();
