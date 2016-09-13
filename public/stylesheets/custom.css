@@ -25,7 +25,7 @@
 .myfairy .bottom{position:static;width:100%;height:auto;}
 .myfairy .bottom .level{float:right;width:100%;margin-bottom:10px;}
 .myfairy .bottom .level p{width:100%;text-align:center;font-size:16px;color:#fcce16;margin-bottom:5px;}
-.myfairy .bottom .level .exp{position:relative;width:100%;height:20px;border:1px solid #f09e01;}
+.myfairy .bottom .level .exp{position:relative;width:100%;height:20px;border:1px solid #f09e01;overflow:hidden;}
 .myfairy .bottom .level .exp b{position:absolute;z-index:1050;height:20px;background:#fcce16;width:0;}
 .myfairy .bottom .level .exp em{position:absolute;z-index:1051;font-style:normal;width:100%;line-height:20px;text-align:center;color:#eb5800;}
 .myfairy .bottom img{float:right;width:100%;height:auto;}
