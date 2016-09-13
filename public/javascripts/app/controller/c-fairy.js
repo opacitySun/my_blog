@@ -11,9 +11,9 @@ define(["jquery","bootstrap","../model/m-fairy"],function($,bootstrap,model){
                     model.getFairyAllInfoById(id,function(res){
                         if(res.success == 1){
                             var fairyBottom = '';
-                            fairyBottom += '<div class="level" id="level">';
+                            fairyBottom += '<div class="level">';
                             fairyBottom += '<p>LV.'+res.result.level+'</p>';
-                            fairyBottom += '<div class="exp">';
+                            fairyBottom += '<div class="exp" id="exp">';
                             fairyBottom += '<b></b>';
                             fairyBottom += '<em>'+res.result.exp+'/'+res.result.nextExp+'</em>';
                             fairyBottom += '</div>';
@@ -23,9 +23,25 @@ define(["jquery","bootstrap","../model/m-fairy"],function($,bootstrap,model){
 
                             //设置经验值
                             var expPercent = res.result.exp/res.result.nextExp;
-                            var expWidth = $("#level").width();
+                            var expWidth = 0;
+                            var screen_w = $(window).width();
+                            if(screen_w >= 800){
+                                expWidth = 260;
+                            }else{
+                                expWidth = $("#exp").width();
+                            }
                             var bgWidth = expPercent * expWidth;
-                            $("#level .exp b").animate({"width":bgWidth+"px"});
+                            $("#exp b").animate({"width":bgWidth+"px"});
+                            window.onresize = function(){
+                                var screen_w = $(window).width();
+                                if(screen_w >= 800){
+                                    expWidth = 260;
+                                }else{
+                                    expWidth = $("#exp").width();
+                                }
+                                var bgWidth = expPercent * expWidth;
+                                $("#exp b").animate({"width":bgWidth+"px"});
+                            }
 
                             $("#myfairy .txtBox p").html(res.result.desc);
                             $("#myfairy").show();
