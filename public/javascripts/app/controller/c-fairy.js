@@ -72,10 +72,10 @@ define(["jquery","bootstrap","../model/m-fairy"],function($,bootstrap,model){
         //根据精灵显示状态设置是否显示
         fairyShowStatus : function(){
             var status = localStorage.getItem('fairyShowStatus');   //0为不显示，1为显示
-            if(status == 1){
-                cFairy.fairyShow();
-            }else{
+            if(status == 0){
                 cFairy.fairyHide();
+            }else{
+                cFairy.fairyShow();
             }
         },
         //自我介绍
