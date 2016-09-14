@@ -17,7 +17,8 @@ define(['jquery','fnbase','../model/m-news'], function ($,fnbase,model) {
                             	var oImgArr = oDesc.match(/<img[^>]+>/gi);
                             	if(oImgArr != null){
                             		var oImg = oImgArr[0];
-	                            	var thisImg = oImg.replace('/>','class="img-responsive zoom-img" />');
+	                            	var thisImg = oImg.replace('<img','<img class="img-responsive zoom-img"');
+	                            	thisImg = thisImg.replace('src="','src="'+staticPath);
                             	}else{
                             		var thisImg = '<img src="/images/news.jpg" alt="图片" class="img-responsive zoom-img">';
                             	}	
