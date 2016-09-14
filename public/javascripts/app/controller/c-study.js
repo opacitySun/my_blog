@@ -13,6 +13,19 @@ define(['jquery','fnbase','../model/m-study'], function ($,fnbase,model) {
                         html += '<div class="news-article">';
                         if(obj.data){
                             $.each(obj.data,function(k,o){
+                                var oDesc = decodeURI(o.desc);
+                                var oImgArr = oDesc.match(/<img[^>]+>/gi);
+                                if(oImgArr != null){
+                                    var oImg = oImgArr[0];
+                                    var thisImg = oImg.replace('<img','<img class="img-responsive zoom-img"');
+                                    thisImg = thisImg.replace('src="','src="'+staticPath);
+                                }else{
+                                    var thisImg = '<img src="/images/study.jpg" alt="图片" class="img-responsive zoom-img">';
+                                }   
+                                var thisDesc = oDesc.replace(/<img[^>]+>/gi,"");
+                                thisDesc = thisDesc.replace(/<\/?.+?>/g,"");
+                                thisDesc = thisDesc.replace(/&nbsp;/g,"");
+                                thisDesc = fnbase.overTxtEllipsis(thisDesc,60,true);
                                 html += '<div class="col-md-6 article-post">';
                                 html += '<div class="col-md-3 post-meta">';
                                 html += '<ul class="ad-info">';
@@ -22,9 +35,9 @@ define(['jquery','fnbase','../model/m-study'], function ($,fnbase,model) {
                                 html += '<div class="clearfix"></div>';
                                 html += '</div>';
                                 html += '<div class="col-md-9 post-details">';
-                                html += '<a href="/study-detail?id='+o._id.toString()+'" class="mask"><img src="/images/banner.jpg" alt="image" class="img-responsive zoom-img"></a>';
+                                html += '<a href="/study-detail?id='+o._id.toString()+'" class="mask">'+thisImg+'</a>';
                                 html += '<a href="/study-detail?id='+o._id.toString()+'"><h4>'+o.name+'</h4></a>';
-                                //html += '<p></p>';
+                                html += '<p>'+thisDesc+'</p>';
                                 html += '<div class="read two">';
                                 html += '<a class="button" href="/study-detail?id='+o._id.toString()+'"><img src="/images/read.png" /></a>';
                                 html += '</div>';
