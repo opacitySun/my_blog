@@ -16,9 +16,10 @@ define(['jquery','fnbase','../model/m-news'], function ($,fnbase,model) {
                             	var oDesc = decodeURI(o.desc);
                             	var oImgArr = oDesc.match(/<img[^>]+>/gi);
                             	if(oImgArr != null){
-                            		var thisImg = oImgArr[0];
+                            		var oImg = oImgArr[0];
+	                            	var thisImg = oImg.replace('/>','class="img-responsive zoom-img"/>');
                             	}else{
-                            		var thisImg = "/images/news.jpg";
+                            		var thisImg = '<img src="/images/news.jpg" alt="图片" class="img-responsive zoom-img">';
                             	}	
                             	var thisDesc = oDesc.replace(/<img[^>]+>/gi,"");
                             	thisDesc = fnbase.overTxtEllipsis(thisDesc,20,true);
