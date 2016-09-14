@@ -3486,4 +3486,7 @@ color:#CA4D4D;
     height:auto;
   }
 }
+.container article,.container h3{
+  width:100%;
+}
 
