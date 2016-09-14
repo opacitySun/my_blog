@@ -3488,5 +3488,7 @@ color:#CA4D4D;
 }
 .container article,.container h3{
   width:100%;
+  word-break:break-all;
+  word-wrap:break-word;
 }
 
