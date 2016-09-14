@@ -23,6 +23,7 @@ define(['jquery','fnbase','../model/m-news'], function ($,fnbase,model) {
                             	}	
                             	var thisDesc = oDesc.replace(/<img[^>]+>/gi,"");
                             	thisDesc = thisDesc.replace(/<\/?.+?>/g,"");
+                            	thisDesc = thisDesc.replace(/&nbsp;/g,"");
                             	thisDesc = fnbase.overTxtEllipsis(thisDesc,20,true);
                                 html += '<div class="col-md-6 article-post">';
                                 html += '<div class="col-md-3 post-meta">';
