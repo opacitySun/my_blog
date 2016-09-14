@@ -16,8 +16,7 @@ define(['jquery','fnbase','../model/m-news'], function ($,fnbase,model) {
                             	var oDesc = decodeURI(o.desc);
                             	var oImgArr = oDesc.match(/<img[^>]+>/gi);
                             	if(oImgArr != null){
-                            		var oImg = oImgArr[0];
-	                            	var thisImg = oImg.substring(oImg.indexOf('src')+5,oImg.lastIndexOf('"'));
+                            		var thisImg = oImgArr[0];
                             	}else{
                             		var thisImg = "/images/news.jpg";
                             	}	
@@ -31,7 +30,7 @@ define(['jquery','fnbase','../model/m-news'], function ($,fnbase,model) {
                                 html += '<div class="clearfix"></div>';
                                 html += '</div>';
                                 html += '<div class="col-md-9 post-details">';
-                                html += '<a href="/news-detail?id='+o._id.toString()+'" class="mask"><img src="'+thisImg+'" alt="图片" class="img-responsive zoom-img"></a>';
+                                html += '<a href="/news-detail?id='+o._id.toString()+'" class="mask">'+thisImg+'</a>';
                                 html += '<a href="/news-detail?id='+o._id.toString()+'"><h4>'+o.name+'</h4></a>';
                                 html += '<p>'+thisDesc+'</p>';
                                 html += '<div class="read two">';
