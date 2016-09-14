@@ -17,7 +17,7 @@ define(['jquery','fnbase','../model/m-news'], function ($,fnbase,model) {
                             	var oImgArr = oDesc.match(/<img[^>]+>/gi);
                             	if(oImgArr != null){
                             		var oImg = oImgArr[0];
-	                            	var thisImg = oImg.substring(oImg.indexOf('src="'),oImg.lastIndexOf('"'));
+	                            	var thisImg = oImg.substring(oImg.indexOf('src')+5,oImg.lastIndexOf('"'));
                             	}else{
                             		var thisImg = "/images/news.jpg";
                             	}	
