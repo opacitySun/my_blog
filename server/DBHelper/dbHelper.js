@@ -75,7 +75,7 @@ exports.removeData = function(model,conditions,callback) {
  * @param callback 
  */  
 exports.findData = function(model,conditions,fields,options,callback) {    
-    model.find(conditions, fields, options).toArray(function(error, result){  
+    model.find(conditions, fields, options).sort({"updateTime":-1}).toArray(function(error, result){  
         if(error) {  
             console.log(error);  
             callback({success: 0, flag: "find data fail"});  
