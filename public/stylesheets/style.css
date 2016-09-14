@@ -3480,3 +3480,7 @@ color:#CA4D4D;
 	  margin: 0px 0 0px 92px;
 	}
 }
+.container img{
+  width:100%;
+  height:auto;
+}
