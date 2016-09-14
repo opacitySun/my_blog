@@ -15,9 +15,13 @@ define(['jquery','fnbase','../model/m-news'], function ($,fnbase,model) {
                             $.each(obj.data,function(k,o){
                             	var oDesc = decodeURI(o.desc);
                             	var oImgArr = oDesc.match(/<img[^>]+>/gi);
-                            	var oImg = oImgArr[0];
-                            	var thisImg = oImg.match(/<img src=\"([^\"]*?)\">/gi);
-                            	thisImg = thisImg[0];
+                            	if(oImgArr != null){
+                            		var oImg = oImgArr[0];
+	                            	var thisImg = oImg.match(/<img src=\"([^\"]*?)\">/gi);
+	                            	thisImg = thisImg[0];
+                            	}else{
+                            		var thisImg = "/images/news.jpg";
+                            	}	
                             	var thisDesc = oDesc.replace(/<img[^>]+>/gi,"");
                             	thisDesc = fnbase.overTxtEllipsis(thisDesc,20,true);
                                 html += '<div class="col-md-6 article-post">';
