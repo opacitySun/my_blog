@@ -17,11 +17,12 @@ define(['jquery','fnbase','../model/m-news'], function ($,fnbase,model) {
                             	var oImgArr = oDesc.match(/<img[^>]+>/gi);
                             	if(oImgArr != null){
                             		var oImg = oImgArr[0];
-	                            	var thisImg = oImg.replace('/>','class="img-responsive zoom-img"/>');
+	                            	var thisImg = oImg.replace('/>','class="img-responsive zoom-img" />');
                             	}else{
                             		var thisImg = '<img src="/images/news.jpg" alt="图片" class="img-responsive zoom-img">';
                             	}	
                             	var thisDesc = oDesc.replace(/<img[^>]+>/gi,"");
+                            	thisDesc = thisDesc.replace(/<\/?.+?>/g,"");
                             	thisDesc = fnbase.overTxtEllipsis(thisDesc,20,true);
                                 html += '<div class="col-md-6 article-post">';
                                 html += '<div class="col-md-3 post-meta">';
