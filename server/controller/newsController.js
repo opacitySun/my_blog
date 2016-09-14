@@ -7,13 +7,10 @@ module.exports = function(app){
     //获取全部项目列表
     app.all("/newsAllListFindAction",function(req,res){
     	var result = {};
-
         var conditions = {};
         newsTypeDao.findNewsType(conditions,dbHelper,function(newsTypeResult){  
-            console.log(JSON.stringify(newsTypeResult));
             result = newsTypeResult;
             newsDao.findNews(conditions,dbHelper,function(newsResult){  
-            	console.log(JSON.stringify(newsResult));
             	result.result.forEach(function(obj){
             		var newsArr = [];
             		newsResult.result.forEach(function(o){
@@ -34,7 +31,6 @@ module.exports = function(app){
         var id = req.body.id;
         var conditions = {"_id":ObjectID(id)};
         newsDao.findOneNews(conditions,dbHelper,function(result){  
-            console.log(JSON.stringify(result));
             res.json(result);
         });    
     });
