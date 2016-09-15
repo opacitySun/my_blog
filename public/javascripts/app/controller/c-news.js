@@ -1,4 +1,4 @@
-define(['jquery','fnbase','../model/m-news'], function ($,fnbase,model) {
+define(['jquery','fnbase','lazyload','../model/m-news'], function ($,fnbase,lazyload,model) {
 	var staticPath = $("#staticPath").val();
 
 	var cNews = {
@@ -20,10 +20,10 @@ define(['jquery','fnbase','../model/m-news'], function ($,fnbase,model) {
                             	var oImgArr = oDesc.match(/<img[^>]+>/gi);
                             	if(oImgArr != null){
                             		var oImg = oImgArr[0];
-	                            	var thisImg = oImg.replace('<img','<img class="img-responsive zoom-img"');
+	                            	var thisImg = oImg.replace('<img','<img class="img-responsive zoom-img lazyload"');
 	                            	thisImg = thisImg.replace('src="','src="'+staticPath);
                             	}else{
-                            		var thisImg = '<img src="/images/news.jpg" alt="图片" class="img-responsive zoom-img">';
+                            		var thisImg = '<img src="/images/news.jpg" alt="图片" class="img-responsive zoom-img lazyload">';
                             	}	
                             	var thisDesc = oDesc.replace(/<img[^>]+>/gi,"");
                             	thisDesc = thisDesc.replace(/<\/?.+?>/g,"");
@@ -56,6 +56,9 @@ define(['jquery','fnbase','../model/m-news'], function ($,fnbase,model) {
                     html = "暂无数据";
                 }
                 $("#newsAll").html(html);
+                $("img.lazyload").lazyload({
+                    effect:'fadeIn' //懒加载淡入
+                });
             });
         },
         //获取二级全部列表
@@ -73,10 +76,10 @@ define(['jquery','fnbase','../model/m-news'], function ($,fnbase,model) {
                         	var oImgArr = oDesc.match(/<img[^>]+>/gi);
                         	if(oImgArr != null){
                         		var oImg = oImgArr[0];
-                            	var thisImg = oImg.replace('<img','<img class="img-responsive zoom-img"');
+                            	var thisImg = oImg.replace('<img','<img class="img-responsive zoom-img lazyload"');
                             	thisImg = thisImg.replace('src="','src="'+staticPath);
                         	}else{
-                        		var thisImg = '<img src="/images/news.jpg" alt="图片" class="img-responsive zoom-img">';
+                        		var thisImg = '<img src="/images/news.jpg" alt="图片" class="img-responsive zoom-img lazyload">';
                         	}	
                         	var thisDesc = oDesc.replace(/<img[^>]+>/gi,"");
                         	thisDesc = thisDesc.replace(/<\/?.+?>/g,"");
@@ -108,6 +111,9 @@ define(['jquery','fnbase','../model/m-news'], function ($,fnbase,model) {
                     html = "暂无数据";
                 }
                 $("#newsSecondAll").html(html);
+                $("img.lazyload").lazyload({
+                    effect:'fadeIn' //懒加载淡入
+                });
             });
         },
         //获取详情
