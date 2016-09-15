@@ -12,6 +12,7 @@
             'hoverdir':'lib/jquery.hoverdir',
             'movetop':'lib/move-top',
             'modernizr':'lib/modernizr',
+            'lazyload':'lib/jquery.lazyload.min',
             'bootstrap':'../loginTemplet/bootstrap/js/bootstrap.min'
         },
         map : {
@@ -29,6 +30,10 @@
             'hoverdir':{
                 deps:['jquery','modernizr'],
                 exports:'hoverdir'
+            },
+            'lazyload':{
+                deps:['jquery'],
+                exports:'lazyload'
             },
             'bootstrap':{
                 deps:['jquery'],

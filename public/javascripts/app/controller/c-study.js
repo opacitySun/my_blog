@@ -1,4 +1,4 @@
-define(['jquery','fnbase','../model/m-study'], function ($,fnbase,model) {
+define(['jquery','fnbase','lazyload','../model/m-study'], function ($,fnbase,lazyload,model) {
 	var staticPath = $("#staticPath").val();
 
 	var cStudy = {
@@ -25,7 +25,7 @@ define(['jquery','fnbase','../model/m-study'], function ($,fnbase,model) {
                                 html += '<div class="clearfix"></div>';
                                 html += '</div>';
                                 html += '<div class="col-md-9 post-details">';
-                                html += '<a href="/study-detail?id='+o._id.toString()+'" class="mask"><img src="/images/study.jpg" alt="image" class="img-responsive zoom-img"></a>';
+                                html += '<a href="/study-detail?id='+o._id.toString()+'" class="mask"><img src="/images/study.jpg" alt="image" class="img-responsive zoom-img lazyload"></a>';
                                 html += '<a href="/study-detail?id='+o._id.toString()+'"><h4>'+o.name+'</h4></a>';
                                 //html += '<p></p>';
                                 html += '<div class="read two">';
@@ -44,6 +44,7 @@ define(['jquery','fnbase','../model/m-study'], function ($,fnbase,model) {
                     html = "暂无数据";
                 }
                 $("#studyAll").html(html);
+                $("img.lazyload").lazyload();
             });
         },
         //获取二级全部列表
@@ -66,7 +67,7 @@ define(['jquery','fnbase','../model/m-study'], function ($,fnbase,model) {
                             html += '<div class="clearfix"></div>';
                             html += '</div>';
                             html += '<div class="col-md-9 post-details">';
-                            html += '<a href="/study-detail?id='+o._id.toString()+'" class="mask"><img src="/images/study.jpg" alt="image" class="img-responsive zoom-img"></a>';
+                            html += '<a href="/study-detail?id='+o._id.toString()+'" class="mask"><img src="/images/study.jpg" alt="image" class="img-responsive zoom-img lazyload"></a>';
                             html += '<a href="/study-detail?id='+o._id.toString()+'"><h4>'+o.name+'</h4></a>';
                             //html += '<p></p>';
                             html += '<div class="read two">';
@@ -84,6 +85,7 @@ define(['jquery','fnbase','../model/m-study'], function ($,fnbase,model) {
                     html = "暂无数据";
                 }
                 $("#studySecondAll").html(html);
+                $("img.lazyload").lazyload();
             });
         },
         //获取详情
