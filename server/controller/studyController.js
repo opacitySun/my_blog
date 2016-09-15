@@ -30,7 +30,7 @@ module.exports = function(app){
     //获取二级全部项目列表
     app.all("/studySecondAllListFindAction",function(req,res){
         var result = {};
-        var conditions = {"type":req.body.type};
+        var conditions = {"type":Number(req.body.type)};
         studyTypeDao.findOneStudyType(conditions,dbHelper,function(studyTypeResult){  
             if(studyTypeResult.success == 1){
                 result = studyTypeResult;
