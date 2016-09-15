@@ -44,7 +44,9 @@ define(['jquery','fnbase','lazyload','../model/m-study'], function ($,fnbase,laz
                     html = "暂无数据";
                 }
                 $("#studyAll").html(html);
-                $("img.lazyload").lazyload();
+                $("img.lazyload").lazyload({
+                    effect:'fadeIn' //懒加载淡入
+                });
             });
         },
         //获取二级全部列表
@@ -85,7 +87,9 @@ define(['jquery','fnbase','lazyload','../model/m-study'], function ($,fnbase,laz
                     html = "暂无数据";
                 }
                 $("#studySecondAll").html(html);
-                $("img.lazyload").lazyload();
+                $("img.lazyload").lazyload({
+                    effect:'fadeIn' //懒加载淡入
+                });
             });
         },
         //获取详情
