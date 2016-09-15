@@ -32,6 +32,11 @@ router.get('/study-list', function(req, res) {
 	res.render('study-list', { title: '学习分享',layout: 'layout.html' });
 });
 
+/* study-list-second */
+router.get('/study-list-second', function(req, res) {
+	res.render('study-list-second', { title: '学习分享详细列表',layout: 'layout.html' });
+});
+
 /* study-detail */
 router.get('/study-detail', function(req, res) {
 	res.render('study-detail', { title: '学习分享详情',layout: 'layout.html' });
@@ -40,6 +45,11 @@ router.get('/study-detail', function(req, res) {
 /* news-list */
 router.get('/news-list', function(req, res) {
 	res.render('news-list', { title: '消息新闻',layout: 'layout.html' });
+});
+
+/* news-list-second */
+router.get('/news-list-second', function(req, res) {
+	res.render('news-list-second', { title: '消息新闻详细列表',layout: 'layout.html' });
 });
 
 /* news-detail */
