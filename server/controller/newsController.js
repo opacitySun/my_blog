@@ -14,7 +14,7 @@ module.exports = function(app){
             	result.result.forEach(function(obj){
             		var newsArr = [];
             		newsResult.result.forEach(function(o){
-            			if(obj.type == o.type){
+            			if(obj.type == o.type && newsArr.length < 4){
             				newsArr.push(o);
             			}
             		});
@@ -24,6 +24,24 @@ module.exports = function(app){
             	});
             	res.json(result);
         	});    
+        });     
+    });
+    //获取二级全部项目列表
+    app.all("/newsSecondAllListFindAction",function(req,res){
+        var result = {};
+        var conditions = {"type":Number(req.body.type)};
+        newsTypeDao.findOneNewsType(conditions,dbHelper,function(newsTypeResult){  
+            if(newsTypeResult.success == 1){
+                result = newsTypeResult;
+                newsDao.findNews(conditions,dbHelper,function(newsResult){  
+                    if(newsResult.result){
+                        result.result["data"] = newsResult.result;
+                    }
+                    res.json(result);
+                });    
+            }else{
+                res.json(newsTypeResult);
+            }  
         });     
     });
     //新闻详情

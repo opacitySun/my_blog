@@ -28,7 +28,7 @@ exports.findStudyType = function(conditions,dbHelper,callback) {
 }  
 
 /** 
- * 调用公共find方法并且传入操作数据库的模型user 
+ * 调用公共findOne方法并且传入操作数据库的模型user 
  * @param conditions 
  * @param dbHelper 
  * @param callback 
