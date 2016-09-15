@@ -53,9 +53,7 @@ define(['jquery','fnbase','../model/m-study'], function ($,fnbase,model) {
                 var html = "";
                 if(res.result){
                     html += '<div class="container">';
-                    html += '<h3 class="tittle">';
-                    html += '<em>'+res.result.name+'</em>';
-                    html += '</h3>';
+                    html += '<h3 class="tittle">'+res.result.name+'</h3>';
                     html += '<div class="news-article">';
                     if(res.result.data){
                         $.each(res.result.data,function(k,o){
