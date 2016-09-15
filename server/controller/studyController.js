@@ -36,7 +36,7 @@ module.exports = function(app){
                 result = studyTypeResult;
                 studyDao.findStudy(conditions,dbHelper,function(studyResult){  
                     if(studyResult.result){
-                        obj["data"] = studyResult.result;
+                        result.result["data"] = studyResult.result;
                     }
                     res.json(result);
                 });    
