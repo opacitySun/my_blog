@@ -3493,6 +3493,7 @@ color:#CA4D4D;
 }
 h3.tittle{
   position:relative;
+  overflow:hidden;
 }
 h3.tittle em{
   float:left;

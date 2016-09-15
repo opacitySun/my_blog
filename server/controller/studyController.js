@@ -15,7 +15,7 @@ module.exports = function(app){
             	result.result.forEach(function(obj){
             		var studyArr = [];
             		studyResult.result.forEach(function(o){
-            			if(obj.type == o.type && studyArr.length <= 4){
+            			if(obj.type == o.type && studyArr.length < 4){
             				studyArr.push(o);
             			}
             		});
