@@ -3491,14 +3491,14 @@ color:#CA4D4D;
   word-break:break-all;
   word-wrap:break-word;
 }
-.container h3.title{
+h3.title{
   position:relative;
 }
-.container h3.title em{
+h3.title em{
   float:left;
   font-style:normal;
 }
-.container h3.title a{
+h3.title a{
   position:absolute;
   right:0;
   bottom:0;
@@ -3506,6 +3506,6 @@ color:#CA4D4D;
   font-weight:normal;
   color:#CA4D4D;
 }
-.container h3.title a:hover{
+h3.title a:hover{
   text-decoration:underline;
 }
