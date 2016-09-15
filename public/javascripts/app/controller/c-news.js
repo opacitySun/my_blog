@@ -131,6 +131,9 @@ define(['jquery','fnbase','lazyload','../model/m-news'], function ($,fnbase,lazy
                     });
                 }  
                 $("#newsDetail article").show();
+                $("img").lazyload({
+                    effect:'fadeIn' //懒加载淡入
+                });
             });
         }
 	};

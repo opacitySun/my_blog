@@ -107,6 +107,9 @@ define(['jquery','fnbase','lazyload','../model/m-study'], function ($,fnbase,laz
                     });
                 }
                 $("#studyDetail article").show();
+                $("img").lazyload({
+                    effect:'fadeIn' //懒加载淡入
+                });
             });
         }
 	};
