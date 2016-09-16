@@ -50,10 +50,26 @@ weixinProgram(app);
 //将express与控制器相关联来达到路由的目的
 routesController(app);
 
+//获取准确的跳转路径
+function getRouterName(url){
+  var urlEndPosition = url.indexOf("?");
+  var urlPath;
+  if(urlEndPosition > -1){
+      urlPath = url.substring(0,urlEndPosition);
+  }else{
+      urlPath = url.substring(0);
+  }
+  return urlPath;
+}
 //判断是否存在session并选择跳转路径
 app.use(function(req,res,next){
   if (!req.session.username) {
-    if(req.url == "/login" || req.url == "/ucenter" || req.url == "/register"){
+    var urlName = getRouterName(req.url);
+    if(urlName == "/login" || 
+      urlName == "/ucenter" || 
+      urlName == "/register" ||
+      urlName == "/news-detail" ||
+      urlName == "/study-detail"){
       next(); //如果请求的地址是登录则通过，进行下一个请求
     }else{
       res.redirect('/login');
