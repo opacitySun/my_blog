@@ -3524,17 +3524,17 @@ h3.tittle a:hover{
 .loadPrompt b{
   position:absolute;
   z-index:9998;
-  width:60px;
+  width:90px;
   height:90px;
   top:0;
-  left:0;
+  left:-15px;
   background:#000000;
   border-radius:10px;
   -moz-border-radius:10px;
   -webkit-border-radius:10px;
   -o-border-radius:10px;
-  opacity:0.5;
-  filter:Alpha(opacity=50);
+  opacity:0.2;
+  filter:Alpha(opacity=20);
 }
 .loadPrompt img{
   width:100%;
