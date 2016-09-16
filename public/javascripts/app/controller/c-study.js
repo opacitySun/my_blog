@@ -60,7 +60,7 @@ define(['jquery','fnbase','lazyload','../model/m-study'], function ($,fnbase,laz
             window.onscroll = function () {
                 if (fnbase.getScrollTop() + fnbase.getClientHeight() == fnbase.getScrollHeight()) {
                     var count = $("#dataCount").val();
-                    if(finished == true && count != 'null' || (currentPage*pageSize) < Number(count)){
+                    if(finished == true && count != 'null' && (currentPage*pageSize) < Number(count)){
                         $("#loadPrompt").show();
                         finished = false;
                         setTimeout(function(){
