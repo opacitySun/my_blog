@@ -8,9 +8,10 @@ module.exports = function(app){
     app.all("/newsAllListFindAction",function(req,res){
     	var result = {};
         var conditions = {};
+        var fields = {};
         newsTypeDao.findNewsType(conditions,dbHelper,function(newsTypeResult){  
             result = newsTypeResult;
-            newsDao.findNews(conditions,dbHelper,function(newsResult){  
+            newsDao.findNews(conditions,fields,dbHelper,function(newsResult){  
             	result.result.forEach(function(obj){
             		var newsArr = [];
             		newsResult.result.forEach(function(o){
@@ -26,16 +27,23 @@ module.exports = function(app){
         	});    
         });     
     });
-    //获取二级全部项目列表
-    app.all("/newsSecondAllListFindAction",function(req,res){
+    //获取二级项目列表
+    app.all("/newsSecondListFindAction",function(req,res){
+        var currentPage = req.body.currentPage;
+        var pageSize = req.body.pageSize;
         var result = {};
         var conditions = {"type":Number(req.body.type)};
+        var fields = {
+            "currentPage":currentPage,
+            "pageSize":pageSize
+        };
         newsTypeDao.findOneNewsType(conditions,dbHelper,function(newsTypeResult){  
             if(newsTypeResult.success == 1){
                 result = newsTypeResult;
-                newsDao.findNews(conditions,dbHelper,function(newsResult){  
+                newsDao.findNews(conditions,fields,dbHelper,function(newsResult){  
                     if(newsResult.result){
                         result.result["data"] = newsResult.result;
+                        result.total = newsResult.total;
                     }
                     res.json(result);
                 });    

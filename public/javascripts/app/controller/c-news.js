@@ -61,15 +61,45 @@ define(['jquery','fnbase','lazyload','../model/m-news'], function ($,fnbase,lazy
                 });
             });
         },
+        //二级列表数据初始化及下拉刷新
+        initSecondList : function(type){
+            var currentPage = 1;
+            var pageSize = 4;
+            cNews.getSecondList(currentPage,pageSize,type);
+
+            //滚动刷新列表数据
+            var finished = true;
+            window.onscroll = function () {
+                if (fnbase.getScrollTop() + fnbase.getClientHeight() == fnbase.getScrollHeight()) {
+                    var count = $("#dataCount").val();
+                    if(finished == true && count != 'null' && (currentPage*pageSize) < Number(count)){
+                        $("#loadPrompt").show();
+                        finished = false;
+                        setTimeout(function(){
+                            $("#loadPrompt").hide();
+                            currentPage = parseInt(currentPage)+1;
+                            cNews.getSecondList(currentPage,pageSize,type);
+                            finished = true;
+                        },1000);
+                    }
+                }
+            }
+        },
         //获取二级全部列表
-		getSecondAllList : function(type){
-			var formData = {"type":type};
-            model.getSecondAllList(formData,function(res){
+		getSecondList : function(currentPage,pageSize,type){
+			var formData = {
+                "currentPage":currentPage,
+                "pageSize":pageSize,
+                "type":type
+            };
+            model.getSecondList(formData,function(res){
                 var html = "";
                 if(res.result){
-                    html += '<div class="container">';
-                    html += '<h3 class="tittle">'+res.result.name+'</h3>';
-                    html += '<div class="news-article">';
+                	if(currentPage == 1){
+                		html += '<div class="container">';
+	                    html += '<h3 class="tittle">'+res.result.name+'</h3>';
+	                    html += '<div class="news-article" id="secondList">';
+                	}   
                     if(res.result.data){
                         $.each(res.result.data,function(k,o){
                         	var oDesc = decodeURI(o.desc);
@@ -104,13 +134,24 @@ define(['jquery','fnbase','lazyload','../model/m-news'], function ($,fnbase,lazy
                             html += '</div>';
                         });
                     }
-                    html += '<div class="clearfix"></div>';
-                    html += '</div>';
-                    html += '</div>';
+                    if(currentPage == 1){
+                    	html += '<div class="clearfix"></div>';
+	                    html += '</div>';
+	                    html += '</div>';
+                    }   
                 }else{
-                    html = "暂无数据";
+                    if(currentPage == 1){
+                        html = "暂无数据";
+                    }
                 }
-                $("#newsSecondAll").html(html);
+                if(currentPage == 1){
+                    $("#newsSecondAll").html(html);
+                    if(res.total > 0){
+                        $("#dataCount").val(res.total);
+                    }
+                }else{
+                    $("#secondList").append(html);
+                }
                 $("img.lazyload").lazyload({
                     effect:'fadeIn' //懒加载淡入
                 });

@@ -10,10 +10,14 @@ define(["./Base"],function(Base){
 				callback(res);
 			});
 		},
-		//获取二级全部列表
-		getSecondAllList : function(formData,callback){
-			var url = "/newsSecondAllListFindAction";
-			var data = {"type":formData.type};
+		//获取二级列表
+		getSecondList : function(formData,callback){
+			var url = "/newsSecondListFindAction";
+			var data = {
+				"currentPage":formData.currentPage,
+				"pageSize":formData.pageSize,
+				"type":formData.type
+			};
 			modelBase.postAjax(url,data,function(res){
 				callback(res);
 			});

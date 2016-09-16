@@ -5,7 +5,7 @@ define(['jquery','fnbase','./controller/c-news','./model/m-news'],function($,fnb
     }else if(routerPath == "/news-list-second"){
         var requestGet = fnbase.GetRequest();
         var type = requestGet["type"];
-        controller.getSecondAllList(type);
+        controller.initSecondList(type);
     }else if(routerPath == "/news-detail"){
         var requestGet = fnbase.GetRequest();
         var urlId = requestGet["id"];
