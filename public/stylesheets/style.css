@@ -3521,21 +3521,6 @@ h3.tittle a:hover{
   margin-top:-45px;
   margin-left:-30px;
 }
-.loadPrompt b{
-  position:absolute;
-  z-index:9998;
-  width:90px;
-  height:100px;
-  top:-10px;
-  left:-15px;
-  background:#000000;
-  border-radius:10px;
-  -moz-border-radius:10px;
-  -webkit-border-radius:10px;
-  -o-border-radius:10px;
-  opacity:0.2;
-  filter:Alpha(opacity=20);
-}
 .loadPrompt img{
   width:100%;
   height:auto;
