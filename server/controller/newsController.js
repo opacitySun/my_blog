@@ -14,7 +14,7 @@ module.exports = function(app){
             	result.result.forEach(function(obj){
             		var newsArr = [];
             		newsResult.result.forEach(function(o){
-            			if(obj.type == o.type && newsArr.length < 4){
+            			if(obj.type == o.type && newsArr.length < 2){
             				newsArr.push(o);
             			}
             		});

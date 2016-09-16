@@ -49,10 +49,38 @@ define(['jquery','fnbase','lazyload','../model/m-study'], function ($,fnbase,laz
                 });
             });
         },
-        //获取二级全部列表
-        getSecondAllList : function(type){
-            var formData = {"type":type};
-            model.getSecondAllList(formData,function(res){
+        //二级列表数据初始化及下拉刷新
+        initSecondList : function(type){
+            var currentPage = 1;
+            var pageSize = 4;
+            cStudy.getSecondList(currentPage,pageSize,type);
+
+            //滚动刷新列表数据
+            var finished = true;
+            window.onscroll = function () {
+                if (fnbase.getScrollTop() + fnbase.getClientHeight() == fnbase.getScrollHeight()) {
+                    var count = $("#dataCount").val();
+                    if(finished == true && count != 'null' || (currentPage*pageSize) < Number(count)){
+                        $("#loadPrompt").show();
+                        finished = false;
+                        setTimeout(function(){
+                            $("#loadPrompt").hide();
+                            currentPage = parseInt(currentPage)+1;
+                            cStudy.getSecondList(currentPage,type);
+                            finished = true;
+                        },1000);
+                    }
+                }
+            }
+        },
+        //获取二级列表
+        getSecondList : function(currentPage,pageSize,type){
+            var formData = {
+                "currentPage":currentPage,
+                "pageSize":pageSize,
+                "type":type
+            };
+            model.getSecondList(formData,function(res){
                 var html = "";
                 if(res.result){
                     html += '<div class="container">';
@@ -86,7 +114,8 @@ define(['jquery','fnbase','lazyload','../model/m-study'], function ($,fnbase,laz
                 }else{
                     html = "暂无数据";
                 }
-                $("#studySecondAll").html(html);
+                $("#studySecondAll").append(html);
+                $("#dataCount").val(res.total);
                 $("img.lazyload").lazyload({
                     effect:'fadeIn' //懒加载淡入
                 });

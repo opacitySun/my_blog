@@ -6,7 +6,7 @@ define(['jquery','fnbase','./controller/c-study','./model/m-study'],function($,f
     }else if(routerPath == "/study-list-second"){
         var requestGet = fnbase.GetRequest();
         var type = requestGet["type"];
-        controller.getSecondAllList(type);
+        controller.initSecondList(type);
     }else if(routerPath == "/study-detail"){
         var requestGet = fnbase.GetRequest();
         var urlId = requestGet["id"];
