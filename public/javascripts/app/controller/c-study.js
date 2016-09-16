@@ -83,9 +83,11 @@ define(['jquery','fnbase','lazyload','../model/m-study'], function ($,fnbase,laz
             model.getSecondList(formData,function(res){
                 var html = "";
                 if(res.result){
-                    html += '<div class="container">';
-                    html += '<h3 class="tittle">'+res.result.name+'</h3>';
-                    html += '<div class="news-article">';
+                    if(currentPage == 1){
+                        html += '<div class="container">';
+                        html += '<h3 class="tittle">'+res.result.name+'</h3>';
+                        html += '<div class="news-article" id="secondList">';
+                    }
                     if(res.result.data){
                         $.each(res.result.data,function(k,o){
                             html += '<div class="col-md-6 article-post">';
@@ -108,14 +110,24 @@ define(['jquery','fnbase','lazyload','../model/m-study'], function ($,fnbase,laz
                             html += '</div>';
                         });
                     }
-                    html += '<div class="clearfix"></div>';
-                    html += '</div>';
-                    html += '</div>';
+                    if(currentPage == 1){
+                        html += '<div class="clearfix"></div>';
+                        html += '</div>';
+                        html += '</div>';
+                    }
                 }else{
-                    html = "暂无数据";
+                    if(currentPage == 1){
+                        html = "暂无数据";
+                    }
                 }
-                $("#studySecondAll").append(html);
-                $("#dataCount").val(res.total);
+                if(currentPage == 1){
+                    $("#studySecondAll").html(html);
+                    if(res.total > 0){
+                        $("#dataCount").val(res.total);
+                    }
+                }else{
+                    $("#secondList").append(html);
+                }  
                 $("img.lazyload").lazyload({
                     effect:'fadeIn' //懒加载淡入
                 });
