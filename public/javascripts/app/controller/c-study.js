@@ -66,7 +66,7 @@ define(['jquery','fnbase','lazyload','../model/m-study'], function ($,fnbase,laz
                         setTimeout(function(){
                             $("#loadPrompt").hide();
                             currentPage = parseInt(currentPage)+1;
-                            cStudy.getSecondList(currentPage,type);
+                            cStudy.getSecondList(currentPage,,pageSize,type);
                             finished = true;
                         },1000);
                     }
