@@ -6,6 +6,6 @@ function(require,$,fnbase,controller,model){
     model.getUserInfo(function(res){
     	$("#peopleImg").attr("src",staticPath+res.result[0].image);
     	$("#peopleName").text(res.result[0].name);
-    	$("#peopleDesc").text(res.result[0].desc);
+    	$("#peopleDesc").html(res.result[0].desc);
     });
 });
