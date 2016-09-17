@@ -14,8 +14,8 @@ define(['jquery','fnbase','../model/m-recreation'],function($,fnbase,model) {
 		    				html += '<div class="main">';
 		    				if(obj.data){
 			    				$.each(obj.data,function(k,o){
-			    					html += '<div class="col-md-2 child">';
-			    					html += '<a target="_blank" href="'+o.url+'" title="'+o.name+'"><img src="'+staticPath+o.image+'" /></a>';
+			    					html += '<div class="col-md-2 child post-details">';
+			    					html += '<a target="_blank" href="'+o.url+'" title="'+o.name+'" class="mask mask1"><img class="img-responsive zoom-img" src="'+staticPath+o.image+'" /></a>';
 			    					html += '<p>'+o.name+'</p>';
 			    					html += '</div>';
 				    			});
@@ -28,8 +28,8 @@ define(['jquery','fnbase','../model/m-recreation'],function($,fnbase,model) {
 		    				html += '<div class="main">';
 		    				if(obj.data){
 			    				$.each(obj.data,function(k,o){
-			    					html += '<div class="col-md-3 child">';
-			    					html += '<a target="_blank" href="'+o.url+'" title="'+o.name+'"><img src="'+staticPath+o.image+'" /></a>';
+			    					html += '<div class="col-md-3 child post-details">';
+			    					html += '<a target="_blank" href="'+o.url+'" title="'+o.name+'" class="mask mask2"><img src="'+staticPath+o.image+'" /></a>';
 			    					html += '<p>'+o.name+'</p>';
 			    					html += '</div>';
 				    			});
