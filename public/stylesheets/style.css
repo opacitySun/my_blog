@@ -3536,7 +3536,7 @@ h3.tittle a:hover{
 .recreationTeam .container{margin-bottom:20px;}
 .recreationTeam .main a{display:block;width:100%;}
 .recreationTeam .main a img{width:100%;height:auto;}
-.recreationTeam .main p{width:100%;text-align:center;line-height:20px;}
+.recreationTeam .main p{width:100%;text-align:center;line-height:30px;margin:10px 0;}
 .recreationTeam .child{margin-bottom:20px;}
 .recreationTeam .child:hover p{color:#ff0000;}
 @media(min-width:991px){
