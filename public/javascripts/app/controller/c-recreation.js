@@ -29,7 +29,7 @@ define(['jquery','fnbase','../model/m-recreation'],function($,fnbase,model) {
 		    				if(obj.data){
 			    				$.each(obj.data,function(k,o){
 			    					html += '<div class="col-md-3 child post-details">';
-			    					html += '<a target="_blank" href="'+o.url+'" title="'+o.name+'" class="mask mask2"><img src="'+staticPath+o.image+'" /></a>';
+			    					html += '<a target="_blank" href="'+o.url+'" title="'+o.name+'" class="mask mask2"><img class="img-responsive zoom-img" src="'+staticPath+o.image+'" /></a>';
 			    					html += '<p>'+o.name+'</p>';
 			    					html += '</div>';
 				    			});
