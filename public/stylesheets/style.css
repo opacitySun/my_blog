@@ -3537,6 +3537,7 @@ h3.tittle a:hover{
 .recreationTeam .main a{display:block;width:100%;}
 .recreationTeam .main a img{width:100%;height:auto;}
 .recreationTeam .main p{width:100%;text-align:center;line-height:20px;}
+.recreationTeam .child{margin-bottom:20px;}
 .recreationTeam .child:hover p{color:#ff0000;}
 @media(min-width:991px){
   .recreationTeam a.mask1 {
@@ -3544,5 +3545,13 @@ h3.tittle a:hover{
   }
   .recreationTeam a.mask2 {
     height:142px;
+  }
+}
+@media(min-width:1200px){
+  .recreationTeam a.mask1 {
+    height:230px;
+  }
+  .recreationTeam a.mask2 {
+    height:176px;
   }
 }
