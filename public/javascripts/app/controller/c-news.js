@@ -38,7 +38,7 @@ define(['jquery','fnbase','lazyload','../model/m-news'], function ($,fnbase,lazy
                                 html += '</div>';
                                 html += '<div class="col-md-9 post-details">';
                                 html += '<a href="/news-detail?id='+o._id.toString()+'" class="mask">'+thisImg+'</a>';
-                                html += '<a href="/news-detail?id='+o._id.toString()+'"><h4>'+o.name+'</h4></a>';
+                                html += '<a href="/news-detail?id='+o._id.toString()+'" title="'+o.name+'"><h4>'+o.name+'</h4></a>';
                                 html += '<p>'+thisDesc+'</p>';
                                 html += '<div class="read two">';
                                 html += '<a class="button" href="/news-detail?id='+o._id.toString()+'"><img src="/images/read.png" /></a>';
@@ -124,7 +124,7 @@ define(['jquery','fnbase','lazyload','../model/m-news'], function ($,fnbase,lazy
                             html += '</div>';
                             html += '<div class="col-md-9 post-details">';
                             html += '<a href="/news-detail?id='+o._id.toString()+'" class="mask">'+thisImg+'</a>';
-                            html += '<a href="/news-detail?id='+o._id.toString()+'"><h4>'+o.name+'</h4></a>';
+                            html += '<a href="/news-detail?id='+o._id.toString()+'" title="'+o.name+'"><h4>'+o.name+'</h4></a>';
                             html += '<p>'+thisDesc+'</p>';
                             html += '<div class="read two">';
                             html += '<a class="button" href="/news-detail?id='+o._id.toString()+'"><img src="/images/read.png" /></a>';

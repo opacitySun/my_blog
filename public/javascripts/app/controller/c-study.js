@@ -26,7 +26,7 @@ define(['jquery','fnbase','lazyload','../model/m-study'], function ($,fnbase,laz
                                 html += '</div>';
                                 html += '<div class="col-md-9 post-details">';
                                 html += '<a href="/study-detail?id='+o._id.toString()+'" class="mask"><img src="/images/study.jpg" alt="image" class="img-responsive zoom-img lazyload"></a>';
-                                html += '<a href="/study-detail?id='+o._id.toString()+'"><h4>'+o.name+'</h4></a>';
+                                html += '<a href="/study-detail?id='+o._id.toString()+'" title="'+o.name+'"><h4>'+o.name+'</h4></a>';
                                 //html += '<p></p>';
                                 html += '<div class="read two">';
                                 html += '<a class="button" href="/study-detail?id='+o._id.toString()+'"><img src="/images/read.png" /></a>';
@@ -100,7 +100,7 @@ define(['jquery','fnbase','lazyload','../model/m-study'], function ($,fnbase,laz
                             html += '</div>';
                             html += '<div class="col-md-9 post-details">';
                             html += '<a href="/study-detail?id='+o._id.toString()+'" class="mask"><img src="/images/study.jpg" alt="image" class="img-responsive zoom-img lazyload"></a>';
-                            html += '<a href="/study-detail?id='+o._id.toString()+'"><h4>'+o.name+'</h4></a>';
+                            html += '<a href="/study-detail?id='+o._id.toString()+'" title="'+o.name+'"><h4>'+o.name+'</h4></a>';
                             //html += '<p></p>';
                             html += '<div class="read two">';
                             html += '<a class="button" href="/study-detail?id='+o._id.toString()+'"><img src="/images/read.png" /></a>';

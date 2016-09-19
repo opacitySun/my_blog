@@ -3555,3 +3555,9 @@ h3.tittle a:hover{
     height:176px;
   }
 }
+.news .post-details h4{
+  overflow:hidden;white-space:nowrap;text-overflow:ellipsis;
+}
+.post-details p{
+  overflow:hidden;white-space:nowrap;text-overflow:ellipsis;
+}
