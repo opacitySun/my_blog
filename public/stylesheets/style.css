@@ -1097,7 +1097,19 @@ font-size:14px;
   background:#586165;
   padding: 5px;
   position: relative;
-  width: 32.4%;
+  width: 100%;
+}
+@media(min-width:1001px){
+    .da-thumbs li{
+      width: 250px;
+      height:250px;
+    }
+}
+@media(min-width:801px){
+    .da-thumbs li{
+      width: 200px;
+      height:200px;
+    }
 }
 .da-thumbs li a,
 .da-thumbs li a img {
