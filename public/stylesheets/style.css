@@ -1101,8 +1101,8 @@ font-size:14px;
 }
 @media(min-width:1001px){
     .da-thumbs li{
-      width: 250px;
-      height:250px;
+      width: 360px;
+      height:360px;
     }
 }
 @media(min-width:801px){
