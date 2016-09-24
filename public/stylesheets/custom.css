@@ -32,7 +32,7 @@
 @media(max-width:800px){
 	.myfairy{bottom:40px;width:30%;}
 	.myfairy .top{right:100%;}
-	.myfairy .top .panel a{width:80px;height:30px;line-height:30px;}
+	.myfairy .top .panel .a{width:80px;height:30px;line-height:30px;}
 	.myfairy .bottom .level{margin-bottom:5px;}
 	.myfairy .bottom .level p{font-size:14px;}
 }
