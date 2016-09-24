@@ -60,7 +60,7 @@ define(["jquery","bootstrap","../model/m-fairy"],function($,bootstrap,model){
             window.onresize = function(){
                 var showBtnStatus = $("#myfairy .showBtn").css("display");
                 var screen_w = $(window).width();
-                if(screen_w >= 800 && showBtnStatus == "none"){
+                if(screen_w >= 800 && showBtnStatus == "block"){
                     $("#myfairy").css("width","260px");
                 }else{
                     $("#myfairy").css("width","30%");
