@@ -57,14 +57,6 @@ define(["jquery","bootstrap","../model/m-fairy"],function($,bootstrap,model){
             }else{
                 $("#myfairy").css("width","30%");
             }
-            window.onresize = function(){
-                var screen_w = $(window).width();
-                if(screen_w >= 800){
-                    $("#myfairy").css("width","260px");
-                }else{
-                    $("#myfairy").css("width","30%");
-                }
-            }
             localStorage.setItem('fairyShowStatus',1);
         },
         //隐藏精灵
@@ -82,6 +74,15 @@ define(["jquery","bootstrap","../model/m-fairy"],function($,bootstrap,model){
                 cFairy.fairyHide();
             }else{
                 cFairy.fairyShow();
+                window.onresize = function(){
+                    var showBtnStatus = $("#myfairy .showBtn").css("display");
+                    var screen_w = $(window).width();
+                    if(screen_w >= 800 && showBtnStatus == "none"){
+                        $("#myfairy").css("width","260px");
+                    }else{
+                        $("#myfairy").css("width","30%");
+                    }
+                }
             }
         },
         //自我介绍
